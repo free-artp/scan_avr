@@ -4,8 +4,8 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <avrlibtypes.h>
-#include <avrlibdefs.h>
+#include "..\include\avrlibtypes.h"
+#include "..\include\avrlibdefs.h"
 
 #define i2c_PORT	PORTC				// Порт где сидит нога TWI
 #define i2c_DDR		DDRC

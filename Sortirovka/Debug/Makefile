@@ -38,7 +38,6 @@ SUBDIRS :=
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../comm2.c \
-../i2c_dev.c \
 ../console_drv.c \
 ../Sortirovka.c
 
@@ -51,25 +50,21 @@ ASM_SRCS +=
 
 OBJS +=  \
 comm2.o \
-i2c_dev.o \
 console_drv.o \
 Sortirovka.o
 
 OBJS_AS_ARGS +=  \
 comm2.o \
-i2c_dev.o \
 console_drv.o \
 Sortirovka.o
 
 C_DEPS +=  \
 comm2.d \
-i2c_dev.d \
 console_drv.d \
 Sortirovka.d
 
 C_DEPS_AS_ARGS +=  \
 comm2.d \
-i2c_dev.d \
 console_drv.d \
 Sortirovka.d
 
@@ -83,14 +78,13 @@ OUTPUT_FILE_DEP:= ./makedep.mk
 
 LIB_DEP+=  \
 C:/Work/AVRStudio/Sortirovka/circ/Debug/libcirc.a \
+C:/Work/AVRStudio/Sortirovka/IIC_ultimate/Debug/libIIC_ultimate.a \
 C:/Work/AVRStudio/Sortirovka/RTOS/Debug/libRTOS.a
 
 LINKER_SCRIPT_DEP+= 
 
 
 # AVR32/GNU C Compiler
-
-
 
 
 

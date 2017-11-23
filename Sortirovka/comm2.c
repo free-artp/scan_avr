@@ -58,14 +58,14 @@ ISR( USART_RX_vect )
 		rx_datalen++;
 	}
 	
-	if (rx_datalen >= header->packet_size +2 ) {
+	if (rx_datalen >= header->packet_size + 2 ) {
 		SetTask(new_packet);
 	}
 }
 
 // прерывание по опустошению сдвигового регистра передатчика
 ISR( USART_TX_vect) {
-	if (UCSR0A & _BV(UDRE0)) {						// есди буфер передатчика пусто, то передавать больше нечего
+	if (UCSR0A & _BV(UDRE0)) {						// есди буфер передатчика пуст, то передавать больше нечего
 		PORTB |= _BV(pin_RS485_RW);					// переключаем драйвер RS485 на прием
 		UCSR0B &= ~(_BV(UDRIE0) | _BV(TXCIE0) );	// запрещаем любые прерывания от передатчика
 		rx_datalen = rx_ptr = 0;					// и устанавливаем на начало буфера приема (теперь должен прийти ответный пакет)
@@ -162,13 +162,4 @@ BOOL scanner_mk_req( unsigned char cmd, unsigned char* dop, size_t ldop) {
 	return TRUE;
 }
 
-BOOL check_packet_in_buffer( unsigned char cmd ){
-o22_header_t *header = (o22_header_t *)tx_buff;
-
-	if (rx_datalen >= sizeof(o22_header_t)){
-		if (rx_datalen+2 >= header->packet_size)
-			return TRUE;
-	}
-	return FALSE;
-}
 

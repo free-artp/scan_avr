@@ -20,6 +20,11 @@
 #define HI(x) ((x)>>8)
 #define LO(x) ((x)& 0xFF)
 
+#define i2c_PORT	PORTC				// Порт где сидит нога TWI
+#define i2c_DDR		DDRC
+#define i2c_SCL		5					// Биты соответствующих выводов
+#define i2c_SDA		4
+
 extern void InitAll(void);
 
 

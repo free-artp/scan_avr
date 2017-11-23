@@ -11,8 +11,13 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
+#include <util/atomic.h>
 
-#include "avrlibtypes.h"
+#include <stddef.h>
+
+#include "..\RTOS\EERTOS.h"
+
+#include "..\include\avrlibtypes.h"
 #include "..\circ\circ.h"
 #include "..\IIC_ultimate\IIC_ultimate.h"
 
@@ -22,12 +27,12 @@
 u08 buff_inp[DRV_BUFF];
 u08 buff_out[DRV_BUFF];
 
-struct circ_buffer drv_queue_inp{
+struct circ_buffer drv_queue_inp = {
 	.start = buff_inp,
 	.length = sizeof(buff_inp),
 };
 
-struct circ_buffer drv_queue_out{
+struct circ_buffer drv_queue_out = {
 	.start = buff_out,
 	.length = sizeof(buff_out),
 };
@@ -37,6 +42,10 @@ u08 m_Buffer[MEDIUM_BUFF];
 u08 m_index = 0, m_ByteCount = 0;
 u08 m_cmd = DISP_NONE;
 u08 *m_ptr = NULL;
+u16 m_delay = 0;	// пауза, которую надо выждать после посылки всего пакета (несколько записей в разные слейвы)
+u08 m_delay_fl = 0;
+
+void parser_m();
 
 void init_parsers() {
 	circ_init( &drv_queue_inp);
@@ -77,10 +86,12 @@ void parser_d(){
 	if (m_cmd) {
 		cmd = m_cmd;
 	} else {
-		circ_pop( &drv_queue_inp, &cmd, 1) );
+		circ_pop( &drv_queue_inp, &cmd, 1);
 	}
 		
 	RS_bit = _BV(DS_RS);		// по дефолту - символ
+	m_delay = 0;				// и отсутствие паузы в конце посылки. Нужна для отработки комманд дисплеем
+	m_delay_fl = 0;
 		
 	switch(cmd) {
 
@@ -94,7 +105,7 @@ void parser_d(){
 			break;
 
 		case DISP_STRP:
-			circ_pop(&drv_queue_inp, &m_ptr, 2);
+			circ_pop(&drv_queue_inp, (u08 *)&m_ptr, 2);
 			m_cmd = DISP_STRP_N;
 		case DISP_STRP_N:
 			data = pgm_read_byte(m_ptr);				//загрузить байт из PGM_SPACE
@@ -102,10 +113,11 @@ void parser_d(){
 			if(data == 0) m_cmd = cmd = DISP_NONE;
 			break;
 
-		case DISP_CMD:	// задержки !!!!
+		case DISP_CMD:	
+			m_delay = DS_CMD_DELAY_DEFAULT;				// задержка для выполнения команды. Отрабатывает ПОСЛЕ посылки команды.
 			RS_bit = 0;
 		case DISP_CHR:
-			circ_pop( &drv_queue_inp, &data, 1))
+			circ_pop( &drv_queue_inp, &data, 1);
 			break;
 	}
 	// если команда требует паузы, то задать ее величину
@@ -133,28 +145,21 @@ void parser_d(){
 	}
 }
 
+
+void parser_m_afterpause(){
+	m_delay_fl = 0;
+	SetTask(parser_m);
+}
+
 //
 // управление получает из TasManager'а или автомата IIC_ultimate
 // захватывает i2c-шину, разбирает m_Buffer, ставит задачи перед IIC_ultimate
 //
-void parser_m(){
+void do_parser_m(){
 	u08 cnt;
-
-	// проверка флага задержки и, возможно, перепоставить себя в очередь и выход
-
-
-// атомарность	
-	if ((m_index == 0) && (i2c_Do & i2c_Busy)) {		// если это первый заход в пачке, то подождем освобождения шины. Иначе - шина захвачена нами
-		SetTimerTask(parser_m, 50);
-	} else {
-		//
-		// сюда приходим либо из очереди дисплея (он сформировал несколько посылок для одной команды, но в разные регистры): strob - strob - data - strob,
-		// либо после окончания посылки в один из регистров
-		// тут как то надо быть если запись не удалась - if(i2c_Do & (i2c_ERR_NA|i2c_ERR_BF))
-		// по-видимому, нужно отсигналить парсеру дисплея, чтобы он откатил указатель в своем буфере и  заново сформировал пачку посылок
-		//
-		if (m_index < m_ByteCount) {
-			// m_Buffer : <SlaveAddr>, <N>, <byte-1>, <byte-2> ... <byte-N>
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+	{
+		if (m_index < m_ByteCount) {			// m_Buffer : <SlaveAddr>, <N>, <byte-1>, <byte-2> ... <byte-N>
 			i2c_Do = i2c_sawp | i2c_Busy;
 			i2c_index = 0;
 			i2c_SlaveAddress = m_Buffer[m_index++];
@@ -169,14 +174,45 @@ void parser_m(){
 			ErrorOutFunc =  parser_m;
 
 			TWCR = 1<<TWSTA|0<<TWSTO|1<<TWINT|0<<TWEA|1<<TWEN|1<<TWIE;
-
-		} else {
-			i2c_Do &= i2c_Free;
-			// если нужна задержка, то установить флаг паузы и SetTimerTask для сброса флага
-			SetTask(parser_d);	// задержка для команд !!!
 		}
 	}
 }
+
+
+//
+// сюда приходим либо из очереди дисплея (он сформировал несколько посылок для одной команды, но в разные регистры): strob - strob - data - strob,
+// либо после окончания посылки в один из регистров
+// тут как то надо быть если запись не удалась - if(i2c_Do & (i2c_ERR_NA|i2c_ERR_BF))
+// по-видимому, нужно отсигналить парсеру дисплея, чтобы он откатил указатель в своем буфере и  заново сформировал пачку посылок
+//
+// m_Buffer : <SlaveAddr>, <N>, <byte-1>, <byte-2> ... <byte-N>
+//
+void parser_m(){
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+	{
+		if (!m_delay_fl)			// проверка семафора(?) задержки. Можно бы, перепоставить себя в очередь, но это произойдет в parser_m_afterpause
+		{
+			if ((m_index == 0) && (i2c_Do & i2c_Busy)) {		// если это первый заход в пачке (т.е. нас вызвал parser_d), то подождем освобождения шины. Иначе - шина уже захвачена нами
+				SetTimerTask(parser_m, 5);
+			} else {
+				if (m_index < m_ByteCount) {
+					i2c_Do = i2c_sawp | i2c_Busy;
+					SetTask(do_parser_m);
+				} else {
+					i2c_Do &= i2c_Free;
+					m_index = m_ByteCount = 0;
+					if (m_delay) {	// если нужна задержка для выполнения команды, то  флаг паузы - m_pause_fl и SetTimerTask для сброса флага
+						SetTimerTask(parser_m_afterpause, m_delay);
+						m_delay_fl = 1;
+						m_delay = 0;
+					}
+					SetTask(parser_d);
+				}
+			}
+		}
+	}
+} // И уходим обратно в IIC_ultimate, где выходим из прерывания, ну или в TaskManager
+
 
 // ф-ии работы с дисплеем верхнего уровня
 
@@ -188,7 +224,7 @@ void d_clear() {
 	
 }
 
-void d_setcursor (u08 column, row) {
+void d_setcursor (u08 column, u08 row) {
 	
 }
 
@@ -198,7 +234,7 @@ void d_putchar(char chr){
 
 void d_putstring(char *str){
 	char pp="aaaaaaa";
-	circ_push(drv_queue_inp,(void *)pp, 2);
+	circ_push( &drv_queue_inp,(void *)pp, 2);
 	
 }
 

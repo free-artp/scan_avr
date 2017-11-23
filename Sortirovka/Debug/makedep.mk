@@ -4,8 +4,6 @@
 
 comm2.c
 
-i2c_dev.c
-
 console_drv.c
 
 Sortirovka.c

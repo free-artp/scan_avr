@@ -1,5 +1,4 @@
-i2c_dev.d i2c_dev.o: .././i2c_dev.c .././..\include\avrlibtypes.h \
- .././i2c_dev.h \
+console_drv.d console_drv.o: .././console_drv.c \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -12,15 +11,15 @@ i2c_dev.d i2c_dev.o: .././i2c_dev.c .././..\include\avrlibtypes.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\lock.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- .././../RTOS/EERTOS.h .././../RTOS/HAL.h .././../RTOS/avrlibtypes.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\lib\gcc\avr\4.8.1\include\stddef.h \
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\util\atomic.h \
+ .././..\RTOS\EERTOS.h .././..\RTOS\HAL.h .././..\RTOS\avrlibtypes.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\wdt.h \
- .././../RTOS/EERTOSHAL.h
-
-.././..\include\avrlibtypes.h:
-
-.././i2c_dev.h:
+ .././..\RTOS\EERTOSHAL.h .././..\include\avrlibtypes.h \
+ .././..\circ\circ.h .././..\IIC_ultimate\IIC_ultimate.h \
+ .././..\IIC_ultimate\..\include\avrlibtypes.h \
+ .././..\IIC_ultimate\..\include\avrlibdefs.h .././console_drv.h
 
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -46,16 +45,30 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-g
 
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
-.././../RTOS/EERTOS.h:
-
-.././../RTOS/HAL.h:
-
-.././../RTOS/avrlibtypes.h:
-
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\lib\gcc\avr\4.8.1\include\stddef.h:
 
+c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\util\atomic.h:
+
+.././..\RTOS\EERTOS.h:
+
+.././..\RTOS\HAL.h:
+
+.././..\RTOS\avrlibtypes.h:
+
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\wdt.h:
 
-.././../RTOS/EERTOSHAL.h:
+.././..\RTOS\EERTOSHAL.h:
+
+.././..\include\avrlibtypes.h:
+
+.././..\circ\circ.h:
+
+.././..\IIC_ultimate\IIC_ultimate.h:
+
+.././..\IIC_ultimate\..\include\avrlibtypes.h:
+
+.././..\IIC_ultimate\..\include\avrlibdefs.h:
+
+.././console_drv.h:

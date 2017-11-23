@@ -24,6 +24,13 @@ inline void InitAll(void)
 	//
 	PORTD = _BV(PORTD1) | _BV(PORTD4);
 	DDRD = _BV(PORTD0) | _BV(PORTD4) | _BV(PORTD5) | _BV(PORTD6);
+	
+	// Настройка режима мастера
+	i2c_PORT |= 1<<i2c_SCL|1<<i2c_SDA;			// Включим подтяжку на ноги, вдруг юзер на резисторы пожмотился
+	i2c_DDR &=~(1<<i2c_SCL|1<<i2c_SDA);
+
+	TWBR = 0xFF;         						// Настроим битрейт
+	TWSR = 0x03;
 }
 
 

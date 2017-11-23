@@ -24,8 +24,8 @@ void new_packet();
 volatile unsigned short current_dmts;
 volatile unsigned short last_wood_index;
 
-void i2c_init();
-void i2c_test();
+//void i2c_init();
+//void i2c_test();
 
 
 
@@ -37,7 +37,7 @@ int main(void)
 	
 	InitAll();
 //	uart_init();
-	i2c_init();
+//	i2c_init();
 
 
 	InitRTOS();
@@ -45,7 +45,7 @@ int main(void)
 
 //	SetTask(new_req);
 //	SetTask(display_init);
-	SetTask(i2c_test);
+//	SetTask(i2c_test);
 
 while(1)
 {

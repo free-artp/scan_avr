@@ -30,6 +30,7 @@
 #define DS_RS	6
 #define DS_RW	5
 #define DS_E	4
+#define DS_CMD_DELAY_DEFAULT	6
 
 // upper level buffer
 
