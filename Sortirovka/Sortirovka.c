@@ -13,10 +13,11 @@
 
 #include "../RTOS/HAL.h"
 #include "../RTOS/EERTOS.h"
+#include "../IIC_ultimate/IIC_ultimate.h"
 
+#include "console_drv.h"
 #include "opto22.h"
 #include "comm2.h"
-#include "display.h"
 
 void new_req();
 void new_packet();
@@ -24,9 +25,44 @@ void new_packet();
 volatile unsigned short current_dmts;
 volatile unsigned short last_wood_index;
 
-//void i2c_init();
-//void i2c_test();
 
+void d_test();
+void d_test1();
+void d_test2();
+void d_test3();
+void d_test4();
+void d_testZ();
+
+void d_testZ() {
+	SetTask(d_test);
+}
+
+void d_test4() {
+	d_setcursor(5,1);
+	d_putstringP( PSTR("World!") );
+	SetTimerTask(d_test1, 1000);
+}
+
+void d_test3() {
+	d_putstring("Hello ");
+	SetTimerTask(d_test4, 500);
+}
+
+void d_test2() {
+	d_putchar('2');
+	SetTimerTask(d_test3, 500);
+}
+
+void d_test1() {
+	d_command(0x01);			// clear, cursor = 0, shift=0, i/d=1
+	SetTimerTask(d_test2, 500);
+}
+
+void d_test() {
+	PORTD &= ~(1<<PORTD5);	_delay_ms(0.2);	PORTD |= (1<<PORTD5);
+	d_command(0x0E);			// display On, cursor On, blink Off
+	SetTimerTask(d_test1, 500);
+}
 
 
 int main(void)
@@ -36,22 +72,25 @@ int main(void)
 //	display_init();
 	
 	InitAll();
+	Init_i2c();
 //	uart_init();
-//	i2c_init();
+
+	d_init();
 
 
 	InitRTOS();
 	RunRTOS();	// разрешает прерывания
 
 //	SetTask(new_req);
-//	SetTask(display_init);
-//	SetTask(i2c_test);
+	SetTask(d_test);
+	
+	while(1)
+	{
+		wdt_reset();
 
-while(1)
-{
-	wdt_reset();
-	TaskManager();
-}
+		
+		TaskManager();
+	}
 
 }
 

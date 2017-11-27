@@ -17,7 +17,7 @@ inline void InitAll(void)
 	// 0-3 - выходные оптроны, 4 - SDA, 5 - SCL, 6 -SPI0 (~CS для spi на разъеме) , 7 - NC
 	//
 	PORTC = _BV(PORTC4) | _BV(PORTC5) | _BV(PORTC6);
-	DDRC = _BV(PORTC0) |_BV(PORTC1) |_BV(PORTC2) |_BV(PORTC3) |_BV(PORTC4) | _BV(PORTC5) | _BV(PORTC6);
+	DDRC = _BV(PORTC0) |_BV(PORTC1) |_BV(PORTC2) |_BV(PORTC3) | _BV(PORTC6);	// |_BV(PORTC4) | _BV(PORTC5)
 
 	// Port D
 	// 0 -RxD, 1 - TxD, 2 - INT0 (клавиатура), 3 - INT1 (входные датчики), 4 - 485_RW (~RE/DE), 5,6 -reserve, 7 - SD_DETECT
@@ -25,12 +25,6 @@ inline void InitAll(void)
 	PORTD = _BV(PORTD1) | _BV(PORTD4);
 	DDRD = _BV(PORTD0) | _BV(PORTD4) | _BV(PORTD5) | _BV(PORTD6);
 	
-	// Настройка режима мастера
-	i2c_PORT |= 1<<i2c_SCL|1<<i2c_SDA;			// Включим подтяжку на ноги, вдруг юзер на резисторы пожмотился
-	i2c_DDR &=~(1<<i2c_SCL|1<<i2c_SDA);
-
-	TWBR = 0xFF;         						// Настроим битрейт
-	TWSR = 0x03;
 }
 
 

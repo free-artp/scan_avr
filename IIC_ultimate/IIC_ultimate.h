@@ -4,8 +4,9 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include "..\include\avrlibtypes.h"
-#include "..\include\avrlibdefs.h"
+
+#include "../include/avrlibtypes.h"
+#include "../include/avrlibdefs.h"
 
 #define i2c_PORT	PORTC				// Порт где сидит нога TWI
 #define i2c_DDR		DDRC
@@ -14,7 +15,7 @@
 
 
 #define i2c_MasterAddress 	0x32		// Адрес на который будем отзываться
-#define i2c_i_am_slave		1			// Если мы еще и слейвом работаем то 1. А то не услышит!
+#define i2c_i_am_slave		0			// Если мы еще и слейвом работаем то 1. А то не услышит!
 
 #define i2c_MasterBytesRX	1			// Величина принимающего буфера режима Slave, т.е. сколько байт жрем.
 #define i2c_MasterBytesTX	1			// Величина Передающего буфера режима Slave , т.е. сколько байт отдаем за сессию.

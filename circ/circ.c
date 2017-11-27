@@ -39,6 +39,19 @@ int circ_push(struct circ_buffer *buff, uint8_t *data, int len)
 	return len; /* Return amount of bytes left */
 }
 
+int circ_push_byte(struct circ_buffer *buff, uint8_t data)
+{
+	uint8_t *bend = buff->start + buff->length - 1;
+	uint8_t *dend = (buff->pointer - buff->start + buff->datalen) % buff->length + buff->start; /* This points to new byte */
+
+	if (dend > bend) dend = buff->start;
+	if (buff->datalen != 0 && dend == buff->pointer) return 1;
+	*dend = data;
+	buff->datalen++;
+
+	return 0; /* Return amount of bytes left */
+}
+
 int circ_peek(struct circ_buffer *buff, uint8_t *data, int len)
 {
 	volatile uint8_t *ptr = buff->pointer;

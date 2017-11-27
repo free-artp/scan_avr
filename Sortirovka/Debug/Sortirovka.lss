@@ -3,1585 +3,3078 @@ Sortirovka.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000006  00800100  00000af6  00000b8a  2**0
+  0 .data         0000001e  00800100  00001118  000011ac  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000af6  00000000  00000000  00000094  2**1
+  1 .text         00001118  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          000000d4  00800106  00800106  00000b90  2**0
+  2 .bss          0000011f  0080011e  0080011e  000011ca  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  00000b90  2**0
+  3 .comment      00000030  00000000  00000000  000011ca  2**0
                   CONTENTS, READONLY
-  4 .debug_aranges 00000110  00000000  00000000  00000bc0  2**0
+  4 .debug_aranges 00000240  00000000  00000000  000011fa  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000aae  00000000  00000000  00000cd0  2**0
+  5 .debug_info   00001e21  00000000  00000000  0000143a  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 000005c2  00000000  00000000  0000177e  2**0
+  6 .debug_abbrev 00000b6a  00000000  00000000  0000325b  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000784  00000000  00000000  00001d40  2**0
+  7 .debug_line   00000f30  00000000  00000000  00003dc5  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  000002c0  00000000  00000000  000024c4  2**2
+  8 .debug_frame  00000608  00000000  00000000  00004cf8  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    0000037e  00000000  00000000  00002784  2**0
+  9 .debug_str    00000704  00000000  00000000  00005300  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    0000094a  00000000  00000000  00002b02  2**0
+ 10 .debug_loc    000013d4  00000000  00000000  00005a04  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 000000c0  00000000  00000000  0000344c  2**0
+ 11 .debug_ranges 000001c0  00000000  00000000  00006dd8  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
-   0:	0c 94 fd 00 	jmp	0x1fa	; 0x1fa <__ctors_end>
-   4:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-   8:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-   c:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  10:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  14:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  18:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  1c:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  20:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  24:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  28:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  2c:	0c 94 dd 04 	jmp	0x9ba	; 0x9ba <__vector_11>
-  30:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  34:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  38:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  3c:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  40:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  44:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  48:	0c 94 1c 01 	jmp	0x238	; 0x238 <__vector_18>
-  4c:	0c 94 85 01 	jmp	0x30a	; 0x30a <__vector_19>
-  50:	0c 94 67 01 	jmp	0x2ce	; 0x2ce <__vector_20>
-  54:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  58:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  5c:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  60:	0c 94 d4 01 	jmp	0x3a8	; 0x3a8 <__vector_24>
-  64:	0c 94 1a 01 	jmp	0x234	; 0x234 <__bad_interrupt>
-  68:	05 02       	muls	r16, r21
-  6a:	4a 04       	cpc	r4, r10
-  6c:	4a 04       	cpc	r4, r10
-  6e:	4a 04       	cpc	r4, r10
-  70:	4a 04       	cpc	r4, r10
-  72:	4a 04       	cpc	r4, r10
-  74:	4a 04       	cpc	r4, r10
-  76:	4a 04       	cpc	r4, r10
-  78:	16 02       	muls	r17, r22
-  7a:	4a 04       	cpc	r4, r10
-  7c:	4a 04       	cpc	r4, r10
-  7e:	4a 04       	cpc	r4, r10
-  80:	4a 04       	cpc	r4, r10
-  82:	4a 04       	cpc	r4, r10
-  84:	4a 04       	cpc	r4, r10
-  86:	4a 04       	cpc	r4, r10
-  88:	35 02       	muls	r19, r21
-  8a:	4a 04       	cpc	r4, r10
-  8c:	4a 04       	cpc	r4, r10
-  8e:	4a 04       	cpc	r4, r10
-  90:	4a 04       	cpc	r4, r10
-  92:	4a 04       	cpc	r4, r10
-  94:	4a 04       	cpc	r4, r10
-  96:	4a 04       	cpc	r4, r10
-  98:	55 02       	muls	r21, r21
-  9a:	4a 04       	cpc	r4, r10
-  9c:	4a 04       	cpc	r4, r10
-  9e:	4a 04       	cpc	r4, r10
-  a0:	4a 04       	cpc	r4, r10
-  a2:	4a 04       	cpc	r4, r10
-  a4:	4a 04       	cpc	r4, r10
-  a6:	4a 04       	cpc	r4, r10
-  a8:	95 02       	muls	r25, r21
-  aa:	4a 04       	cpc	r4, r10
-  ac:	4a 04       	cpc	r4, r10
-  ae:	4a 04       	cpc	r4, r10
-  b0:	4a 04       	cpc	r4, r10
-  b2:	4a 04       	cpc	r4, r10
-  b4:	4a 04       	cpc	r4, r10
-  b6:	4a 04       	cpc	r4, r10
-  b8:	a6 02       	muls	r26, r22
-  ba:	4a 04       	cpc	r4, r10
-  bc:	4a 04       	cpc	r4, r10
-  be:	4a 04       	cpc	r4, r10
-  c0:	4a 04       	cpc	r4, r10
-  c2:	4a 04       	cpc	r4, r10
-  c4:	4a 04       	cpc	r4, r10
-  c6:	4a 04       	cpc	r4, r10
-  c8:	04 03       	mulsu	r16, r20
-  ca:	4a 04       	cpc	r4, r10
-  cc:	4a 04       	cpc	r4, r10
-  ce:	4a 04       	cpc	r4, r10
-  d0:	4a 04       	cpc	r4, r10
-  d2:	4a 04       	cpc	r4, r10
-  d4:	4a 04       	cpc	r4, r10
-  d6:	4a 04       	cpc	r4, r10
-  d8:	15 03       	mulsu	r17, r21
-  da:	4a 04       	cpc	r4, r10
-  dc:	4a 04       	cpc	r4, r10
-  de:	4a 04       	cpc	r4, r10
-  e0:	4a 04       	cpc	r4, r10
-  e2:	4a 04       	cpc	r4, r10
-  e4:	4a 04       	cpc	r4, r10
-  e6:	4a 04       	cpc	r4, r10
-  e8:	24 03       	mulsu	r18, r20
-  ea:	4a 04       	cpc	r4, r10
-  ec:	4a 04       	cpc	r4, r10
-  ee:	4a 04       	cpc	r4, r10
-  f0:	4a 04       	cpc	r4, r10
-  f2:	4a 04       	cpc	r4, r10
-  f4:	4a 04       	cpc	r4, r10
-  f6:	4a 04       	cpc	r4, r10
-  f8:	3e 03       	fmul	r19, r22
-  fa:	4a 04       	cpc	r4, r10
-  fc:	4a 04       	cpc	r4, r10
-  fe:	4a 04       	cpc	r4, r10
- 100:	4a 04       	cpc	r4, r10
- 102:	4a 04       	cpc	r4, r10
- 104:	4a 04       	cpc	r4, r10
- 106:	4a 04       	cpc	r4, r10
- 108:	4f 03       	fmul	r20, r23
- 10a:	4a 04       	cpc	r4, r10
- 10c:	4a 04       	cpc	r4, r10
- 10e:	4a 04       	cpc	r4, r10
- 110:	4a 04       	cpc	r4, r10
- 112:	4a 04       	cpc	r4, r10
- 114:	4a 04       	cpc	r4, r10
- 116:	4a 04       	cpc	r4, r10
- 118:	7a 03       	fmul	r23, r18
- 11a:	4a 04       	cpc	r4, r10
- 11c:	4a 04       	cpc	r4, r10
- 11e:	4a 04       	cpc	r4, r10
- 120:	4a 04       	cpc	r4, r10
- 122:	4a 04       	cpc	r4, r10
- 124:	4a 04       	cpc	r4, r10
- 126:	4a 04       	cpc	r4, r10
- 128:	9b 03       	fmulsu	r17, r19
- 12a:	4a 04       	cpc	r4, r10
- 12c:	4a 04       	cpc	r4, r10
- 12e:	4a 04       	cpc	r4, r10
- 130:	4a 04       	cpc	r4, r10
- 132:	4a 04       	cpc	r4, r10
- 134:	4a 04       	cpc	r4, r10
- 136:	4a 04       	cpc	r4, r10
- 138:	92 03       	fmuls	r17, r18
- 13a:	4a 04       	cpc	r4, r10
- 13c:	4a 04       	cpc	r4, r10
- 13e:	4a 04       	cpc	r4, r10
- 140:	4a 04       	cpc	r4, r10
- 142:	4a 04       	cpc	r4, r10
- 144:	4a 04       	cpc	r4, r10
- 146:	4a 04       	cpc	r4, r10
- 148:	9b 03       	fmulsu	r17, r19
- 14a:	4a 04       	cpc	r4, r10
- 14c:	4a 04       	cpc	r4, r10
- 14e:	4a 04       	cpc	r4, r10
- 150:	4a 04       	cpc	r4, r10
- 152:	4a 04       	cpc	r4, r10
- 154:	4a 04       	cpc	r4, r10
- 156:	4a 04       	cpc	r4, r10
- 158:	92 03       	fmuls	r17, r18
- 15a:	4a 04       	cpc	r4, r10
- 15c:	4a 04       	cpc	r4, r10
- 15e:	4a 04       	cpc	r4, r10
- 160:	4a 04       	cpc	r4, r10
- 162:	4a 04       	cpc	r4, r10
- 164:	4a 04       	cpc	r4, r10
- 166:	4a 04       	cpc	r4, r10
- 168:	a8 03       	fmulsu	r18, r16
- 16a:	4a 04       	cpc	r4, r10
- 16c:	4a 04       	cpc	r4, r10
- 16e:	4a 04       	cpc	r4, r10
- 170:	4a 04       	cpc	r4, r10
- 172:	4a 04       	cpc	r4, r10
- 174:	4a 04       	cpc	r4, r10
- 176:	4a 04       	cpc	r4, r10
- 178:	c9 03       	fmulsu	r20, r17
- 17a:	4a 04       	cpc	r4, r10
- 17c:	4a 04       	cpc	r4, r10
- 17e:	4a 04       	cpc	r4, r10
- 180:	4a 04       	cpc	r4, r10
- 182:	4a 04       	cpc	r4, r10
- 184:	4a 04       	cpc	r4, r10
- 186:	4a 04       	cpc	r4, r10
- 188:	a8 03       	fmulsu	r18, r16
- 18a:	4a 04       	cpc	r4, r10
- 18c:	4a 04       	cpc	r4, r10
- 18e:	4a 04       	cpc	r4, r10
- 190:	4a 04       	cpc	r4, r10
- 192:	4a 04       	cpc	r4, r10
- 194:	4a 04       	cpc	r4, r10
- 196:	4a 04       	cpc	r4, r10
- 198:	c9 03       	fmulsu	r20, r17
- 19a:	4a 04       	cpc	r4, r10
- 19c:	4a 04       	cpc	r4, r10
- 19e:	4a 04       	cpc	r4, r10
- 1a0:	4a 04       	cpc	r4, r10
- 1a2:	4a 04       	cpc	r4, r10
- 1a4:	4a 04       	cpc	r4, r10
- 1a6:	4a 04       	cpc	r4, r10
- 1a8:	eb 03       	fmulsu	r22, r19
- 1aa:	4a 04       	cpc	r4, r10
- 1ac:	4a 04       	cpc	r4, r10
- 1ae:	4a 04       	cpc	r4, r10
- 1b0:	4a 04       	cpc	r4, r10
- 1b2:	4a 04       	cpc	r4, r10
- 1b4:	4a 04       	cpc	r4, r10
- 1b6:	4a 04       	cpc	r4, r10
- 1b8:	fa 03       	fmulsu	r23, r18
- 1ba:	4a 04       	cpc	r4, r10
- 1bc:	4a 04       	cpc	r4, r10
- 1be:	4a 04       	cpc	r4, r10
- 1c0:	4a 04       	cpc	r4, r10
- 1c2:	4a 04       	cpc	r4, r10
- 1c4:	4a 04       	cpc	r4, r10
- 1c6:	4a 04       	cpc	r4, r10
- 1c8:	f1 03       	fmuls	r23, r17
- 1ca:	4a 04       	cpc	r4, r10
- 1cc:	4a 04       	cpc	r4, r10
- 1ce:	4a 04       	cpc	r4, r10
- 1d0:	4a 04       	cpc	r4, r10
- 1d2:	4a 04       	cpc	r4, r10
- 1d4:	4a 04       	cpc	r4, r10
- 1d6:	4a 04       	cpc	r4, r10
- 1d8:	0e 04       	cpc	r0, r14
- 1da:	4a 04       	cpc	r4, r10
- 1dc:	4a 04       	cpc	r4, r10
- 1de:	4a 04       	cpc	r4, r10
- 1e0:	4a 04       	cpc	r4, r10
- 1e2:	4a 04       	cpc	r4, r10
- 1e4:	4a 04       	cpc	r4, r10
- 1e6:	4a 04       	cpc	r4, r10
- 1e8:	2f 04       	cpc	r2, r15
- 1ea:	4a 04       	cpc	r4, r10
- 1ec:	4a 04       	cpc	r4, r10
- 1ee:	4a 04       	cpc	r4, r10
- 1f0:	4a 04       	cpc	r4, r10
- 1f2:	4a 04       	cpc	r4, r10
- 1f4:	4a 04       	cpc	r4, r10
- 1f6:	4a 04       	cpc	r4, r10
- 1f8:	2f 04       	cpc	r2, r15
+       0:	0c 94 01 01 	jmp	0x202	; 0x202 <__ctors_end>
+       4:	0c 94 ba 03 	jmp	0x774	; 0x774 <__vector_1>
+       8:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+       c:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      10:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      14:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      18:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      1c:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      20:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      24:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      28:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      2c:	0c 94 d2 07 	jmp	0xfa4	; 0xfa4 <__vector_11>
+      30:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      34:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      38:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      3c:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      40:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      44:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      48:	0c 94 20 01 	jmp	0x240	; 0x240 <__vector_18>
+      4c:	0c 94 89 01 	jmp	0x312	; 0x312 <__vector_19>
+      50:	0c 94 6b 01 	jmp	0x2d6	; 0x2d6 <__vector_20>
+      54:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      58:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      5c:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      60:	0c 94 0d 05 	jmp	0xa1a	; 0xa1a <__vector_24>
+      64:	0c 94 1e 01 	jmp	0x23c	; 0x23c <__bad_interrupt>
+      68:	2b 05       	cpc	r18, r11
+      6a:	d9 06       	cpc	r13, r25
+      6c:	d9 06       	cpc	r13, r25
+      6e:	d9 06       	cpc	r13, r25
+      70:	d9 06       	cpc	r13, r25
+      72:	d9 06       	cpc	r13, r25
+      74:	d9 06       	cpc	r13, r25
+      76:	d9 06       	cpc	r13, r25
+      78:	39 05       	cpc	r19, r9
+      7a:	d9 06       	cpc	r13, r25
+      7c:	d9 06       	cpc	r13, r25
+      7e:	d9 06       	cpc	r13, r25
+      80:	d9 06       	cpc	r13, r25
+      82:	d9 06       	cpc	r13, r25
+      84:	d9 06       	cpc	r13, r25
+      86:	d9 06       	cpc	r13, r25
+      88:	58 05       	cpc	r21, r8
+      8a:	d9 06       	cpc	r13, r25
+      8c:	d9 06       	cpc	r13, r25
+      8e:	d9 06       	cpc	r13, r25
+      90:	d9 06       	cpc	r13, r25
+      92:	d9 06       	cpc	r13, r25
+      94:	d9 06       	cpc	r13, r25
+      96:	d9 06       	cpc	r13, r25
+      98:	70 05       	cpc	r23, r0
+      9a:	d9 06       	cpc	r13, r25
+      9c:	d9 06       	cpc	r13, r25
+      9e:	d9 06       	cpc	r13, r25
+      a0:	d9 06       	cpc	r13, r25
+      a2:	d9 06       	cpc	r13, r25
+      a4:	d9 06       	cpc	r13, r25
+      a6:	d9 06       	cpc	r13, r25
+      a8:	9c 05       	cpc	r25, r12
+      aa:	d9 06       	cpc	r13, r25
+      ac:	d9 06       	cpc	r13, r25
+      ae:	d9 06       	cpc	r13, r25
+      b0:	d9 06       	cpc	r13, r25
+      b2:	d9 06       	cpc	r13, r25
+      b4:	d9 06       	cpc	r13, r25
+      b6:	d9 06       	cpc	r13, r25
+      b8:	aa 05       	cpc	r26, r10
+      ba:	d9 06       	cpc	r13, r25
+      bc:	d9 06       	cpc	r13, r25
+      be:	d9 06       	cpc	r13, r25
+      c0:	d9 06       	cpc	r13, r25
+      c2:	d9 06       	cpc	r13, r25
+      c4:	d9 06       	cpc	r13, r25
+      c6:	d9 06       	cpc	r13, r25
+      c8:	eb 05       	cpc	r30, r11
+      ca:	d9 06       	cpc	r13, r25
+      cc:	d9 06       	cpc	r13, r25
+      ce:	d9 06       	cpc	r13, r25
+      d0:	d9 06       	cpc	r13, r25
+      d2:	d9 06       	cpc	r13, r25
+      d4:	d9 06       	cpc	r13, r25
+      d6:	d9 06       	cpc	r13, r25
+      d8:	f9 05       	cpc	r31, r9
+      da:	d9 06       	cpc	r13, r25
+      dc:	d9 06       	cpc	r13, r25
+      de:	d9 06       	cpc	r13, r25
+      e0:	d9 06       	cpc	r13, r25
+      e2:	d9 06       	cpc	r13, r25
+      e4:	d9 06       	cpc	r13, r25
+      e6:	d9 06       	cpc	r13, r25
+      e8:	06 06       	cpc	r0, r22
+      ea:	d9 06       	cpc	r13, r25
+      ec:	d9 06       	cpc	r13, r25
+      ee:	d9 06       	cpc	r13, r25
+      f0:	d9 06       	cpc	r13, r25
+      f2:	d9 06       	cpc	r13, r25
+      f4:	d9 06       	cpc	r13, r25
+      f6:	d9 06       	cpc	r13, r25
+      f8:	19 06       	cpc	r1, r25
+      fa:	d9 06       	cpc	r13, r25
+      fc:	d9 06       	cpc	r13, r25
+      fe:	d9 06       	cpc	r13, r25
+     100:	d9 06       	cpc	r13, r25
+     102:	d9 06       	cpc	r13, r25
+     104:	d9 06       	cpc	r13, r25
+     106:	d9 06       	cpc	r13, r25
+     108:	27 06       	cpc	r2, r23
+     10a:	d9 06       	cpc	r13, r25
+     10c:	d9 06       	cpc	r13, r25
+     10e:	d9 06       	cpc	r13, r25
+     110:	d9 06       	cpc	r13, r25
+     112:	d9 06       	cpc	r13, r25
+     114:	d9 06       	cpc	r13, r25
+     116:	d9 06       	cpc	r13, r25
+     118:	44 06       	cpc	r4, r20
+     11a:	d9 06       	cpc	r13, r25
+     11c:	d9 06       	cpc	r13, r25
+     11e:	d9 06       	cpc	r13, r25
+     120:	d9 06       	cpc	r13, r25
+     122:	d9 06       	cpc	r13, r25
+     124:	d9 06       	cpc	r13, r25
+     126:	d9 06       	cpc	r13, r25
+     128:	5e 06       	cpc	r5, r30
+     12a:	d9 06       	cpc	r13, r25
+     12c:	d9 06       	cpc	r13, r25
+     12e:	d9 06       	cpc	r13, r25
+     130:	d9 06       	cpc	r13, r25
+     132:	d9 06       	cpc	r13, r25
+     134:	d9 06       	cpc	r13, r25
+     136:	d9 06       	cpc	r13, r25
+     138:	55 06       	cpc	r5, r21
+     13a:	d9 06       	cpc	r13, r25
+     13c:	d9 06       	cpc	r13, r25
+     13e:	d9 06       	cpc	r13, r25
+     140:	d9 06       	cpc	r13, r25
+     142:	d9 06       	cpc	r13, r25
+     144:	d9 06       	cpc	r13, r25
+     146:	d9 06       	cpc	r13, r25
+     148:	5e 06       	cpc	r5, r30
+     14a:	d9 06       	cpc	r13, r25
+     14c:	d9 06       	cpc	r13, r25
+     14e:	d9 06       	cpc	r13, r25
+     150:	d9 06       	cpc	r13, r25
+     152:	d9 06       	cpc	r13, r25
+     154:	d9 06       	cpc	r13, r25
+     156:	d9 06       	cpc	r13, r25
+     158:	55 06       	cpc	r5, r21
+     15a:	d9 06       	cpc	r13, r25
+     15c:	d9 06       	cpc	r13, r25
+     15e:	d9 06       	cpc	r13, r25
+     160:	d9 06       	cpc	r13, r25
+     162:	d9 06       	cpc	r13, r25
+     164:	d9 06       	cpc	r13, r25
+     166:	d9 06       	cpc	r13, r25
+     168:	69 06       	cpc	r6, r25
+     16a:	d9 06       	cpc	r13, r25
+     16c:	d9 06       	cpc	r13, r25
+     16e:	d9 06       	cpc	r13, r25
+     170:	d9 06       	cpc	r13, r25
+     172:	d9 06       	cpc	r13, r25
+     174:	d9 06       	cpc	r13, r25
+     176:	d9 06       	cpc	r13, r25
+     178:	7f 06       	cpc	r7, r31
+     17a:	d9 06       	cpc	r13, r25
+     17c:	d9 06       	cpc	r13, r25
+     17e:	d9 06       	cpc	r13, r25
+     180:	d9 06       	cpc	r13, r25
+     182:	d9 06       	cpc	r13, r25
+     184:	d9 06       	cpc	r13, r25
+     186:	d9 06       	cpc	r13, r25
+     188:	69 06       	cpc	r6, r25
+     18a:	d9 06       	cpc	r13, r25
+     18c:	d9 06       	cpc	r13, r25
+     18e:	d9 06       	cpc	r13, r25
+     190:	d9 06       	cpc	r13, r25
+     192:	d9 06       	cpc	r13, r25
+     194:	d9 06       	cpc	r13, r25
+     196:	d9 06       	cpc	r13, r25
+     198:	7f 06       	cpc	r7, r31
+     19a:	d9 06       	cpc	r13, r25
+     19c:	d9 06       	cpc	r13, r25
+     19e:	d9 06       	cpc	r13, r25
+     1a0:	d9 06       	cpc	r13, r25
+     1a2:	d9 06       	cpc	r13, r25
+     1a4:	d9 06       	cpc	r13, r25
+     1a6:	d9 06       	cpc	r13, r25
+     1a8:	98 06       	cpc	r9, r24
+     1aa:	d9 06       	cpc	r13, r25
+     1ac:	d9 06       	cpc	r13, r25
+     1ae:	d9 06       	cpc	r13, r25
+     1b0:	d9 06       	cpc	r13, r25
+     1b2:	d9 06       	cpc	r13, r25
+     1b4:	d9 06       	cpc	r13, r25
+     1b6:	d9 06       	cpc	r13, r25
+     1b8:	a5 06       	cpc	r10, r21
+     1ba:	d9 06       	cpc	r13, r25
+     1bc:	d9 06       	cpc	r13, r25
+     1be:	d9 06       	cpc	r13, r25
+     1c0:	d9 06       	cpc	r13, r25
+     1c2:	d9 06       	cpc	r13, r25
+     1c4:	d9 06       	cpc	r13, r25
+     1c6:	d9 06       	cpc	r13, r25
+     1c8:	9c 06       	cpc	r9, r28
+     1ca:	d9 06       	cpc	r13, r25
+     1cc:	d9 06       	cpc	r13, r25
+     1ce:	d9 06       	cpc	r13, r25
+     1d0:	d9 06       	cpc	r13, r25
+     1d2:	d9 06       	cpc	r13, r25
+     1d4:	d9 06       	cpc	r13, r25
+     1d6:	d9 06       	cpc	r13, r25
+     1d8:	af 06       	cpc	r10, r31
+     1da:	d9 06       	cpc	r13, r25
+     1dc:	d9 06       	cpc	r13, r25
+     1de:	d9 06       	cpc	r13, r25
+     1e0:	d9 06       	cpc	r13, r25
+     1e2:	d9 06       	cpc	r13, r25
+     1e4:	d9 06       	cpc	r13, r25
+     1e6:	d9 06       	cpc	r13, r25
+     1e8:	c6 06       	cpc	r12, r22
+     1ea:	d9 06       	cpc	r13, r25
+     1ec:	d9 06       	cpc	r13, r25
+     1ee:	d9 06       	cpc	r13, r25
+     1f0:	d9 06       	cpc	r13, r25
+     1f2:	d9 06       	cpc	r13, r25
+     1f4:	d9 06       	cpc	r13, r25
+     1f6:	d9 06       	cpc	r13, r25
+     1f8:	c6 06       	cpc	r12, r22
 
-000001fa <__ctors_end>:
- 1fa:	11 24       	eor	r1, r1
- 1fc:	1f be       	out	0x3f, r1	; 63
- 1fe:	cf ef       	ldi	r28, 0xFF	; 255
- 200:	d8 e0       	ldi	r29, 0x08	; 8
- 202:	de bf       	out	0x3e, r29	; 62
- 204:	cd bf       	out	0x3d, r28	; 61
+000001fa <__trampolines_end>:
+     1fa:	57 6f       	ori	r21, 0xF7	; 247
+     1fc:	72 6c       	ori	r23, 0xC2	; 194
+     1fe:	64 21       	and	r22, r4
+	...
 
-00000206 <__do_copy_data>:
- 206:	11 e0       	ldi	r17, 0x01	; 1
- 208:	a0 e0       	ldi	r26, 0x00	; 0
- 20a:	b1 e0       	ldi	r27, 0x01	; 1
- 20c:	e6 ef       	ldi	r30, 0xF6	; 246
- 20e:	fa e0       	ldi	r31, 0x0A	; 10
- 210:	02 c0       	rjmp	.+4      	; 0x216 <__do_copy_data+0x10>
- 212:	05 90       	lpm	r0, Z+
- 214:	0d 92       	st	X+, r0
- 216:	a6 30       	cpi	r26, 0x06	; 6
- 218:	b1 07       	cpc	r27, r17
- 21a:	d9 f7       	brne	.-10     	; 0x212 <__do_copy_data+0xc>
+00000202 <__ctors_end>:
+     202:	11 24       	eor	r1, r1
+     204:	1f be       	out	0x3f, r1	; 63
+     206:	cf ef       	ldi	r28, 0xFF	; 255
+     208:	d8 e0       	ldi	r29, 0x08	; 8
+     20a:	de bf       	out	0x3e, r29	; 62
+     20c:	cd bf       	out	0x3d, r28	; 61
 
-0000021c <__do_clear_bss>:
- 21c:	21 e0       	ldi	r18, 0x01	; 1
- 21e:	a6 e0       	ldi	r26, 0x06	; 6
- 220:	b1 e0       	ldi	r27, 0x01	; 1
- 222:	01 c0       	rjmp	.+2      	; 0x226 <.do_clear_bss_start>
+0000020e <__do_copy_data>:
+     20e:	11 e0       	ldi	r17, 0x01	; 1
+     210:	a0 e0       	ldi	r26, 0x00	; 0
+     212:	b1 e0       	ldi	r27, 0x01	; 1
+     214:	e8 e1       	ldi	r30, 0x18	; 24
+     216:	f1 e1       	ldi	r31, 0x11	; 17
+     218:	02 c0       	rjmp	.+4      	; 0x21e <__do_copy_data+0x10>
+     21a:	05 90       	lpm	r0, Z+
+     21c:	0d 92       	st	X+, r0
+     21e:	ae 31       	cpi	r26, 0x1E	; 30
+     220:	b1 07       	cpc	r27, r17
+     222:	d9 f7       	brne	.-10     	; 0x21a <__do_copy_data+0xc>
 
-00000224 <.do_clear_bss_loop>:
- 224:	1d 92       	st	X+, r1
+00000224 <__do_clear_bss>:
+     224:	22 e0       	ldi	r18, 0x02	; 2
+     226:	ae e1       	ldi	r26, 0x1E	; 30
+     228:	b1 e0       	ldi	r27, 0x01	; 1
+     22a:	01 c0       	rjmp	.+2      	; 0x22e <.do_clear_bss_start>
 
-00000226 <.do_clear_bss_start>:
- 226:	aa 3d       	cpi	r26, 0xDA	; 218
- 228:	b2 07       	cpc	r27, r18
- 22a:	e1 f7       	brne	.-8      	; 0x224 <.do_clear_bss_loop>
- 22c:	0e 94 b7 01 	call	0x36e	; 0x36e <main>
- 230:	0c 94 79 05 	jmp	0xaf2	; 0xaf2 <_exit>
+0000022c <.do_clear_bss_loop>:
+     22c:	1d 92       	st	X+, r1
 
-00000234 <__bad_interrupt>:
- 234:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+0000022e <.do_clear_bss_start>:
+     22e:	ad 33       	cpi	r26, 0x3D	; 61
+     230:	b2 07       	cpc	r27, r18
+     232:	e1 f7       	brne	.-8      	; 0x22c <.do_clear_bss_loop>
+     234:	0e 94 20 04 	call	0x840	; 0x840 <main>
+     238:	0c 94 8a 08 	jmp	0x1114	; 0x1114 <_exit>
 
-00000238 <__vector_18>:
+0000023c <__bad_interrupt>:
+     23c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000240 <__vector_18>:
 	UCSR0B = _BV(RXEN0) | _BV(TXEN0) | (1<<RXCIE0)| (0<<TXCIE0) | (0<<UDRIE0);   /* Разрешаем RX and TX, RXIE - байт принят, TXIE - байт отправлен, URDIE -буффер отправки пуст */
 }
 
 //Обработчик прерывания по окончанию приёма байта
 ISR( USART_RX_vect )
 {
- 238:	1f 92       	push	r1
- 23a:	0f 92       	push	r0
- 23c:	0f b6       	in	r0, 0x3f	; 63
- 23e:	0f 92       	push	r0
- 240:	11 24       	eor	r1, r1
- 242:	2f 93       	push	r18
- 244:	3f 93       	push	r19
- 246:	4f 93       	push	r20
- 248:	5f 93       	push	r21
- 24a:	6f 93       	push	r22
- 24c:	7f 93       	push	r23
- 24e:	8f 93       	push	r24
- 250:	9f 93       	push	r25
- 252:	af 93       	push	r26
- 254:	bf 93       	push	r27
- 256:	ef 93       	push	r30
- 258:	ff 93       	push	r31
+     240:	1f 92       	push	r1
+     242:	0f 92       	push	r0
+     244:	0f b6       	in	r0, 0x3f	; 63
+     246:	0f 92       	push	r0
+     248:	11 24       	eor	r1, r1
+     24a:	2f 93       	push	r18
+     24c:	3f 93       	push	r19
+     24e:	4f 93       	push	r20
+     250:	5f 93       	push	r21
+     252:	6f 93       	push	r22
+     254:	7f 93       	push	r23
+     256:	8f 93       	push	r24
+     258:	9f 93       	push	r25
+     25a:	af 93       	push	r26
+     25c:	bf 93       	push	r27
+     25e:	ef 93       	push	r30
+     260:	ff 93       	push	r31
 	o22_header_t *header = (o22_header_t *)rx_buff;
 	unsigned char rxbyte = UDR0;
- 25a:	40 91 c6 00 	lds	r20, 0x00C6
+     262:	40 91 c6 00 	lds	r20, 0x00C6
 	
 	if( rx_ptr < rx_datalen-1 ) {
- 25e:	20 91 bf 01 	lds	r18, 0x01BF
- 262:	80 91 cb 01 	lds	r24, 0x01CB
- 266:	30 e0       	ldi	r19, 0x00	; 0
- 268:	90 e0       	ldi	r25, 0x00	; 0
- 26a:	01 97       	sbiw	r24, 0x01	; 1
- 26c:	28 17       	cp	r18, r24
- 26e:	39 07       	cpc	r19, r25
- 270:	7c f4       	brge	.+30     	; 0x290 <__vector_18+0x58>
+     266:	20 91 df 01 	lds	r18, 0x01DF
+     26a:	80 91 eb 01 	lds	r24, 0x01EB
+     26e:	30 e0       	ldi	r19, 0x00	; 0
+     270:	90 e0       	ldi	r25, 0x00	; 0
+     272:	01 97       	sbiw	r24, 0x01	; 1
+     274:	28 17       	cp	r18, r24
+     276:	39 07       	cpc	r19, r25
+     278:	7c f4       	brge	.+30     	; 0x298 <__vector_18+0x58>
 		rx_buff[rx_ptr++] = rxbyte;
- 272:	e0 91 bf 01 	lds	r30, 0x01BF
- 276:	81 e0       	ldi	r24, 0x01	; 1
- 278:	8e 0f       	add	r24, r30
- 27a:	80 93 bf 01 	sts	0x01BF, r24
- 27e:	f0 e0       	ldi	r31, 0x00	; 0
- 280:	e0 59       	subi	r30, 0x90	; 144
- 282:	fe 4f       	sbci	r31, 0xFE	; 254
- 284:	40 83       	st	Z, r20
+     27a:	e0 91 df 01 	lds	r30, 0x01DF
+     27e:	81 e0       	ldi	r24, 0x01	; 1
+     280:	8e 0f       	add	r24, r30
+     282:	80 93 df 01 	sts	0x01DF, r24
+     286:	f0 e0       	ldi	r31, 0x00	; 0
+     288:	e0 57       	subi	r30, 0x70	; 112
+     28a:	fe 4f       	sbci	r31, 0xFE	; 254
+     28c:	40 83       	st	Z, r20
 		rx_datalen++;
- 286:	80 91 cb 01 	lds	r24, 0x01CB
- 28a:	8f 5f       	subi	r24, 0xFF	; 255
- 28c:	80 93 cb 01 	sts	0x01CB, r24
+     28e:	80 91 eb 01 	lds	r24, 0x01EB
+     292:	8f 5f       	subi	r24, 0xFF	; 255
+     294:	80 93 eb 01 	sts	0x01EB, r24
 	}
 	
 	if (rx_datalen >= header->packet_size + 2 ) {
- 290:	20 91 cb 01 	lds	r18, 0x01CB
- 294:	30 e0       	ldi	r19, 0x00	; 0
- 296:	80 91 71 01 	lds	r24, 0x0171
- 29a:	90 e0       	ldi	r25, 0x00	; 0
- 29c:	02 96       	adiw	r24, 0x02	; 2
- 29e:	28 17       	cp	r18, r24
- 2a0:	39 07       	cpc	r19, r25
- 2a2:	24 f0       	brlt	.+8      	; 0x2ac <__vector_18+0x74>
+     298:	20 91 eb 01 	lds	r18, 0x01EB
+     29c:	30 e0       	ldi	r19, 0x00	; 0
+     29e:	80 91 91 01 	lds	r24, 0x0191
+     2a2:	90 e0       	ldi	r25, 0x00	; 0
+     2a4:	02 96       	adiw	r24, 0x02	; 2
+     2a6:	28 17       	cp	r18, r24
+     2a8:	39 07       	cpc	r19, r25
+     2aa:	24 f0       	brlt	.+8      	; 0x2b4 <__vector_18+0x74>
 		SetTask(new_packet);
- 2a4:	8c ec       	ldi	r24, 0xCC	; 204
- 2a6:	91 e0       	ldi	r25, 0x01	; 1
- 2a8:	0e 94 8a 04 	call	0x914	; 0x914 <SetTask>
+     2ac:	8d e3       	ldi	r24, 0x3D	; 61
+     2ae:	94 e0       	ldi	r25, 0x04	; 4
+     2b0:	0e 94 1a 07 	call	0xe34	; 0xe34 <SetTask>
 	}
 }
- 2ac:	ff 91       	pop	r31
- 2ae:	ef 91       	pop	r30
- 2b0:	bf 91       	pop	r27
- 2b2:	af 91       	pop	r26
- 2b4:	9f 91       	pop	r25
- 2b6:	8f 91       	pop	r24
- 2b8:	7f 91       	pop	r23
- 2ba:	6f 91       	pop	r22
- 2bc:	5f 91       	pop	r21
- 2be:	4f 91       	pop	r20
- 2c0:	3f 91       	pop	r19
- 2c2:	2f 91       	pop	r18
- 2c4:	0f 90       	pop	r0
- 2c6:	0f be       	out	0x3f, r0	; 63
- 2c8:	0f 90       	pop	r0
- 2ca:	1f 90       	pop	r1
- 2cc:	18 95       	reti
+     2b4:	ff 91       	pop	r31
+     2b6:	ef 91       	pop	r30
+     2b8:	bf 91       	pop	r27
+     2ba:	af 91       	pop	r26
+     2bc:	9f 91       	pop	r25
+     2be:	8f 91       	pop	r24
+     2c0:	7f 91       	pop	r23
+     2c2:	6f 91       	pop	r22
+     2c4:	5f 91       	pop	r21
+     2c6:	4f 91       	pop	r20
+     2c8:	3f 91       	pop	r19
+     2ca:	2f 91       	pop	r18
+     2cc:	0f 90       	pop	r0
+     2ce:	0f be       	out	0x3f, r0	; 63
+     2d0:	0f 90       	pop	r0
+     2d2:	1f 90       	pop	r1
+     2d4:	18 95       	reti
 
-000002ce <__vector_20>:
+000002d6 <__vector_20>:
 
 // прерывание по опустошению сдвигового регистра передатчика
 ISR( USART_TX_vect) {
- 2ce:	1f 92       	push	r1
- 2d0:	0f 92       	push	r0
- 2d2:	0f b6       	in	r0, 0x3f	; 63
- 2d4:	0f 92       	push	r0
- 2d6:	11 24       	eor	r1, r1
- 2d8:	8f 93       	push	r24
- 2da:	ef 93       	push	r30
- 2dc:	ff 93       	push	r31
+     2d6:	1f 92       	push	r1
+     2d8:	0f 92       	push	r0
+     2da:	0f b6       	in	r0, 0x3f	; 63
+     2dc:	0f 92       	push	r0
+     2de:	11 24       	eor	r1, r1
+     2e0:	8f 93       	push	r24
+     2e2:	ef 93       	push	r30
+     2e4:	ff 93       	push	r31
 	if (UCSR0A & _BV(UDRE0)) {						// есди буфер передатчика пуст, то передавать больше нечего
- 2de:	80 91 c0 00 	lds	r24, 0x00C0
- 2e2:	85 ff       	sbrs	r24, 5
- 2e4:	0a c0       	rjmp	.+20     	; 0x2fa <__vector_20+0x2c>
+     2e6:	80 91 c0 00 	lds	r24, 0x00C0
+     2ea:	85 ff       	sbrs	r24, 5
+     2ec:	0a c0       	rjmp	.+20     	; 0x302 <__vector_20+0x2c>
 		PORTB |= _BV(pin_RS485_RW);					// переключаем драйвер RS485 на прием
- 2e6:	2c 9a       	sbi	0x05, 4	; 5
+     2ee:	2c 9a       	sbi	0x05, 4	; 5
 		UCSR0B &= ~(_BV(UDRIE0) | _BV(TXCIE0) );	// запрещаем любые прерывания от передатчика
- 2e8:	e1 ec       	ldi	r30, 0xC1	; 193
- 2ea:	f0 e0       	ldi	r31, 0x00	; 0
- 2ec:	80 81       	ld	r24, Z
- 2ee:	8f 79       	andi	r24, 0x9F	; 159
- 2f0:	80 83       	st	Z, r24
+     2f0:	e1 ec       	ldi	r30, 0xC1	; 193
+     2f2:	f0 e0       	ldi	r31, 0x00	; 0
+     2f4:	80 81       	ld	r24, Z
+     2f6:	8f 79       	andi	r24, 0x9F	; 159
+     2f8:	80 83       	st	Z, r24
 		rx_datalen = rx_ptr = 0;					// и устанавливаем на начало буфера приема (теперь должен прийти ответный пакет)
- 2f2:	10 92 bf 01 	sts	0x01BF, r1
- 2f6:	10 92 cb 01 	sts	0x01CB, r1
+     2fa:	10 92 df 01 	sts	0x01DF, r1
+     2fe:	10 92 eb 01 	sts	0x01EB, r1
 	}
 }
- 2fa:	ff 91       	pop	r31
- 2fc:	ef 91       	pop	r30
- 2fe:	8f 91       	pop	r24
- 300:	0f 90       	pop	r0
- 302:	0f be       	out	0x3f, r0	; 63
- 304:	0f 90       	pop	r0
- 306:	1f 90       	pop	r1
- 308:	18 95       	reti
+     302:	ff 91       	pop	r31
+     304:	ef 91       	pop	r30
+     306:	8f 91       	pop	r24
+     308:	0f 90       	pop	r0
+     30a:	0f be       	out	0x3f, r0	; 63
+     30c:	0f 90       	pop	r0
+     30e:	1f 90       	pop	r1
+     310:	18 95       	reti
 
-0000030a <__vector_19>:
+00000312 <__vector_19>:
 
 // прерывание по опустошению буфера передатчика (байт ушел в сдвиговый регистр передатчика)
 ISR( USART_UDRE_vect )
 {
- 30a:	1f 92       	push	r1
- 30c:	0f 92       	push	r0
- 30e:	0f b6       	in	r0, 0x3f	; 63
- 310:	0f 92       	push	r0
- 312:	11 24       	eor	r1, r1
- 314:	2f 93       	push	r18
- 316:	3f 93       	push	r19
- 318:	8f 93       	push	r24
- 31a:	9f 93       	push	r25
- 31c:	ef 93       	push	r30
- 31e:	ff 93       	push	r31
+     312:	1f 92       	push	r1
+     314:	0f 92       	push	r0
+     316:	0f b6       	in	r0, 0x3f	; 63
+     318:	0f 92       	push	r0
+     31a:	11 24       	eor	r1, r1
+     31c:	2f 93       	push	r18
+     31e:	3f 93       	push	r19
+     320:	8f 93       	push	r24
+     322:	9f 93       	push	r25
+     324:	ef 93       	push	r30
+     326:	ff 93       	push	r31
 	unsigned char txbyte;
 	if( tx_ptr < tx_datalen-1 ) {					// если буфер не пуст, то передаем следующий байт
- 320:	20 91 be 01 	lds	r18, 0x01BE
- 324:	80 91 ca 01 	lds	r24, 0x01CA
- 328:	30 e0       	ldi	r19, 0x00	; 0
- 32a:	90 e0       	ldi	r25, 0x00	; 0
- 32c:	01 97       	sbiw	r24, 0x01	; 1
- 32e:	28 17       	cp	r18, r24
- 330:	39 07       	cpc	r19, r25
- 332:	6c f4       	brge	.+26     	; 0x34e <__vector_19+0x44>
+     328:	20 91 de 01 	lds	r18, 0x01DE
+     32c:	80 91 ea 01 	lds	r24, 0x01EA
+     330:	30 e0       	ldi	r19, 0x00	; 0
+     332:	90 e0       	ldi	r25, 0x00	; 0
+     334:	01 97       	sbiw	r24, 0x01	; 1
+     336:	28 17       	cp	r18, r24
+     338:	39 07       	cpc	r19, r25
+     33a:	6c f4       	brge	.+26     	; 0x356 <__vector_19+0x44>
 		txbyte = tx_buff[tx_ptr++];
- 334:	e0 91 be 01 	lds	r30, 0x01BE
- 338:	81 e0       	ldi	r24, 0x01	; 1
- 33a:	8e 0f       	add	r24, r30
- 33c:	80 93 be 01 	sts	0x01BE, r24
- 340:	f0 e0       	ldi	r31, 0x00	; 0
- 342:	e0 54       	subi	r30, 0x40	; 64
- 344:	fe 4f       	sbci	r31, 0xFE	; 254
- 346:	80 81       	ld	r24, Z
+     33c:	e0 91 de 01 	lds	r30, 0x01DE
+     340:	81 e0       	ldi	r24, 0x01	; 1
+     342:	8e 0f       	add	r24, r30
+     344:	80 93 de 01 	sts	0x01DE, r24
+     348:	f0 e0       	ldi	r31, 0x00	; 0
+     34a:	e0 52       	subi	r30, 0x20	; 32
+     34c:	fe 4f       	sbci	r31, 0xFE	; 254
+     34e:	80 81       	ld	r24, Z
 		UDR0 = txbyte;
- 348:	80 93 c6 00 	sts	0x00C6, r24
- 34c:	05 c0       	rjmp	.+10     	; 0x358 <__vector_19+0x4e>
+     350:	80 93 c6 00 	sts	0x00C6, r24
+     354:	05 c0       	rjmp	.+10     	; 0x360 <__vector_19+0x4e>
 	}
 	else {
 		UCSR0B &= ~_BV(UDRIE0);					//если данных в fifo больше нет то запрещаем это прерывание
- 34e:	e1 ec       	ldi	r30, 0xC1	; 193
- 350:	f0 e0       	ldi	r31, 0x00	; 0
- 352:	80 81       	ld	r24, Z
- 354:	8f 7d       	andi	r24, 0xDF	; 223
- 356:	80 83       	st	Z, r24
+     356:	e1 ec       	ldi	r30, 0xC1	; 193
+     358:	f0 e0       	ldi	r31, 0x00	; 0
+     35a:	80 81       	ld	r24, Z
+     35c:	8f 7d       	andi	r24, 0xDF	; 223
+     35e:	80 83       	st	Z, r24
 	}
 }
- 358:	ff 91       	pop	r31
- 35a:	ef 91       	pop	r30
- 35c:	9f 91       	pop	r25
- 35e:	8f 91       	pop	r24
- 360:	3f 91       	pop	r19
- 362:	2f 91       	pop	r18
- 364:	0f 90       	pop	r0
- 366:	0f be       	out	0x3f, r0	; 63
- 368:	0f 90       	pop	r0
- 36a:	1f 90       	pop	r1
- 36c:	18 95       	reti
+     360:	ff 91       	pop	r31
+     362:	ef 91       	pop	r30
+     364:	9f 91       	pop	r25
+     366:	8f 91       	pop	r24
+     368:	3f 91       	pop	r19
+     36a:	2f 91       	pop	r18
+     36c:	0f 90       	pop	r0
+     36e:	0f be       	out	0x3f, r0	; 63
+     370:	0f 90       	pop	r0
+     372:	1f 90       	pop	r1
+     374:	18 95       	reti
 
-0000036e <main>:
+00000376 <kbd_readed>:
+
+void kbd_read();
+
+void kbd_readed(){
+	u08 kf;
+	kf = i2c_Buffer[0];
+     376:	20 91 30 02 	lds	r18, 0x0230
+	
+	i2c_Do &= i2c_Free;											// Освобождаем шину
+     37a:	80 91 3c 02 	lds	r24, 0x023C
+     37e:	98 2f       	mov	r25, r24
+     380:	9f 7b       	andi	r25, 0xBF	; 191
+     382:	90 93 3c 02 	sts	0x023C, r25
+	if(i2c_Do & (i2c_ERR_NA|i2c_ERR_BF))						// Если запись не удалась
+     386:	81 71       	andi	r24, 0x11	; 17
+     388:	39 f0       	breq	.+14     	; 0x398 <kbd_readed+0x22>
+	{
+		SetTimerTask(kbd_read,20);								// повторяем попытку
+     38a:	64 e1       	ldi	r22, 0x14	; 20
+     38c:	70 e0       	ldi	r23, 0x00	; 0
+     38e:	87 ed       	ldi	r24, 0xD7	; 215
+     390:	91 e0       	ldi	r25, 0x01	; 1
+     392:	0e 94 41 07 	call	0xe82	; 0xe82 <SetTimerTask>
+     396:	08 95       	ret
+	}
+	else														// Если все ок, то ...
+	{
+		kf3=kf2;
+     398:	80 91 2e 02 	lds	r24, 0x022E
+     39c:	80 93 ec 01 	sts	0x01EC, r24
+		kf2=kf1;
+     3a0:	80 91 2d 02 	lds	r24, 0x022D
+     3a4:	80 93 2e 02 	sts	0x022E, r24
+		kf1 = kf;
+     3a8:	20 93 2d 02 	sts	0x022D, r18
+     3ac:	08 95       	ret
+
+000003ae <kbd_read>:
+	}
+}
+
+void kbd_read(){
+	if ( (i2c_Do & i2c_Busy) ) {
+     3ae:	80 91 3c 02 	lds	r24, 0x023C
+     3b2:	86 ff       	sbrs	r24, 6
+     3b4:	07 c0       	rjmp	.+14     	; 0x3c4 <kbd_read+0x16>
+		SetTimerTask(kbd_read, 5);
+     3b6:	65 e0       	ldi	r22, 0x05	; 5
+     3b8:	70 e0       	ldi	r23, 0x00	; 0
+     3ba:	87 ed       	ldi	r24, 0xD7	; 215
+     3bc:	91 e0       	ldi	r25, 0x01	; 1
+     3be:	0e 94 41 07 	call	0xe82	; 0xe82 <SetTimerTask>
+     3c2:	08 95       	ret
+		} else {
+		ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+     3c4:	2f b7       	in	r18, 0x3f	; 63
+    return 1;
+}
+
+static __inline__ uint8_t __iCliRetVal(void)
+{
+    cli();
+     3c6:	f8 94       	cli
+		{
+			i2c_Do = i2c_sarp | i2c_Busy;
+     3c8:	80 e4       	ldi	r24, 0x40	; 64
+     3ca:	80 93 3c 02 	sts	0x023C, r24
+			i2c_SlaveAddress = KBD_REG;
+     3ce:	80 93 33 02 	sts	0x0233, r24
+			i2c_index = 0;
+     3d2:	10 92 2f 02 	sts	0x022F, r1
+			i2c_ByteCount = 1;
+     3d6:	81 e0       	ldi	r24, 0x01	; 1
+     3d8:	80 93 39 02 	sts	0x0239, r24
+			
+			MasterOutFunc = kbd_readed;
+     3dc:	8b eb       	ldi	r24, 0xBB	; 187
+     3de:	91 e0       	ldi	r25, 0x01	; 1
+     3e0:	90 93 15 01 	sts	0x0115, r25
+     3e4:	80 93 14 01 	sts	0x0114, r24
+			ErrorOutFunc =  kbd_readed;
+     3e8:	90 93 11 01 	sts	0x0111, r25
+     3ec:	80 93 10 01 	sts	0x0110, r24
+			
+			TWCR = 1<<TWSTA|0<<TWSTO|1<<TWINT|0<<TWEA|1<<TWEN|1<<TWIE;
+     3f0:	85 ea       	ldi	r24, 0xA5	; 165
+     3f2:	80 93 bc 00 	sts	0x00BC, r24
+    (void)__s;
+}
+
+static __inline__ void __iRestore(const  uint8_t *__s)
+{
+    SREG = *__s;
+     3f6:	2f bf       	out	0x3f, r18	; 63
+    __asm__ volatile ("" ::: "memory");
+     3f8:	08 95       	ret
+
+000003fa <parser_d>:
+//
+// В ситуации, когда во входной очереди была команда вывода строки (т.е. указатель на zero-ended массив в RAM или PGM_SPACE, то мы запоминаем команду в m_cmd и указатель в m_ptr
+// и при очередном входе в parcer_d руководствуемся ими, а не данными из drv_queue_inp
+//
+
+void parser_d(){
+     3fa:	1f 93       	push	r17
+     3fc:	cf 93       	push	r28
+     3fe:	df 93       	push	r29
+     400:	00 d0       	rcall	.+0      	; 0x402 <parser_d+0x8>
+     402:	cd b7       	in	r28, 0x3d	; 61
+     404:	de b7       	in	r29, 0x3e	; 62
+	u08 RS_bit;
+	u08 data;
+
+//	PORTD &= ~(1<<PORTD6);	_delay_ms(0.1);	PORTD |= (1<<PORTD6);	_delay_ms(0.1);
+
+	if  (m_ByteCount > 0) {							// Уже идет процесс общения. m_Buffer не пуст и parser_m еще не все из него вынул для отправки
+     406:	80 91 24 01 	lds	r24, 0x0124
+     40a:	88 23       	and	r24, r24
+     40c:	39 f0       	breq	.+14     	; 0x41c <parser_d+0x22>
+		SetTimerTask(parser_d, 50);
+     40e:	62 e3       	ldi	r22, 0x32	; 50
+     410:	70 e0       	ldi	r23, 0x00	; 0
+     412:	8d ef       	ldi	r24, 0xFD	; 253
+     414:	91 e0       	ldi	r25, 0x01	; 1
+     416:	0e 94 41 07 	call	0xe82	; 0xe82 <SetTimerTask>
+		return;
+     41a:	ab c0       	rjmp	.+342    	; 0x572 <parser_d+0x178>
+	}
+	if ( (m_cmd == DISP_NONE) && (circ_is_empty(&drv_queue_inp)) ) {
+     41c:	80 91 23 01 	lds	r24, 0x0123
+     420:	81 11       	cpse	r24, r1
+     422:	08 c0       	rjmp	.+16     	; 0x434 <parser_d+0x3a>
+     424:	80 91 0e 01 	lds	r24, 0x010E
+     428:	90 91 0f 01 	lds	r25, 0x010F
+     42c:	89 2b       	or	r24, r25
+     42e:	09 f4       	brne	.+2      	; 0x432 <parser_d+0x38>
+     430:	a0 c0       	rjmp	.+320    	; 0x572 <parser_d+0x178>
+     432:	02 c0       	rjmp	.+4      	; 0x438 <parser_d+0x3e>
+		return;
+	}
+
+	if (m_cmd) {
+		cmd = m_cmd;
+     434:	89 83       	std	Y+1, r24	; 0x01
+     436:	09 c0       	rjmp	.+18     	; 0x44a <parser_d+0x50>
+	} else {
+		circ_pop( &drv_queue_inp, &cmd, 1);
+     438:	41 e0       	ldi	r20, 0x01	; 1
+     43a:	50 e0       	ldi	r21, 0x00	; 0
+     43c:	be 01       	movw	r22, r28
+     43e:	6f 5f       	subi	r22, 0xFF	; 255
+     440:	7f 4f       	sbci	r23, 0xFF	; 255
+     442:	88 e0       	ldi	r24, 0x08	; 8
+     444:	91 e0       	ldi	r25, 0x01	; 1
+     446:	0e 94 c8 04 	call	0x990	; 0x990 <circ_pop>
+	}
+		
+	RS_bit = _BV(DS_RS);		// по дефолту - символ
+	m_delay = 0;				// и отсутствие паузы в конце посылки. Нужна для отработки комманд дисплеем
+     44a:	10 92 20 01 	sts	0x0120, r1
+     44e:	10 92 1f 01 	sts	0x011F, r1
+	m_delay_fl = 0;
+     452:	10 92 1e 01 	sts	0x011E, r1
+		
+	switch(cmd) {
+     456:	89 81       	ldd	r24, Y+1	; 0x01
+     458:	88 30       	cpi	r24, 0x08	; 8
+     45a:	81 f0       	breq	.+32     	; 0x47c <parser_d+0x82>
+     45c:	38 f4       	brcc	.+14     	; 0x46c <parser_d+0x72>
+     45e:	82 30       	cpi	r24, 0x02	; 2
+     460:	09 f4       	brne	.+2      	; 0x464 <parser_d+0x6a>
+     462:	45 c0       	rjmp	.+138    	; 0x4ee <parser_d+0xf4>
+     464:	84 30       	cpi	r24, 0x04	; 4
+     466:	09 f4       	brne	.+2      	; 0x46a <parser_d+0x70>
+     468:	4a c0       	rjmp	.+148    	; 0x4fe <parser_d+0x104>
+     46a:	54 c0       	rjmp	.+168    	; 0x514 <parser_d+0x11a>
+     46c:	80 31       	cpi	r24, 0x10	; 16
+     46e:	11 f1       	breq	.+68     	; 0x4b4 <parser_d+0xba>
+     470:	81 31       	cpi	r24, 0x11	; 17
+     472:	59 f1       	breq	.+86     	; 0x4ca <parser_d+0xd0>
+     474:	89 30       	cpi	r24, 0x09	; 9
+     476:	09 f0       	breq	.+2      	; 0x47a <parser_d+0x80>
+     478:	4d c0       	rjmp	.+154    	; 0x514 <parser_d+0x11a>
+     47a:	0b c0       	rjmp	.+22     	; 0x492 <parser_d+0x98>
+
+		case DISP_STR:
+			circ_pop(&drv_queue_inp, (u08 *)&m_ptr, 2);
+     47c:	42 e0       	ldi	r20, 0x02	; 2
+     47e:	50 e0       	ldi	r21, 0x00	; 0
+     480:	61 e2       	ldi	r22, 0x21	; 33
+     482:	71 e0       	ldi	r23, 0x01	; 1
+     484:	88 e0       	ldi	r24, 0x08	; 8
+     486:	91 e0       	ldi	r25, 0x01	; 1
+     488:	0e 94 c8 04 	call	0x990	; 0x990 <circ_pop>
+			m_cmd = DISP_STR_N;
+     48c:	89 e0       	ldi	r24, 0x09	; 9
+     48e:	80 93 23 01 	sts	0x0123, r24
+		case DISP_STR_N:
+			data = *m_ptr;
+     492:	e0 91 21 01 	lds	r30, 0x0121
+     496:	f0 91 22 01 	lds	r31, 0x0122
+     49a:	81 91       	ld	r24, Z+
+     49c:	8a 83       	std	Y+2, r24	; 0x02
+			m_ptr++;
+     49e:	f0 93 22 01 	sts	0x0122, r31
+     4a2:	e0 93 21 01 	sts	0x0121, r30
+			if(data == 0) m_cmd = cmd = DISP_NONE;
+     4a6:	81 11       	cpse	r24, r1
+     4a8:	37 c0       	rjmp	.+110    	; 0x518 <parser_d+0x11e>
+     4aa:	19 82       	std	Y+1, r1	; 0x01
+     4ac:	10 92 23 01 	sts	0x0123, r1
+		cmd = m_cmd;
+	} else {
+		circ_pop( &drv_queue_inp, &cmd, 1);
+	}
+		
+	RS_bit = _BV(DS_RS);		// по дефолту - символ
+     4b0:	10 e4       	ldi	r17, 0x40	; 64
+     4b2:	35 c0       	rjmp	.+106    	; 0x51e <parser_d+0x124>
+			m_ptr++;
+			if(data == 0) m_cmd = cmd = DISP_NONE;
+			break;
+
+		case DISP_STRP:
+			circ_pop(&drv_queue_inp, (u08 *)&m_ptr, 2);
+     4b4:	42 e0       	ldi	r20, 0x02	; 2
+     4b6:	50 e0       	ldi	r21, 0x00	; 0
+     4b8:	61 e2       	ldi	r22, 0x21	; 33
+     4ba:	71 e0       	ldi	r23, 0x01	; 1
+     4bc:	88 e0       	ldi	r24, 0x08	; 8
+     4be:	91 e0       	ldi	r25, 0x01	; 1
+     4c0:	0e 94 c8 04 	call	0x990	; 0x990 <circ_pop>
+			m_cmd = DISP_STRP_N;
+     4c4:	81 e1       	ldi	r24, 0x11	; 17
+     4c6:	80 93 23 01 	sts	0x0123, r24
+		case DISP_STRP_N:
+			data = pgm_read_byte(m_ptr);				//загрузить байт из PGM_SPACE
+     4ca:	e0 91 21 01 	lds	r30, 0x0121
+     4ce:	f0 91 22 01 	lds	r31, 0x0122
+     4d2:	84 91       	lpm	r24, Z
+     4d4:	8a 83       	std	Y+2, r24	; 0x02
+			m_ptr++;
+     4d6:	31 96       	adiw	r30, 0x01	; 1
+     4d8:	f0 93 22 01 	sts	0x0122, r31
+     4dc:	e0 93 21 01 	sts	0x0121, r30
+			if(data == 0) m_cmd = cmd = DISP_NONE;
+     4e0:	81 11       	cpse	r24, r1
+     4e2:	1c c0       	rjmp	.+56     	; 0x51c <parser_d+0x122>
+     4e4:	19 82       	std	Y+1, r1	; 0x01
+     4e6:	10 92 23 01 	sts	0x0123, r1
+		cmd = m_cmd;
+	} else {
+		circ_pop( &drv_queue_inp, &cmd, 1);
+	}
+		
+	RS_bit = _BV(DS_RS);		// по дефолту - символ
+     4ea:	10 e4       	ldi	r17, 0x40	; 64
+     4ec:	18 c0       	rjmp	.+48     	; 0x51e <parser_d+0x124>
+			m_ptr++;
+			if(data == 0) m_cmd = cmd = DISP_NONE;
+			break;
+
+		case DISP_CMD:	
+			m_delay = DS_CMD_DELAY_DEFAULT;				// задержка для выполнения команды. Отрабатывает ПОСЛЕ посылки команды.
+     4ee:	86 e0       	ldi	r24, 0x06	; 6
+     4f0:	90 e0       	ldi	r25, 0x00	; 0
+     4f2:	90 93 20 01 	sts	0x0120, r25
+     4f6:	80 93 1f 01 	sts	0x011F, r24
+			RS_bit = 0;
+     4fa:	10 e0       	ldi	r17, 0x00	; 0
+     4fc:	01 c0       	rjmp	.+2      	; 0x500 <parser_d+0x106>
+		cmd = m_cmd;
+	} else {
+		circ_pop( &drv_queue_inp, &cmd, 1);
+	}
+		
+	RS_bit = _BV(DS_RS);		// по дефолту - символ
+     4fe:	10 e4       	ldi	r17, 0x40	; 64
+
+		case DISP_CMD:	
+			m_delay = DS_CMD_DELAY_DEFAULT;				// задержка для выполнения команды. Отрабатывает ПОСЛЕ посылки команды.
+			RS_bit = 0;
+		case DISP_CHR:
+			circ_pop( &drv_queue_inp, &data, 1);
+     500:	41 e0       	ldi	r20, 0x01	; 1
+     502:	50 e0       	ldi	r21, 0x00	; 0
+     504:	be 01       	movw	r22, r28
+     506:	6e 5f       	subi	r22, 0xFE	; 254
+     508:	7f 4f       	sbci	r23, 0xFF	; 255
+     50a:	88 e0       	ldi	r24, 0x08	; 8
+     50c:	91 e0       	ldi	r25, 0x01	; 1
+     50e:	0e 94 c8 04 	call	0x990	; 0x990 <circ_pop>
+			break;
+     512:	05 c0       	rjmp	.+10     	; 0x51e <parser_d+0x124>
+		cmd = m_cmd;
+	} else {
+		circ_pop( &drv_queue_inp, &cmd, 1);
+	}
+		
+	RS_bit = _BV(DS_RS);		// по дефолту - символ
+     514:	10 e4       	ldi	r17, 0x40	; 64
+     516:	03 c0       	rjmp	.+6      	; 0x51e <parser_d+0x124>
+     518:	10 e4       	ldi	r17, 0x40	; 64
+     51a:	01 c0       	rjmp	.+2      	; 0x51e <parser_d+0x124>
+     51c:	10 e4       	ldi	r17, 0x40	; 64
+		case DISP_CHR:
+			circ_pop( &drv_queue_inp, &data, 1);
+			break;
+	}
+	// если команда требует паузы, то задать ее величину
+	if (cmd) {
+     51e:	89 81       	ldd	r24, Y+1	; 0x01
+     520:	88 23       	and	r24, r24
+     522:	39 f1       	breq	.+78     	; 0x572 <parser_d+0x178>
+		m_index = 0;
+		m_ByteCount = 0;
+
+		m_Buffer[m_index++] = DISPLAY_CTRL_REG;
+     524:	94 e4       	ldi	r25, 0x44	; 68
+     526:	90 93 fd 01 	sts	0x01FD, r25
+		m_Buffer[m_index++] = 2;
+     52a:	82 e0       	ldi	r24, 0x02	; 2
+     52c:	80 93 fe 01 	sts	0x01FE, r24
+		m_Buffer[m_index++] = (0<<DS_E) | (0<<DS_RW) | RS_bit;		// строб, запись, команда
+     530:	10 93 ff 01 	sts	0x01FF, r17
+		m_Buffer[m_index++] = (1<<DS_E) | (0<<DS_RW) | RS_bit;		// строб, запись, команда
+     534:	21 2f       	mov	r18, r17
+     536:	20 61       	ori	r18, 0x10	; 16
+     538:	20 93 00 02 	sts	0x0200, r18
+
+		m_Buffer[m_index++] = DISPLAY_DATA_REG;
+     53c:	26 e4       	ldi	r18, 0x46	; 70
+     53e:	20 93 01 02 	sts	0x0201, r18
+		m_Buffer[m_index++] = 1;
+     542:	21 e0       	ldi	r18, 0x01	; 1
+     544:	20 93 02 02 	sts	0x0202, r18
+		m_Buffer[m_index++] = data;									// команда или символ
+     548:	2a 81       	ldd	r18, Y+2	; 0x02
+     54a:	20 93 03 02 	sts	0x0203, r18
+
+		m_Buffer[m_index++] = DISPLAY_CTRL_REG;
+     54e:	90 93 04 02 	sts	0x0204, r25
+		m_Buffer[m_index++] = 2;
+     552:	80 93 05 02 	sts	0x0205, r24
+		m_Buffer[m_index++] = (0<<DS_E) | (0<<DS_RW) | RS_bit;		// строб, запись, команда
+     556:	10 93 06 02 	sts	0x0206, r17
+		m_Buffer[m_index++] = (0<<DS_E) | (1<<DS_RW) | (1<<DS_RS);	// строб, запись, команда
+     55a:	80 e6       	ldi	r24, 0x60	; 96
+     55c:	80 93 07 02 	sts	0x0207, r24
+
+		m_ByteCount = m_index;
+     560:	8b e0       	ldi	r24, 0x0B	; 11
+     562:	80 93 24 01 	sts	0x0124, r24
+		m_index = 0;
+     566:	10 92 25 01 	sts	0x0125, r1
+		SetTask(parser_m);
+     56a:	86 ec       	ldi	r24, 0xC6	; 198
+     56c:	92 e0       	ldi	r25, 0x02	; 2
+     56e:	0e 94 1a 07 	call	0xe34	; 0xe34 <SetTask>
+	}
+}
+     572:	0f 90       	pop	r0
+     574:	0f 90       	pop	r0
+     576:	df 91       	pop	r29
+     578:	cf 91       	pop	r28
+     57a:	1f 91       	pop	r17
+     57c:	08 95       	ret
+
+0000057e <parser_m_afterpause>:
 
 
+void parser_m_afterpause(){
+	m_delay_fl = 0;
+     57e:	10 92 1e 01 	sts	0x011E, r1
+	SetTask(parser_d);
+     582:	8d ef       	ldi	r24, 0xFD	; 253
+     584:	91 e0       	ldi	r25, 0x01	; 1
+     586:	0e 94 1a 07 	call	0xe34	; 0xe34 <SetTask>
+     58a:	08 95       	ret
+
+0000058c <parser_m>:
+// тут как то надо быть если запись не удалась - if(i2c_Do & (i2c_ERR_NA|i2c_ERR_BF))
+// по-видимому, нужно отсигналить парсеру дисплея, чтобы он откатил указатель в своем буфере и  заново сформировал пачку посылок
+//
+// m_Buffer : <SlaveAddr>, <N>, <byte-1>, <byte-2> ... <byte-N>
+//
+void parser_m(){
+     58c:	cf 93       	push	r28
+	u08 cnt = 0;
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+     58e:	cf b7       	in	r28, 0x3f	; 63
+    return 1;
+}
+
+static __inline__ uint8_t __iCliRetVal(void)
+{
+    cli();
+     590:	f8 94       	cli
+	{
+		if (!m_delay_fl)			// проверка семафора(?) задержки. Можно бы, перепоставить себя в очередь, но это произойдет в parser_m_afterpause
+     592:	80 91 1e 01 	lds	r24, 0x011E
+     596:	81 11       	cpse	r24, r1
+     598:	77 c0       	rjmp	.+238    	; 0x688 <parser_m+0xfc>
+		{
+			if ((m_index == 0) && (i2c_Do & i2c_Busy)) {		// если это первый заход в пачке (т.е. нас вызвал parser_d), то подождем освобождения шины. Иначе - шина уже захвачена нами
+     59a:	e0 91 25 01 	lds	r30, 0x0125
+     59e:	e1 11       	cpse	r30, r1
+     5a0:	0b c0       	rjmp	.+22     	; 0x5b8 <parser_m+0x2c>
+     5a2:	80 91 3c 02 	lds	r24, 0x023C
+     5a6:	86 ff       	sbrs	r24, 6
+     5a8:	07 c0       	rjmp	.+14     	; 0x5b8 <parser_m+0x2c>
+				SetTimerTask(parser_m, 5);
+     5aa:	65 e0       	ldi	r22, 0x05	; 5
+     5ac:	70 e0       	ldi	r23, 0x00	; 0
+     5ae:	86 ec       	ldi	r24, 0xC6	; 198
+     5b0:	92 e0       	ldi	r25, 0x02	; 2
+     5b2:	0e 94 41 07 	call	0xe82	; 0xe82 <SetTimerTask>
+     5b6:	68 c0       	rjmp	.+208    	; 0x688 <parser_m+0xfc>
+			} else {
+				if (m_index < m_ByteCount) {			// m_Buffer : <SlaveAddr>, <N>, <byte-1>, <byte-2> ... <byte-N>
+     5b8:	80 91 24 01 	lds	r24, 0x0124
+     5bc:	e8 17       	cp	r30, r24
+     5be:	08 f0       	brcs	.+2      	; 0x5c2 <parser_m+0x36>
+     5c0:	44 c0       	rjmp	.+136    	; 0x64a <parser_m+0xbe>
+					i2c_Do = i2c_sawp | i2c_Busy;
+     5c2:	84 e4       	ldi	r24, 0x44	; 68
+     5c4:	80 93 3c 02 	sts	0x023C, r24
+					MasterOutFunc = parser_m;
+     5c8:	86 ec       	ldi	r24, 0xC6	; 198
+     5ca:	92 e0       	ldi	r25, 0x02	; 2
+     5cc:	90 93 15 01 	sts	0x0115, r25
+     5d0:	80 93 14 01 	sts	0x0114, r24
+					ErrorOutFunc =  parser_m;
+     5d4:	90 93 11 01 	sts	0x0111, r25
+     5d8:	80 93 10 01 	sts	0x0110, r24
+					i2c_index = 0;
+     5dc:	10 92 2f 02 	sts	0x022F, r1
+					i2c_SlaveAddress = m_Buffer[m_index++];
+     5e0:	ae 2f       	mov	r26, r30
+     5e2:	b0 e0       	ldi	r27, 0x00	; 0
+     5e4:	a3 50       	subi	r26, 0x03	; 3
+     5e6:	be 4f       	sbci	r27, 0xFE	; 254
+     5e8:	8c 91       	ld	r24, X
+     5ea:	80 93 33 02 	sts	0x0233, r24
+					cnt = m_Buffer[m_index++];
+     5ee:	52 e0       	ldi	r21, 0x02	; 2
+     5f0:	5e 0f       	add	r21, r30
+     5f2:	50 93 25 01 	sts	0x0125, r21
+				if (m_index < m_ByteCount) {			// m_Buffer : <SlaveAddr>, <N>, <byte-1>, <byte-2> ... <byte-N>
+					i2c_Do = i2c_sawp | i2c_Busy;
+					MasterOutFunc = parser_m;
+					ErrorOutFunc =  parser_m;
+					i2c_index = 0;
+					i2c_SlaveAddress = m_Buffer[m_index++];
+     5f6:	ef 5f       	subi	r30, 0xFF	; 255
+					cnt = m_Buffer[m_index++];
+     5f8:	f0 e0       	ldi	r31, 0x00	; 0
+     5fa:	e3 50       	subi	r30, 0x03	; 3
+     5fc:	fe 4f       	sbci	r31, 0xFE	; 254
+     5fe:	40 81       	ld	r20, Z
+					while (cnt--) {
+     600:	44 23       	and	r20, r20
+     602:	c9 f0       	breq	.+50     	; 0x636 <parser_m+0xaa>
+     604:	90 e0       	ldi	r25, 0x00	; 0
+     606:	24 2f       	mov	r18, r20
+     608:	29 0f       	add	r18, r25
+     60a:	89 2f       	mov	r24, r25
+     60c:	35 2f       	mov	r19, r21
+     60e:	39 1b       	sub	r19, r25
+						i2c_Buffer[i2c_index++] = m_Buffer[m_index++];
+     610:	e8 2f       	mov	r30, r24
+     612:	f0 e0       	ldi	r31, 0x00	; 0
+     614:	e0 5d       	subi	r30, 0xD0	; 208
+     616:	fd 4f       	sbci	r31, 0xFD	; 253
+     618:	a3 2f       	mov	r26, r19
+     61a:	a8 0f       	add	r26, r24
+     61c:	b0 e0       	ldi	r27, 0x00	; 0
+     61e:	a3 50       	subi	r26, 0x03	; 3
+     620:	be 4f       	sbci	r27, 0xFE	; 254
+     622:	9c 91       	ld	r25, X
+     624:	90 83       	st	Z, r25
+     626:	8f 5f       	subi	r24, 0xFF	; 255
+					MasterOutFunc = parser_m;
+					ErrorOutFunc =  parser_m;
+					i2c_index = 0;
+					i2c_SlaveAddress = m_Buffer[m_index++];
+					cnt = m_Buffer[m_index++];
+					while (cnt--) {
+     628:	82 13       	cpse	r24, r18
+     62a:	f2 cf       	rjmp	.-28     	; 0x610 <parser_m+0x84>
+     62c:	20 93 2f 02 	sts	0x022F, r18
+     630:	45 0f       	add	r20, r21
+     632:	40 93 25 01 	sts	0x0125, r20
+						i2c_Buffer[i2c_index++] = m_Buffer[m_index++];
+					}
+					i2c_ByteCount = i2c_index;
+     636:	80 91 2f 02 	lds	r24, 0x022F
+     63a:	80 93 39 02 	sts	0x0239, r24
+					i2c_index = 0;
+     63e:	10 92 2f 02 	sts	0x022F, r1
+					TWCR = 1<<TWSTA|0<<TWSTO|1<<TWINT|0<<TWEA|1<<TWEN|1<<TWIE;
+     642:	85 ea       	ldi	r24, 0xA5	; 165
+     644:	80 93 bc 00 	sts	0x00BC, r24
+     648:	1f c0       	rjmp	.+62     	; 0x688 <parser_m+0xfc>
+				} else {
+					i2c_Do &= i2c_Free;
+     64a:	80 91 3c 02 	lds	r24, 0x023C
+     64e:	8f 7b       	andi	r24, 0xBF	; 191
+     650:	80 93 3c 02 	sts	0x023C, r24
+					m_index = m_ByteCount = 0;
+     654:	10 92 24 01 	sts	0x0124, r1
+     658:	10 92 25 01 	sts	0x0125, r1
+					if (m_delay) {	// если нужна задержка для выполнения команды, то  флаг паузы - m_pause_fl и SetTimerTask для сброса флага
+     65c:	60 91 1f 01 	lds	r22, 0x011F
+     660:	70 91 20 01 	lds	r23, 0x0120
+     664:	61 15       	cp	r22, r1
+     666:	71 05       	cpc	r23, r1
+     668:	59 f0       	breq	.+22     	; 0x680 <parser_m+0xf4>
+						SetTimerTask(parser_m_afterpause, m_delay);
+     66a:	8f eb       	ldi	r24, 0xBF	; 191
+     66c:	92 e0       	ldi	r25, 0x02	; 2
+     66e:	0e 94 41 07 	call	0xe82	; 0xe82 <SetTimerTask>
+						m_delay_fl = 1;
+     672:	81 e0       	ldi	r24, 0x01	; 1
+     674:	80 93 1e 01 	sts	0x011E, r24
+						m_delay = 0;
+     678:	10 92 20 01 	sts	0x0120, r1
+     67c:	10 92 1f 01 	sts	0x011F, r1
+					}
+					SetTask(parser_d);
+     680:	8d ef       	ldi	r24, 0xFD	; 253
+     682:	91 e0       	ldi	r25, 0x01	; 1
+     684:	0e 94 1a 07 	call	0xe34	; 0xe34 <SetTask>
+    (void)__s;
+}
+
+static __inline__ void __iRestore(const  uint8_t *__s)
+{
+    SREG = *__s;
+     688:	cf bf       	out	0x3f, r28	; 63
+				}
+			}
+		}
+	}
+} // И уходим обратно в IIC_ultimate, где выходим из прерывания, ну или в TaskManager
+     68a:	cf 91       	pop	r28
+     68c:	08 95       	ret
+
+0000068e <d_init>:
+
+
+// ф-ии работы с дисплеем верхнего уровня
+
+void d_init() {
+	circ_init( &drv_queue_inp);
+     68e:	88 e0       	ldi	r24, 0x08	; 8
+     690:	91 e0       	ldi	r25, 0x01	; 1
+     692:	0e 94 45 04 	call	0x88a	; 0x88a <circ_init>
+	circ_init( &drv_queue_out);
+     696:	80 e0       	ldi	r24, 0x00	; 0
+     698:	91 e0       	ldi	r25, 0x01	; 1
+     69a:	0e 94 45 04 	call	0x88a	; 0x88a <circ_init>
+     69e:	08 95       	ret
+
+000006a0 <d_command>:
+	column %= 0x40;
+	cmd = 0x80 | (row * 0x40 + column);
+	d_command(cmd);
+}
+
+void d_command(u08 cmd){
+     6a0:	cf 93       	push	r28
+     6a2:	c8 2f       	mov	r28, r24
+	circ_push_byte( &drv_queue_inp, DISP_CMD);
+     6a4:	62 e0       	ldi	r22, 0x02	; 2
+     6a6:	88 e0       	ldi	r24, 0x08	; 8
+     6a8:	91 e0       	ldi	r25, 0x01	; 1
+     6aa:	0e 94 91 04 	call	0x922	; 0x922 <circ_push_byte>
+	circ_push_byte( &drv_queue_inp, cmd);
+     6ae:	6c 2f       	mov	r22, r28
+     6b0:	88 e0       	ldi	r24, 0x08	; 8
+     6b2:	91 e0       	ldi	r25, 0x01	; 1
+     6b4:	0e 94 91 04 	call	0x922	; 0x922 <circ_push_byte>
+	SetTask(parser_d);
+     6b8:	8d ef       	ldi	r24, 0xFD	; 253
+     6ba:	91 e0       	ldi	r25, 0x01	; 1
+     6bc:	0e 94 1a 07 	call	0xe34	; 0xe34 <SetTask>
+}
+     6c0:	cf 91       	pop	r28
+     6c2:	08 95       	ret
+
+000006c4 <d_setcursor>:
+	SetTask(parser_d);
+}
+
+void d_setcursor (u08 column, u08 row) {
+	u08 cmd;
+	row %= 2;
+     6c4:	61 70       	andi	r22, 0x01	; 1
+	column %= 0x40;
+     6c6:	8f 73       	andi	r24, 0x3F	; 63
+	cmd = 0x80 | (row * 0x40 + column);
+     6c8:	90 e4       	ldi	r25, 0x40	; 64
+     6ca:	69 9f       	mul	r22, r25
+     6cc:	80 0d       	add	r24, r0
+     6ce:	11 24       	eor	r1, r1
+	d_command(cmd);
+     6d0:	80 68       	ori	r24, 0x80	; 128
+     6d2:	0e 94 50 03 	call	0x6a0	; 0x6a0 <d_command>
+     6d6:	08 95       	ret
+
+000006d8 <d_putchar>:
+	circ_push_byte( &drv_queue_inp, DISP_CMD);
+	circ_push_byte( &drv_queue_inp, cmd);
+	SetTask(parser_d);
+}
+
+void d_putchar(char chr){
+     6d8:	cf 93       	push	r28
+     6da:	c8 2f       	mov	r28, r24
+	circ_push_byte( &drv_queue_inp, DISP_CHR);
+     6dc:	64 e0       	ldi	r22, 0x04	; 4
+     6de:	88 e0       	ldi	r24, 0x08	; 8
+     6e0:	91 e0       	ldi	r25, 0x01	; 1
+     6e2:	0e 94 91 04 	call	0x922	; 0x922 <circ_push_byte>
+	circ_push_byte( &drv_queue_inp, chr);
+     6e6:	6c 2f       	mov	r22, r28
+     6e8:	88 e0       	ldi	r24, 0x08	; 8
+     6ea:	91 e0       	ldi	r25, 0x01	; 1
+     6ec:	0e 94 91 04 	call	0x922	; 0x922 <circ_push_byte>
+	SetTask(parser_d);
+     6f0:	8d ef       	ldi	r24, 0xFD	; 253
+     6f2:	91 e0       	ldi	r25, 0x01	; 1
+     6f4:	0e 94 1a 07 	call	0xe34	; 0xe34 <SetTask>
+}
+     6f8:	cf 91       	pop	r28
+     6fa:	08 95       	ret
+
+000006fc <d_putstring>:
+
+void d_putstring(char *str){
+     6fc:	cf 93       	push	r28
+     6fe:	df 93       	push	r29
+     700:	00 d0       	rcall	.+0      	; 0x702 <d_putstring+0x6>
+     702:	cd b7       	in	r28, 0x3d	; 61
+     704:	de b7       	in	r29, 0x3e	; 62
+     706:	9a 83       	std	Y+2, r25	; 0x02
+     708:	89 83       	std	Y+1, r24	; 0x01
+	circ_push_byte( &drv_queue_inp, DISP_STR);
+     70a:	68 e0       	ldi	r22, 0x08	; 8
+     70c:	88 e0       	ldi	r24, 0x08	; 8
+     70e:	91 e0       	ldi	r25, 0x01	; 1
+     710:	0e 94 91 04 	call	0x922	; 0x922 <circ_push_byte>
+	circ_push( &drv_queue_inp, (u08*)&str, 2);
+     714:	42 e0       	ldi	r20, 0x02	; 2
+     716:	50 e0       	ldi	r21, 0x00	; 0
+     718:	be 01       	movw	r22, r28
+     71a:	6f 5f       	subi	r22, 0xFF	; 255
+     71c:	7f 4f       	sbci	r23, 0xFF	; 255
+     71e:	88 e0       	ldi	r24, 0x08	; 8
+     720:	91 e0       	ldi	r25, 0x01	; 1
+     722:	0e 94 4d 04 	call	0x89a	; 0x89a <circ_push>
+	SetTask(parser_d);
+     726:	8d ef       	ldi	r24, 0xFD	; 253
+     728:	91 e0       	ldi	r25, 0x01	; 1
+     72a:	0e 94 1a 07 	call	0xe34	; 0xe34 <SetTask>
+}
+     72e:	0f 90       	pop	r0
+     730:	0f 90       	pop	r0
+     732:	df 91       	pop	r29
+     734:	cf 91       	pop	r28
+     736:	08 95       	ret
+
+00000738 <d_putstringP>:
+
+void d_putstringP(char *str){
+     738:	cf 93       	push	r28
+     73a:	df 93       	push	r29
+     73c:	00 d0       	rcall	.+0      	; 0x73e <d_putstringP+0x6>
+     73e:	cd b7       	in	r28, 0x3d	; 61
+     740:	de b7       	in	r29, 0x3e	; 62
+     742:	9a 83       	std	Y+2, r25	; 0x02
+     744:	89 83       	std	Y+1, r24	; 0x01
+	circ_push_byte( &drv_queue_inp, DISP_STRP);
+     746:	60 e1       	ldi	r22, 0x10	; 16
+     748:	88 e0       	ldi	r24, 0x08	; 8
+     74a:	91 e0       	ldi	r25, 0x01	; 1
+     74c:	0e 94 91 04 	call	0x922	; 0x922 <circ_push_byte>
+	circ_push( &drv_queue_inp, (u08*)&str, 2);
+     750:	42 e0       	ldi	r20, 0x02	; 2
+     752:	50 e0       	ldi	r21, 0x00	; 0
+     754:	be 01       	movw	r22, r28
+     756:	6f 5f       	subi	r22, 0xFF	; 255
+     758:	7f 4f       	sbci	r23, 0xFF	; 255
+     75a:	88 e0       	ldi	r24, 0x08	; 8
+     75c:	91 e0       	ldi	r25, 0x01	; 1
+     75e:	0e 94 4d 04 	call	0x89a	; 0x89a <circ_push>
+	SetTask(parser_d);
+     762:	8d ef       	ldi	r24, 0xFD	; 253
+     764:	91 e0       	ldi	r25, 0x01	; 1
+     766:	0e 94 1a 07 	call	0xe34	; 0xe34 <SetTask>
+}
+     76a:	0f 90       	pop	r0
+     76c:	0f 90       	pop	r0
+     76e:	df 91       	pop	r29
+     770:	cf 91       	pop	r28
+     772:	08 95       	ret
+
+00000774 <__vector_1>:
+// притянули бит в 0 - прерывание
+// прочитали - прерывание снялось
+// отпустили бит в 1 - прерывание
+// прочитали - прерывание снялось
+//
+ISR(INT0_vect) {
+     774:	1f 92       	push	r1
+     776:	0f 92       	push	r0
+     778:	0f b6       	in	r0, 0x3f	; 63
+     77a:	0f 92       	push	r0
+     77c:	11 24       	eor	r1, r1
+     77e:	2f 93       	push	r18
+     780:	3f 93       	push	r19
+     782:	4f 93       	push	r20
+     784:	5f 93       	push	r21
+     786:	6f 93       	push	r22
+     788:	7f 93       	push	r23
+     78a:	8f 93       	push	r24
+     78c:	9f 93       	push	r25
+     78e:	af 93       	push	r26
+     790:	bf 93       	push	r27
+     792:	ef 93       	push	r30
+     794:	ff 93       	push	r31
+	SetTask(kbd_read);
+     796:	87 ed       	ldi	r24, 0xD7	; 215
+     798:	91 e0       	ldi	r25, 0x01	; 1
+     79a:	0e 94 1a 07 	call	0xe34	; 0xe34 <SetTask>
+}
+     79e:	ff 91       	pop	r31
+     7a0:	ef 91       	pop	r30
+     7a2:	bf 91       	pop	r27
+     7a4:	af 91       	pop	r26
+     7a6:	9f 91       	pop	r25
+     7a8:	8f 91       	pop	r24
+     7aa:	7f 91       	pop	r23
+     7ac:	6f 91       	pop	r22
+     7ae:	5f 91       	pop	r21
+     7b0:	4f 91       	pop	r20
+     7b2:	3f 91       	pop	r19
+     7b4:	2f 91       	pop	r18
+     7b6:	0f 90       	pop	r0
+     7b8:	0f be       	out	0x3f, r0	; 63
+     7ba:	0f 90       	pop	r0
+     7bc:	1f 90       	pop	r1
+     7be:	18 95       	reti
+
+000007c0 <d_test4>:
+void d_testZ() {
+	SetTask(d_test);
+}
+
+void d_test4() {
+	d_setcursor(5,1);
+     7c0:	61 e0       	ldi	r22, 0x01	; 1
+     7c2:	85 e0       	ldi	r24, 0x05	; 5
+     7c4:	0e 94 62 03 	call	0x6c4	; 0x6c4 <d_setcursor>
+	d_putstringP( PSTR("World!") );
+     7c8:	8a ef       	ldi	r24, 0xFA	; 250
+     7ca:	91 e0       	ldi	r25, 0x01	; 1
+     7cc:	0e 94 9c 03 	call	0x738	; 0x738 <d_putstringP>
+	SetTimerTask(d_test1, 1000);
+     7d0:	68 ee       	ldi	r22, 0xE8	; 232
+     7d2:	73 e0       	ldi	r23, 0x03	; 3
+     7d4:	84 e0       	ldi	r24, 0x04	; 4
+     7d6:	94 e0       	ldi	r25, 0x04	; 4
+     7d8:	0e 94 41 07 	call	0xe82	; 0xe82 <SetTimerTask>
+     7dc:	08 95       	ret
+
+000007de <d_test3>:
+}
+
+void d_test3() {
+	d_putstring("Hello ");
+     7de:	86 e1       	ldi	r24, 0x16	; 22
+     7e0:	91 e0       	ldi	r25, 0x01	; 1
+     7e2:	0e 94 7e 03 	call	0x6fc	; 0x6fc <d_putstring>
+	SetTimerTask(d_test4, 500);
+     7e6:	64 ef       	ldi	r22, 0xF4	; 244
+     7e8:	71 e0       	ldi	r23, 0x01	; 1
+     7ea:	80 ee       	ldi	r24, 0xE0	; 224
+     7ec:	93 e0       	ldi	r25, 0x03	; 3
+     7ee:	0e 94 41 07 	call	0xe82	; 0xe82 <SetTimerTask>
+     7f2:	08 95       	ret
+
+000007f4 <d_test2>:
+}
+
+void d_test2() {
+	d_putchar('2');
+     7f4:	82 e3       	ldi	r24, 0x32	; 50
+     7f6:	0e 94 6c 03 	call	0x6d8	; 0x6d8 <d_putchar>
+	SetTimerTask(d_test3, 500);
+     7fa:	64 ef       	ldi	r22, 0xF4	; 244
+     7fc:	71 e0       	ldi	r23, 0x01	; 1
+     7fe:	8f ee       	ldi	r24, 0xEF	; 239
+     800:	93 e0       	ldi	r25, 0x03	; 3
+     802:	0e 94 41 07 	call	0xe82	; 0xe82 <SetTimerTask>
+     806:	08 95       	ret
+
+00000808 <d_test1>:
+}
+
+void d_test1() {
+	d_command(0x01);			// clear, cursor = 0, shift=0, i/d=1
+     808:	81 e0       	ldi	r24, 0x01	; 1
+     80a:	0e 94 50 03 	call	0x6a0	; 0x6a0 <d_command>
+	SetTimerTask(d_test2, 500);
+     80e:	64 ef       	ldi	r22, 0xF4	; 244
+     810:	71 e0       	ldi	r23, 0x01	; 1
+     812:	8a ef       	ldi	r24, 0xFA	; 250
+     814:	93 e0       	ldi	r25, 0x03	; 3
+     816:	0e 94 41 07 	call	0xe82	; 0xe82 <SetTimerTask>
+     81a:	08 95       	ret
+
+0000081c <d_test>:
+}
+
+void d_test() {
+	PORTD &= ~(1<<PORTD5);	_delay_ms(0.2);	PORTD |= (1<<PORTD5);
+     81c:	5d 98       	cbi	0x0b, 5	; 11
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+     81e:	8f e1       	ldi	r24, 0x1F	; 31
+     820:	93 e0       	ldi	r25, 0x03	; 3
+     822:	01 97       	sbiw	r24, 0x01	; 1
+     824:	f1 f7       	brne	.-4      	; 0x822 <d_test+0x6>
+     826:	00 c0       	rjmp	.+0      	; 0x828 <d_test+0xc>
+     828:	00 00       	nop
+     82a:	5d 9a       	sbi	0x0b, 5	; 11
+	d_command(0x0E);			// display On, cursor On, blink Off
+     82c:	8e e0       	ldi	r24, 0x0E	; 14
+     82e:	0e 94 50 03 	call	0x6a0	; 0x6a0 <d_command>
+	SetTimerTask(d_test1, 500);
+     832:	64 ef       	ldi	r22, 0xF4	; 244
+     834:	71 e0       	ldi	r23, 0x01	; 1
+     836:	84 e0       	ldi	r24, 0x04	; 4
+     838:	94 e0       	ldi	r25, 0x04	; 4
+     83a:	0e 94 41 07 	call	0xe82	; 0xe82 <SetTimerTask>
+     83e:	08 95       	ret
+
+00000840 <main>:
+
+*/
 
 int main(void)
 {
 	wdt_enable(WDTO_4S);
- 36e:	28 e2       	ldi	r18, 0x28	; 40
- 370:	88 e1       	ldi	r24, 0x18	; 24
- 372:	90 e0       	ldi	r25, 0x00	; 0
- 374:	0f b6       	in	r0, 0x3f	; 63
- 376:	f8 94       	cli
- 378:	a8 95       	wdr
- 37a:	80 93 60 00 	sts	0x0060, r24
- 37e:	0f be       	out	0x3f, r0	; 63
- 380:	20 93 60 00 	sts	0x0060, r18
+     840:	28 e2       	ldi	r18, 0x28	; 40
+     842:	88 e1       	ldi	r24, 0x18	; 24
+     844:	90 e0       	ldi	r25, 0x00	; 0
+     846:	0f b6       	in	r0, 0x3f	; 63
+     848:	f8 94       	cli
+     84a:	a8 95       	wdr
+     84c:	80 93 60 00 	sts	0x0060, r24
+     850:	0f be       	out	0x3f, r0	; 63
+     852:	20 93 60 00 	sts	0x0060, r18
 	
 //	display_init();
 	
 	InitAll();
- 384:	0e 94 56 05 	call	0xaac	; 0xaac <InitAll>
+     856:	0e 94 4b 08 	call	0x1096	; 0x1096 <InitAll>
+	Init_i2c();
+     85a:	0e 94 ea 06 	call	0xdd4	; 0xdd4 <Init_i2c>
 //	uart_init();
-//	i2c_init();
+
+	d_init();
+     85e:	0e 94 47 03 	call	0x68e	; 0x68e <d_init>
 
 
 	InitRTOS();
- 388:	0e 94 67 04 	call	0x8ce	; 0x8ce <InitRTOS>
+     862:	0e 94 f7 06 	call	0xdee	; 0xdee <InitRTOS>
 	RunRTOS();	// разрешает прерывания
- 38c:	0e 94 44 05 	call	0xa88	; 0xa88 <RunRTOS>
-//	SetTask(display_init);
+     866:	0e 94 39 08 	call	0x1072	; 0x1072 <RunRTOS>
+
+//	SetTask(new_req);
 //	SetTask(i2c_test);
+	SetTask(d_test);
+     86a:	8e e0       	ldi	r24, 0x0E	; 14
+     86c:	94 e0       	ldi	r25, 0x04	; 4
+     86e:	0e 94 1a 07 	call	0xe34	; 0xe34 <SetTask>
+//	SetTask(i_test);
+//	SetTask(i_testA);
+	
+	while(1)
+	{
+		wdt_reset();
+     872:	a8 95       	wdr
 
-while(1)
-{
-	wdt_reset();
- 390:	a8 95       	wdr
-	TaskManager();
- 392:	0e 94 b1 04 	call	0x962	; 0x962 <TaskManager>
- 396:	fc cf       	rjmp	.-8      	; 0x390 <main+0x22>
+		
+		TaskManager();
+     874:	0e 94 a6 07 	call	0xf4c	; 0xf4c <TaskManager>
+     878:	fc cf       	rjmp	.-8      	; 0x872 <main+0x32>
 
-00000398 <new_packet>:
+0000087a <new_packet>:
 }
 
 void new_packet(){
 	o22_header_t *header = (o22_header_t *)rx_buff;
 
 	switch (header->cmd) {
- 398:	80 91 72 01 	lds	r24, 0x0172
- 39c:	81 11       	cpse	r24, r1
- 39e:	03 c0       	rjmp	.+6      	; 0x3a6 <new_packet+0xe>
+     87a:	80 91 92 01 	lds	r24, 0x0192
+     87e:	81 11       	cpse	r24, r1
+     880:	03 c0       	rjmp	.+6      	; 0x888 <new_packet+0xe>
 		case CMD_COMMON_INFO:
 			header->address=1;
- 3a0:	81 e0       	ldi	r24, 0x01	; 1
- 3a2:	80 93 70 01 	sts	0x0170, r24
- 3a6:	08 95       	ret
+     882:	81 e0       	ldi	r24, 0x01	; 1
+     884:	80 93 90 01 	sts	0x0190, r24
+     888:	08 95       	ret
 
-000003a8 <__vector_24>:
- 3a8:	1f 92       	push	r1
- 3aa:	0f 92       	push	r0
- 3ac:	00 90 5f 00 	lds	r0, 0x005F
- 3b0:	0f 92       	push	r0
- 3b2:	11 24       	eor	r1, r1
- 3b4:	2f 93       	push	r18
- 3b6:	3f 93       	push	r19
- 3b8:	4f 93       	push	r20
- 3ba:	5f 93       	push	r21
- 3bc:	6f 93       	push	r22
- 3be:	7f 93       	push	r23
- 3c0:	8f 93       	push	r24
- 3c2:	9f 93       	push	r25
- 3c4:	af 93       	push	r26
- 3c6:	bf 93       	push	r27
- 3c8:	ef 93       	push	r30
- 3ca:	ff 93       	push	r31
- 3cc:	cf 93       	push	r28
- 3ce:	df 93       	push	r29
- 3d0:	cd b7       	in	r28, 0x3d	; 61
- 3d2:	de b7       	in	r29, 0x3e	; 62
- 3d4:	89 eb       	ldi	r24, 0xB9	; 185
- 3d6:	90 e0       	ldi	r25, 0x00	; 0
- 3d8:	fc 01       	movw	r30, r24
- 3da:	80 81       	ld	r24, Z
- 3dc:	88 2f       	mov	r24, r24
- 3de:	90 e0       	ldi	r25, 0x00	; 0
- 3e0:	88 7f       	andi	r24, 0xF8	; 248
- 3e2:	99 27       	eor	r25, r25
- 3e4:	aa 27       	eor	r26, r26
- 3e6:	97 fd       	sbrc	r25, 7
- 3e8:	a0 95       	com	r26
- 3ea:	ba 2f       	mov	r27, r26
- 3ec:	40 e0       	ldi	r20, 0x00	; 0
- 3ee:	50 e0       	ldi	r21, 0x00	; 0
- 3f0:	28 ec       	ldi	r18, 0xC8	; 200
- 3f2:	30 e0       	ldi	r19, 0x00	; 0
- 3f4:	84 1b       	sub	r24, r20
- 3f6:	95 0b       	sbc	r25, r21
- 3f8:	28 17       	cp	r18, r24
- 3fa:	39 07       	cpc	r19, r25
- 3fc:	08 f4       	brcc	.+2      	; 0x400 <__vector_24+0x58>
- 3fe:	4a c2       	rjmp	.+1172   	; 0x894 <__vector_24+0x4ec>
- 400:	8c 5c       	subi	r24, 0xCC	; 204
- 402:	9f 4f       	sbci	r25, 0xFF	; 255
- 404:	fc 01       	movw	r30, r24
- 406:	0c 94 73 05 	jmp	0xae6	; 0xae6 <__tablejump2__>
- 40a:	80 91 d9 01 	lds	r24, 0x01D9
- 40e:	81 60       	ori	r24, 0x01	; 1
- 410:	80 93 d9 01 	sts	0x01D9, r24
- 414:	8c eb       	ldi	r24, 0xBC	; 188
- 416:	90 e0       	ldi	r25, 0x00	; 0
- 418:	25 ed       	ldi	r18, 0xD5	; 213
- 41a:	fc 01       	movw	r30, r24
- 41c:	20 83       	st	Z, r18
- 41e:	80 91 04 01 	lds	r24, 0x0104
- 422:	90 91 05 01 	lds	r25, 0x0105
- 426:	fc 01       	movw	r30, r24
- 428:	09 95       	icall
- 42a:	35 c2       	rjmp	.+1130   	; 0x896 <__vector_24+0x4ee>
- 42c:	80 91 d9 01 	lds	r24, 0x01D9
- 430:	88 2f       	mov	r24, r24
- 432:	90 e0       	ldi	r25, 0x00	; 0
- 434:	8c 70       	andi	r24, 0x0C	; 12
- 436:	99 27       	eor	r25, r25
- 438:	00 97       	sbiw	r24, 0x00	; 0
- 43a:	31 f4       	brne	.+12     	; 0x448 <__vector_24+0xa0>
- 43c:	80 91 d0 01 	lds	r24, 0x01D0
- 440:	81 60       	ori	r24, 0x01	; 1
- 442:	80 93 d0 01 	sts	0x01D0, r24
- 446:	05 c0       	rjmp	.+10     	; 0x452 <__vector_24+0xaa>
- 448:	80 91 d0 01 	lds	r24, 0x01D0
- 44c:	8e 7f       	andi	r24, 0xFE	; 254
- 44e:	80 93 d0 01 	sts	0x01D0, r24
- 452:	8b eb       	ldi	r24, 0xBB	; 187
- 454:	90 e0       	ldi	r25, 0x00	; 0
- 456:	20 91 d0 01 	lds	r18, 0x01D0
- 45a:	fc 01       	movw	r30, r24
- 45c:	20 83       	st	Z, r18
- 45e:	8c eb       	ldi	r24, 0xBC	; 188
- 460:	90 e0       	ldi	r25, 0x00	; 0
- 462:	25 ec       	ldi	r18, 0xC5	; 197
- 464:	fc 01       	movw	r30, r24
- 466:	20 83       	st	Z, r18
- 468:	16 c2       	rjmp	.+1068   	; 0x896 <__vector_24+0x4ee>
- 46a:	80 91 d9 01 	lds	r24, 0x01D9
- 46e:	88 2f       	mov	r24, r24
- 470:	90 e0       	ldi	r25, 0x00	; 0
- 472:	8c 70       	andi	r24, 0x0C	; 12
- 474:	99 27       	eor	r25, r25
- 476:	88 30       	cpi	r24, 0x08	; 8
- 478:	91 05       	cpc	r25, r1
- 47a:	31 f4       	brne	.+12     	; 0x488 <__vector_24+0xe0>
- 47c:	80 91 d0 01 	lds	r24, 0x01D0
- 480:	81 60       	ori	r24, 0x01	; 1
- 482:	80 93 d0 01 	sts	0x01D0, r24
- 486:	05 c0       	rjmp	.+10     	; 0x492 <__vector_24+0xea>
- 488:	80 91 d0 01 	lds	r24, 0x01D0
- 48c:	8e 7f       	andi	r24, 0xFE	; 254
- 48e:	80 93 d0 01 	sts	0x01D0, r24
- 492:	8b eb       	ldi	r24, 0xBB	; 187
- 494:	90 e0       	ldi	r25, 0x00	; 0
- 496:	20 91 d0 01 	lds	r18, 0x01D0
- 49a:	fc 01       	movw	r30, r24
- 49c:	20 83       	st	Z, r18
- 49e:	8c eb       	ldi	r24, 0xBC	; 188
- 4a0:	90 e0       	ldi	r25, 0x00	; 0
- 4a2:	25 ec       	ldi	r18, 0xC5	; 197
- 4a4:	fc 01       	movw	r30, r24
- 4a6:	20 83       	st	Z, r18
- 4a8:	f6 c1       	rjmp	.+1004   	; 0x896 <__vector_24+0x4ee>
- 4aa:	80 91 d9 01 	lds	r24, 0x01D9
- 4ae:	88 2f       	mov	r24, r24
- 4b0:	90 e0       	ldi	r25, 0x00	; 0
- 4b2:	8c 70       	andi	r24, 0x0C	; 12
- 4b4:	99 27       	eor	r25, r25
- 4b6:	84 30       	cpi	r24, 0x04	; 4
- 4b8:	91 05       	cpc	r25, r1
- 4ba:	b1 f4       	brne	.+44     	; 0x4e8 <__vector_24+0x140>
- 4bc:	8b eb       	ldi	r24, 0xBB	; 187
- 4be:	90 e0       	ldi	r25, 0x00	; 0
- 4c0:	20 91 cc 01 	lds	r18, 0x01CC
- 4c4:	22 2f       	mov	r18, r18
- 4c6:	30 e0       	ldi	r19, 0x00	; 0
- 4c8:	23 53       	subi	r18, 0x33	; 51
- 4ca:	3e 4f       	sbci	r19, 0xFE	; 254
- 4cc:	f9 01       	movw	r30, r18
- 4ce:	20 81       	ld	r18, Z
- 4d0:	fc 01       	movw	r30, r24
- 4d2:	20 83       	st	Z, r18
- 4d4:	80 91 cc 01 	lds	r24, 0x01CC
- 4d8:	8f 5f       	subi	r24, 0xFF	; 255
- 4da:	80 93 cc 01 	sts	0x01CC, r24
- 4de:	8c eb       	ldi	r24, 0xBC	; 188
- 4e0:	90 e0       	ldi	r25, 0x00	; 0
- 4e2:	25 ec       	ldi	r18, 0xC5	; 197
- 4e4:	fc 01       	movw	r30, r24
- 4e6:	20 83       	st	Z, r18
- 4e8:	80 91 d9 01 	lds	r24, 0x01D9
- 4ec:	88 2f       	mov	r24, r24
- 4ee:	90 e0       	ldi	r25, 0x00	; 0
- 4f0:	8c 70       	andi	r24, 0x0C	; 12
- 4f2:	99 27       	eor	r25, r25
- 4f4:	88 30       	cpi	r24, 0x08	; 8
- 4f6:	91 05       	cpc	r25, r1
- 4f8:	b9 f4       	brne	.+46     	; 0x528 <__vector_24+0x180>
- 4fa:	8b eb       	ldi	r24, 0xBB	; 187
- 4fc:	90 e0       	ldi	r25, 0x00	; 0
- 4fe:	20 91 d5 01 	lds	r18, 0x01D5
- 502:	22 2f       	mov	r18, r18
- 504:	30 e0       	ldi	r19, 0x00	; 0
- 506:	2d 52       	subi	r18, 0x2D	; 45
- 508:	3e 4f       	sbci	r19, 0xFE	; 254
- 50a:	f9 01       	movw	r30, r18
- 50c:	20 81       	ld	r18, Z
- 50e:	fc 01       	movw	r30, r24
- 510:	20 83       	st	Z, r18
- 512:	80 91 d5 01 	lds	r24, 0x01D5
- 516:	8f 5f       	subi	r24, 0xFF	; 255
- 518:	80 93 d5 01 	sts	0x01D5, r24
- 51c:	8c eb       	ldi	r24, 0xBC	; 188
- 51e:	90 e0       	ldi	r25, 0x00	; 0
- 520:	25 ec       	ldi	r18, 0xC5	; 197
- 522:	fc 01       	movw	r30, r24
- 524:	20 83       	st	Z, r18
- 526:	b7 c1       	rjmp	.+878    	; 0x896 <__vector_24+0x4ee>
- 528:	b6 c1       	rjmp	.+876    	; 0x896 <__vector_24+0x4ee>
- 52a:	80 91 d9 01 	lds	r24, 0x01D9
- 52e:	80 61       	ori	r24, 0x10	; 16
- 530:	80 93 d9 01 	sts	0x01D9, r24
- 534:	8c eb       	ldi	r24, 0xBC	; 188
- 536:	90 e0       	ldi	r25, 0x00	; 0
- 538:	25 ed       	ldi	r18, 0xD5	; 213
- 53a:	fc 01       	movw	r30, r24
- 53c:	20 83       	st	Z, r18
- 53e:	80 91 04 01 	lds	r24, 0x0104
- 542:	90 91 05 01 	lds	r25, 0x0105
- 546:	fc 01       	movw	r30, r24
- 548:	09 95       	icall
- 54a:	a5 c1       	rjmp	.+842    	; 0x896 <__vector_24+0x4ee>
- 54c:	80 91 d9 01 	lds	r24, 0x01D9
- 550:	88 2f       	mov	r24, r24
- 552:	90 e0       	ldi	r25, 0x00	; 0
- 554:	8c 70       	andi	r24, 0x0C	; 12
- 556:	99 27       	eor	r25, r25
- 558:	84 30       	cpi	r24, 0x04	; 4
- 55a:	91 05       	cpc	r25, r1
- 55c:	41 f5       	brne	.+80     	; 0x5ae <__vector_24+0x206>
- 55e:	90 91 cc 01 	lds	r25, 0x01CC
- 562:	80 91 d6 01 	lds	r24, 0x01D6
- 566:	98 17       	cp	r25, r24
- 568:	61 f4       	brne	.+24     	; 0x582 <__vector_24+0x1da>
- 56a:	8c eb       	ldi	r24, 0xBC	; 188
- 56c:	90 e0       	ldi	r25, 0x00	; 0
- 56e:	25 ed       	ldi	r18, 0xD5	; 213
- 570:	fc 01       	movw	r30, r24
- 572:	20 83       	st	Z, r18
- 574:	80 91 00 01 	lds	r24, 0x0100
- 578:	90 91 01 01 	lds	r25, 0x0101
- 57c:	fc 01       	movw	r30, r24
- 57e:	09 95       	icall
- 580:	16 c0       	rjmp	.+44     	; 0x5ae <__vector_24+0x206>
- 582:	8b eb       	ldi	r24, 0xBB	; 187
- 584:	90 e0       	ldi	r25, 0x00	; 0
- 586:	20 91 cc 01 	lds	r18, 0x01CC
- 58a:	22 2f       	mov	r18, r18
- 58c:	30 e0       	ldi	r19, 0x00	; 0
- 58e:	23 53       	subi	r18, 0x33	; 51
- 590:	3e 4f       	sbci	r19, 0xFE	; 254
- 592:	f9 01       	movw	r30, r18
- 594:	20 81       	ld	r18, Z
- 596:	fc 01       	movw	r30, r24
- 598:	20 83       	st	Z, r18
- 59a:	80 91 cc 01 	lds	r24, 0x01CC
- 59e:	8f 5f       	subi	r24, 0xFF	; 255
- 5a0:	80 93 cc 01 	sts	0x01CC, r24
- 5a4:	8c eb       	ldi	r24, 0xBC	; 188
- 5a6:	90 e0       	ldi	r25, 0x00	; 0
- 5a8:	25 ec       	ldi	r18, 0xC5	; 197
- 5aa:	fc 01       	movw	r30, r24
- 5ac:	20 83       	st	Z, r18
- 5ae:	80 91 d9 01 	lds	r24, 0x01D9
- 5b2:	88 2f       	mov	r24, r24
- 5b4:	90 e0       	ldi	r25, 0x00	; 0
- 5b6:	8c 70       	andi	r24, 0x0C	; 12
- 5b8:	99 27       	eor	r25, r25
- 5ba:	88 30       	cpi	r24, 0x08	; 8
- 5bc:	91 05       	cpc	r25, r1
- 5be:	19 f5       	brne	.+70     	; 0x606 <__vector_24+0x25e>
- 5c0:	90 91 d5 01 	lds	r25, 0x01D5
- 5c4:	80 91 d2 01 	lds	r24, 0x01D2
- 5c8:	98 17       	cp	r25, r24
- 5ca:	31 f4       	brne	.+12     	; 0x5d8 <__vector_24+0x230>
- 5cc:	8c eb       	ldi	r24, 0xBC	; 188
- 5ce:	90 e0       	ldi	r25, 0x00	; 0
- 5d0:	25 ee       	ldi	r18, 0xE5	; 229
- 5d2:	fc 01       	movw	r30, r24
- 5d4:	20 83       	st	Z, r18
- 5d6:	17 c0       	rjmp	.+46     	; 0x606 <__vector_24+0x25e>
- 5d8:	8b eb       	ldi	r24, 0xBB	; 187
- 5da:	90 e0       	ldi	r25, 0x00	; 0
- 5dc:	20 91 d5 01 	lds	r18, 0x01D5
- 5e0:	22 2f       	mov	r18, r18
- 5e2:	30 e0       	ldi	r19, 0x00	; 0
- 5e4:	2d 52       	subi	r18, 0x2D	; 45
- 5e6:	3e 4f       	sbci	r19, 0xFE	; 254
- 5e8:	f9 01       	movw	r30, r18
- 5ea:	20 81       	ld	r18, Z
- 5ec:	fc 01       	movw	r30, r24
- 5ee:	20 83       	st	Z, r18
- 5f0:	80 91 d5 01 	lds	r24, 0x01D5
- 5f4:	8f 5f       	subi	r24, 0xFF	; 255
- 5f6:	80 93 d5 01 	sts	0x01D5, r24
- 5fa:	8c eb       	ldi	r24, 0xBC	; 188
- 5fc:	90 e0       	ldi	r25, 0x00	; 0
- 5fe:	25 ec       	ldi	r18, 0xC5	; 197
- 600:	fc 01       	movw	r30, r24
- 602:	20 83       	st	Z, r18
- 604:	48 c1       	rjmp	.+656    	; 0x896 <__vector_24+0x4ee>
- 606:	47 c1       	rjmp	.+654    	; 0x896 <__vector_24+0x4ee>
- 608:	80 91 d9 01 	lds	r24, 0x01D9
- 60c:	82 60       	ori	r24, 0x02	; 2
- 60e:	80 93 d9 01 	sts	0x01D9, r24
- 612:	8c eb       	ldi	r24, 0xBC	; 188
- 614:	90 e0       	ldi	r25, 0x00	; 0
- 616:	25 ed       	ldi	r18, 0xD5	; 213
- 618:	fc 01       	movw	r30, r24
- 61a:	20 83       	st	Z, r18
- 61c:	80 91 00 01 	lds	r24, 0x0100
- 620:	90 91 01 01 	lds	r25, 0x0101
- 624:	fc 01       	movw	r30, r24
- 626:	09 95       	icall
- 628:	36 c1       	rjmp	.+620    	; 0x896 <__vector_24+0x4ee>
- 62a:	80 91 d9 01 	lds	r24, 0x01D9
- 62e:	80 62       	ori	r24, 0x20	; 32
- 630:	80 93 d9 01 	sts	0x01D9, r24
- 634:	10 92 cc 01 	sts	0x01CC, r1
- 638:	10 92 d5 01 	sts	0x01D5, r1
- 63c:	8c eb       	ldi	r24, 0xBC	; 188
- 63e:	90 e0       	ldi	r25, 0x00	; 0
- 640:	25 ee       	ldi	r18, 0xE5	; 229
- 642:	fc 01       	movw	r30, r24
- 644:	20 83       	st	Z, r18
- 646:	27 c1       	rjmp	.+590    	; 0x896 <__vector_24+0x4ee>
- 648:	80 91 cc 01 	lds	r24, 0x01CC
- 64c:	88 2f       	mov	r24, r24
- 64e:	90 e0       	ldi	r25, 0x00	; 0
- 650:	9c 01       	movw	r18, r24
- 652:	2f 5f       	subi	r18, 0xFF	; 255
- 654:	3f 4f       	sbci	r19, 0xFF	; 255
- 656:	80 91 d6 01 	lds	r24, 0x01D6
- 65a:	88 2f       	mov	r24, r24
- 65c:	90 e0       	ldi	r25, 0x00	; 0
- 65e:	28 17       	cp	r18, r24
- 660:	39 07       	cpc	r19, r25
- 662:	31 f4       	brne	.+12     	; 0x670 <__vector_24+0x2c8>
- 664:	8c eb       	ldi	r24, 0xBC	; 188
- 666:	90 e0       	ldi	r25, 0x00	; 0
- 668:	25 e8       	ldi	r18, 0x85	; 133
- 66a:	fc 01       	movw	r30, r24
- 66c:	20 83       	st	Z, r18
- 66e:	13 c1       	rjmp	.+550    	; 0x896 <__vector_24+0x4ee>
- 670:	8c eb       	ldi	r24, 0xBC	; 188
- 672:	90 e0       	ldi	r25, 0x00	; 0
- 674:	25 ec       	ldi	r18, 0xC5	; 197
- 676:	fc 01       	movw	r30, r24
- 678:	20 83       	st	Z, r18
- 67a:	0d c1       	rjmp	.+538    	; 0x896 <__vector_24+0x4ee>
- 67c:	80 91 d9 01 	lds	r24, 0x01D9
- 680:	80 61       	ori	r24, 0x10	; 16
- 682:	80 93 d9 01 	sts	0x01D9, r24
- 686:	8c eb       	ldi	r24, 0xBC	; 188
- 688:	90 e0       	ldi	r25, 0x00	; 0
- 68a:	25 ed       	ldi	r18, 0xD5	; 213
- 68c:	fc 01       	movw	r30, r24
- 68e:	20 83       	st	Z, r18
- 690:	80 91 04 01 	lds	r24, 0x0104
- 694:	90 91 05 01 	lds	r25, 0x0105
- 698:	fc 01       	movw	r30, r24
- 69a:	09 95       	icall
- 69c:	fc c0       	rjmp	.+504    	; 0x896 <__vector_24+0x4ee>
- 69e:	80 91 cc 01 	lds	r24, 0x01CC
- 6a2:	88 2f       	mov	r24, r24
- 6a4:	90 e0       	ldi	r25, 0x00	; 0
- 6a6:	2b eb       	ldi	r18, 0xBB	; 187
- 6a8:	30 e0       	ldi	r19, 0x00	; 0
- 6aa:	f9 01       	movw	r30, r18
- 6ac:	20 81       	ld	r18, Z
- 6ae:	83 53       	subi	r24, 0x33	; 51
- 6b0:	9e 4f       	sbci	r25, 0xFE	; 254
- 6b2:	fc 01       	movw	r30, r24
- 6b4:	20 83       	st	Z, r18
- 6b6:	80 91 cc 01 	lds	r24, 0x01CC
- 6ba:	8f 5f       	subi	r24, 0xFF	; 255
- 6bc:	80 93 cc 01 	sts	0x01CC, r24
- 6c0:	80 91 cc 01 	lds	r24, 0x01CC
- 6c4:	88 2f       	mov	r24, r24
- 6c6:	90 e0       	ldi	r25, 0x00	; 0
- 6c8:	9c 01       	movw	r18, r24
- 6ca:	2f 5f       	subi	r18, 0xFF	; 255
- 6cc:	3f 4f       	sbci	r19, 0xFF	; 255
- 6ce:	80 91 d6 01 	lds	r24, 0x01D6
- 6d2:	88 2f       	mov	r24, r24
- 6d4:	90 e0       	ldi	r25, 0x00	; 0
- 6d6:	28 17       	cp	r18, r24
- 6d8:	39 07       	cpc	r19, r25
- 6da:	31 f4       	brne	.+12     	; 0x6e8 <__vector_24+0x340>
- 6dc:	8c eb       	ldi	r24, 0xBC	; 188
- 6de:	90 e0       	ldi	r25, 0x00	; 0
- 6e0:	25 e8       	ldi	r18, 0x85	; 133
- 6e2:	fc 01       	movw	r30, r24
- 6e4:	20 83       	st	Z, r18
- 6e6:	d7 c0       	rjmp	.+430    	; 0x896 <__vector_24+0x4ee>
- 6e8:	8c eb       	ldi	r24, 0xBC	; 188
- 6ea:	90 e0       	ldi	r25, 0x00	; 0
- 6ec:	25 ec       	ldi	r18, 0xC5	; 197
- 6ee:	fc 01       	movw	r30, r24
- 6f0:	20 83       	st	Z, r18
- 6f2:	d1 c0       	rjmp	.+418    	; 0x896 <__vector_24+0x4ee>
- 6f4:	80 91 cc 01 	lds	r24, 0x01CC
- 6f8:	88 2f       	mov	r24, r24
- 6fa:	90 e0       	ldi	r25, 0x00	; 0
- 6fc:	2b eb       	ldi	r18, 0xBB	; 187
- 6fe:	30 e0       	ldi	r19, 0x00	; 0
- 700:	f9 01       	movw	r30, r18
- 702:	20 81       	ld	r18, Z
- 704:	83 53       	subi	r24, 0x33	; 51
- 706:	9e 4f       	sbci	r25, 0xFE	; 254
- 708:	fc 01       	movw	r30, r24
- 70a:	20 83       	st	Z, r18
- 70c:	8c eb       	ldi	r24, 0xBC	; 188
- 70e:	90 e0       	ldi	r25, 0x00	; 0
- 710:	25 ed       	ldi	r18, 0xD5	; 213
- 712:	fc 01       	movw	r30, r24
- 714:	20 83       	st	Z, r18
- 716:	80 91 00 01 	lds	r24, 0x0100
- 71a:	90 91 01 01 	lds	r25, 0x0101
- 71e:	fc 01       	movw	r30, r24
- 720:	09 95       	icall
- 722:	b9 c0       	rjmp	.+370    	; 0x896 <__vector_24+0x4ee>
- 724:	80 91 d9 01 	lds	r24, 0x01D9
- 728:	80 6a       	ori	r24, 0xA0	; 160
- 72a:	80 93 d9 01 	sts	0x01D9, r24
- 72e:	10 92 cc 01 	sts	0x01CC, r1
- 732:	10 92 d5 01 	sts	0x01D5, r1
- 736:	80 91 d9 01 	lds	r24, 0x01D9
- 73a:	80 64       	ori	r24, 0x40	; 64
- 73c:	80 93 d9 01 	sts	0x01D9, r24
- 740:	10 92 d7 01 	sts	0x01D7, r1
- 744:	8c eb       	ldi	r24, 0xBC	; 188
- 746:	90 e0       	ldi	r25, 0x00	; 0
- 748:	25 e8       	ldi	r18, 0x85	; 133
- 74a:	fc 01       	movw	r30, r24
- 74c:	20 83       	st	Z, r18
- 74e:	a3 c0       	rjmp	.+326    	; 0x896 <__vector_24+0x4ee>
- 750:	80 91 d7 01 	lds	r24, 0x01D7
- 754:	88 2f       	mov	r24, r24
- 756:	90 e0       	ldi	r25, 0x00	; 0
- 758:	2b eb       	ldi	r18, 0xBB	; 187
- 75a:	30 e0       	ldi	r19, 0x00	; 0
- 75c:	f9 01       	movw	r30, r18
- 75e:	20 81       	ld	r18, Z
- 760:	88 52       	subi	r24, 0x28	; 40
- 762:	9e 4f       	sbci	r25, 0xFE	; 254
- 764:	fc 01       	movw	r30, r24
- 766:	20 83       	st	Z, r18
- 768:	80 91 d7 01 	lds	r24, 0x01D7
- 76c:	8f 5f       	subi	r24, 0xFF	; 255
- 76e:	80 93 d7 01 	sts	0x01D7, r24
- 772:	80 91 d7 01 	lds	r24, 0x01D7
- 776:	88 23       	and	r24, r24
- 778:	31 f4       	brne	.+12     	; 0x786 <__vector_24+0x3de>
- 77a:	8c eb       	ldi	r24, 0xBC	; 188
- 77c:	90 e0       	ldi	r25, 0x00	; 0
- 77e:	25 e8       	ldi	r18, 0x85	; 133
- 780:	fc 01       	movw	r30, r24
- 782:	20 83       	st	Z, r18
- 784:	88 c0       	rjmp	.+272    	; 0x896 <__vector_24+0x4ee>
- 786:	8c eb       	ldi	r24, 0xBC	; 188
- 788:	90 e0       	ldi	r25, 0x00	; 0
- 78a:	25 ec       	ldi	r18, 0xC5	; 197
- 78c:	fc 01       	movw	r30, r24
- 78e:	20 83       	st	Z, r18
- 790:	82 c0       	rjmp	.+260    	; 0x896 <__vector_24+0x4ee>
- 792:	80 91 d7 01 	lds	r24, 0x01D7
- 796:	88 2f       	mov	r24, r24
- 798:	90 e0       	ldi	r25, 0x00	; 0
- 79a:	2b eb       	ldi	r18, 0xBB	; 187
- 79c:	30 e0       	ldi	r19, 0x00	; 0
- 79e:	f9 01       	movw	r30, r18
- 7a0:	20 81       	ld	r18, Z
- 7a2:	88 52       	subi	r24, 0x28	; 40
- 7a4:	9e 4f       	sbci	r25, 0xFE	; 254
- 7a6:	fc 01       	movw	r30, r24
- 7a8:	20 83       	st	Z, r18
- 7aa:	80 91 d9 01 	lds	r24, 0x01D9
- 7ae:	88 23       	and	r24, r24
- 7b0:	34 f4       	brge	.+12     	; 0x7be <__vector_24+0x416>
- 7b2:	8c eb       	ldi	r24, 0xBC	; 188
- 7b4:	90 e0       	ldi	r25, 0x00	; 0
- 7b6:	25 ee       	ldi	r18, 0xE5	; 229
- 7b8:	fc 01       	movw	r30, r24
- 7ba:	20 83       	st	Z, r18
- 7bc:	05 c0       	rjmp	.+10     	; 0x7c8 <__vector_24+0x420>
- 7be:	8c eb       	ldi	r24, 0xBC	; 188
- 7c0:	90 e0       	ldi	r25, 0x00	; 0
- 7c2:	25 ec       	ldi	r18, 0xC5	; 197
- 7c4:	fc 01       	movw	r30, r24
- 7c6:	20 83       	st	Z, r18
- 7c8:	80 91 02 01 	lds	r24, 0x0102
- 7cc:	90 91 03 01 	lds	r25, 0x0103
- 7d0:	fc 01       	movw	r30, r24
- 7d2:	09 95       	icall
- 7d4:	60 c0       	rjmp	.+192    	; 0x896 <__vector_24+0x4ee>
- 7d6:	8c eb       	ldi	r24, 0xBC	; 188
- 7d8:	90 e0       	ldi	r25, 0x00	; 0
- 7da:	25 ec       	ldi	r18, 0xC5	; 197
- 7dc:	fc 01       	movw	r30, r24
- 7de:	20 83       	st	Z, r18
- 7e0:	5a c0       	rjmp	.+180    	; 0x896 <__vector_24+0x4ee>
- 7e2:	80 91 d9 01 	lds	r24, 0x01D9
- 7e6:	80 6a       	ori	r24, 0xA0	; 160
- 7e8:	80 93 d9 01 	sts	0x01D9, r24
- 7ec:	10 92 cc 01 	sts	0x01CC, r1
- 7f0:	10 92 d5 01 	sts	0x01D5, r1
- 7f4:	10 92 d7 01 	sts	0x01D7, r1
- 7f8:	8b eb       	ldi	r24, 0xBB	; 187
- 7fa:	90 e0       	ldi	r25, 0x00	; 0
- 7fc:	20 91 d7 01 	lds	r18, 0x01D7
- 800:	22 2f       	mov	r18, r18
- 802:	30 e0       	ldi	r19, 0x00	; 0
- 804:	2f 52       	subi	r18, 0x2F	; 47
- 806:	3e 4f       	sbci	r19, 0xFE	; 254
- 808:	f9 01       	movw	r30, r18
- 80a:	20 81       	ld	r18, Z
- 80c:	fc 01       	movw	r30, r24
- 80e:	20 83       	st	Z, r18
- 810:	8c eb       	ldi	r24, 0xBC	; 188
- 812:	90 e0       	ldi	r25, 0x00	; 0
- 814:	25 e8       	ldi	r18, 0x85	; 133
- 816:	fc 01       	movw	r30, r24
- 818:	20 83       	st	Z, r18
- 81a:	3d c0       	rjmp	.+122    	; 0x896 <__vector_24+0x4ee>
- 81c:	80 91 d7 01 	lds	r24, 0x01D7
- 820:	8f 5f       	subi	r24, 0xFF	; 255
- 822:	80 93 d7 01 	sts	0x01D7, r24
- 826:	8b eb       	ldi	r24, 0xBB	; 187
- 828:	90 e0       	ldi	r25, 0x00	; 0
- 82a:	20 91 d7 01 	lds	r18, 0x01D7
- 82e:	22 2f       	mov	r18, r18
- 830:	30 e0       	ldi	r19, 0x00	; 0
- 832:	2f 52       	subi	r18, 0x2F	; 47
- 834:	3e 4f       	sbci	r19, 0xFE	; 254
- 836:	f9 01       	movw	r30, r18
- 838:	20 81       	ld	r18, Z
- 83a:	fc 01       	movw	r30, r24
- 83c:	20 83       	st	Z, r18
- 83e:	80 91 d7 01 	lds	r24, 0x01D7
- 842:	88 23       	and	r24, r24
- 844:	31 f4       	brne	.+12     	; 0x852 <__vector_24+0x4aa>
- 846:	8c eb       	ldi	r24, 0xBC	; 188
- 848:	90 e0       	ldi	r25, 0x00	; 0
- 84a:	25 e8       	ldi	r18, 0x85	; 133
- 84c:	fc 01       	movw	r30, r24
- 84e:	20 83       	st	Z, r18
- 850:	22 c0       	rjmp	.+68     	; 0x896 <__vector_24+0x4ee>
- 852:	8c eb       	ldi	r24, 0xBC	; 188
- 854:	90 e0       	ldi	r25, 0x00	; 0
- 856:	21 ec       	ldi	r18, 0xC1	; 193
- 858:	fc 01       	movw	r30, r24
- 85a:	20 83       	st	Z, r18
- 85c:	1c c0       	rjmp	.+56     	; 0x896 <__vector_24+0x4ee>
- 85e:	80 91 d9 01 	lds	r24, 0x01D9
- 862:	88 23       	and	r24, r24
- 864:	5c f4       	brge	.+22     	; 0x87c <__vector_24+0x4d4>
- 866:	80 91 d9 01 	lds	r24, 0x01D9
- 86a:	8f 77       	andi	r24, 0x7F	; 127
- 86c:	80 93 d9 01 	sts	0x01D9, r24
- 870:	8c eb       	ldi	r24, 0xBC	; 188
- 872:	90 e0       	ldi	r25, 0x00	; 0
- 874:	25 ee       	ldi	r18, 0xE5	; 229
- 876:	fc 01       	movw	r30, r24
- 878:	20 83       	st	Z, r18
- 87a:	05 c0       	rjmp	.+10     	; 0x886 <__vector_24+0x4de>
- 87c:	8c eb       	ldi	r24, 0xBC	; 188
- 87e:	90 e0       	ldi	r25, 0x00	; 0
- 880:	25 ec       	ldi	r18, 0xC5	; 197
- 882:	fc 01       	movw	r30, r24
- 884:	20 83       	st	Z, r18
- 886:	80 91 02 01 	lds	r24, 0x0102
- 88a:	90 91 03 01 	lds	r25, 0x0103
- 88e:	fc 01       	movw	r30, r24
- 890:	09 95       	icall
- 892:	01 c0       	rjmp	.+2      	; 0x896 <__vector_24+0x4ee>
- 894:	00 00       	nop
- 896:	df 91       	pop	r29
- 898:	cf 91       	pop	r28
- 89a:	ff 91       	pop	r31
- 89c:	ef 91       	pop	r30
- 89e:	bf 91       	pop	r27
- 8a0:	af 91       	pop	r26
- 8a2:	9f 91       	pop	r25
- 8a4:	8f 91       	pop	r24
- 8a6:	7f 91       	pop	r23
- 8a8:	6f 91       	pop	r22
- 8aa:	5f 91       	pop	r21
- 8ac:	4f 91       	pop	r20
- 8ae:	3f 91       	pop	r19
- 8b0:	2f 91       	pop	r18
- 8b2:	0f 90       	pop	r0
- 8b4:	00 92 5f 00 	sts	0x005F, r0
- 8b8:	0f 90       	pop	r0
- 8ba:	1f 90       	pop	r1
- 8bc:	18 95       	reti
+0000088a <circ_init>:
+//    .length = sizeof(u_txbuff),
+//  },
+// затем вызывается circ_init
+//
+void circ_init(struct circ_buffer *buff)
+{
+     88a:	fc 01       	movw	r30, r24
+	buff->pointer = buff->start;
+     88c:	80 81       	ld	r24, Z
+     88e:	91 81       	ldd	r25, Z+1	; 0x01
+     890:	95 83       	std	Z+5, r25	; 0x05
+     892:	84 83       	std	Z+4, r24	; 0x04
+	buff->datalen = 0;
+     894:	17 82       	std	Z+7, r1	; 0x07
+     896:	16 82       	std	Z+6, r1	; 0x06
+     898:	08 95       	ret
 
-000008be <DoNothing>:
- 8be:	cf 93       	push	r28
- 8c0:	df 93       	push	r29
- 8c2:	cd b7       	in	r28, 0x3d	; 61
- 8c4:	de b7       	in	r29, 0x3e	; 62
- 8c6:	df 91       	pop	r29
- 8c8:	cf 91       	pop	r28
- 8ca:	08 95       	ret
+0000089a <circ_push>:
+}
 
-000008cc <Idle>:
+int circ_push(struct circ_buffer *buff, uint8_t *data, int len)
+{
+     89a:	ef 92       	push	r14
+     89c:	ff 92       	push	r15
+     89e:	0f 93       	push	r16
+     8a0:	1f 93       	push	r17
+     8a2:	cf 93       	push	r28
+     8a4:	df 93       	push	r29
+     8a6:	fc 01       	movw	r30, r24
+     8a8:	eb 01       	movw	r28, r22
+     8aa:	9a 01       	movw	r18, r20
+	uint8_t *bend = buff->start + buff->length - 1;
+     8ac:	e0 80       	ld	r14, Z
+     8ae:	f1 80       	ldd	r15, Z+1	; 0x01
+     8b0:	62 81       	ldd	r22, Z+2	; 0x02
+     8b2:	73 81       	ldd	r23, Z+3	; 0x03
+     8b4:	8b 01       	movw	r16, r22
+     8b6:	01 50       	subi	r16, 0x01	; 1
+     8b8:	11 09       	sbc	r17, r1
+     8ba:	0e 0d       	add	r16, r14
+     8bc:	1f 1d       	adc	r17, r15
+	uint8_t *dend = (buff->pointer - buff->start + buff->datalen) % buff->length + buff->start; /* This points to new byte */
+     8be:	46 81       	ldd	r20, Z+6	; 0x06
+     8c0:	57 81       	ldd	r21, Z+7	; 0x07
+     8c2:	84 81       	ldd	r24, Z+4	; 0x04
+     8c4:	95 81       	ldd	r25, Z+5	; 0x05
+     8c6:	8e 19       	sub	r24, r14
+     8c8:	9f 09       	sbc	r25, r15
+     8ca:	84 0f       	add	r24, r20
+     8cc:	95 1f       	adc	r25, r21
+     8ce:	0e 94 5c 08 	call	0x10b8	; 0x10b8 <__divmodhi4>
+     8d2:	d7 01       	movw	r26, r14
+     8d4:	a8 0f       	add	r26, r24
+     8d6:	b9 1f       	adc	r27, r25
+
+	for (; len > 0; len--) {
+     8d8:	12 16       	cp	r1, r18
+     8da:	13 06       	cpc	r1, r19
+     8dc:	d4 f4       	brge	.+52     	; 0x912 <__stack+0x13>
+		if (dend > bend) dend = buff->start;
+     8de:	0a 17       	cp	r16, r26
+     8e0:	1b 07       	cpc	r17, r27
+     8e2:	10 f4       	brcc	.+4      	; 0x8e8 <circ_push+0x4e>
+     8e4:	a0 81       	ld	r26, Z
+     8e6:	b1 81       	ldd	r27, Z+1	; 0x01
+		if (buff->datalen != 0 && dend == buff->pointer) break;
+     8e8:	86 81       	ldd	r24, Z+6	; 0x06
+     8ea:	97 81       	ldd	r25, Z+7	; 0x07
+     8ec:	89 2b       	or	r24, r25
+     8ee:	29 f0       	breq	.+10     	; 0x8fa <circ_push+0x60>
+     8f0:	84 81       	ldd	r24, Z+4	; 0x04
+     8f2:	95 81       	ldd	r25, Z+5	; 0x05
+     8f4:	8a 17       	cp	r24, r26
+     8f6:	9b 07       	cpc	r25, r27
+     8f8:	61 f0       	breq	.+24     	; 0x912 <__stack+0x13>
+		*dend = *data;
+     8fa:	89 91       	ld	r24, Y+
+     8fc:	8d 93       	st	X+, r24
+		dend++;
+		data++;
+		buff->datalen++;
+     8fe:	86 81       	ldd	r24, Z+6	; 0x06
+     900:	97 81       	ldd	r25, Z+7	; 0x07
+     902:	01 96       	adiw	r24, 0x01	; 1
+     904:	97 83       	std	Z+7, r25	; 0x07
+     906:	86 83       	std	Z+6, r24	; 0x06
+int circ_push(struct circ_buffer *buff, uint8_t *data, int len)
+{
+	uint8_t *bend = buff->start + buff->length - 1;
+	uint8_t *dend = (buff->pointer - buff->start + buff->datalen) % buff->length + buff->start; /* This points to new byte */
+
+	for (; len > 0; len--) {
+     908:	21 50       	subi	r18, 0x01	; 1
+     90a:	31 09       	sbc	r19, r1
+     90c:	21 15       	cp	r18, r1
+     90e:	31 05       	cpc	r19, r1
+     910:	31 f7       	brne	.-52     	; 0x8de <circ_push+0x44>
+		data++;
+		buff->datalen++;
+	}
+
+	return len; /* Return amount of bytes left */
+}
+     912:	c9 01       	movw	r24, r18
+     914:	df 91       	pop	r29
+     916:	cf 91       	pop	r28
+     918:	1f 91       	pop	r17
+     91a:	0f 91       	pop	r16
+     91c:	ff 90       	pop	r15
+     91e:	ef 90       	pop	r14
+     920:	08 95       	ret
+
+00000922 <circ_push_byte>:
+
+int circ_push_byte(struct circ_buffer *buff, uint8_t data)
+{
+     922:	0f 93       	push	r16
+     924:	1f 93       	push	r17
+     926:	cf 93       	push	r28
+     928:	df 93       	push	r29
+     92a:	fc 01       	movw	r30, r24
+     92c:	46 2f       	mov	r20, r22
+	uint8_t *bend = buff->start + buff->length - 1;
+     92e:	c0 81       	ld	r28, Z
+     930:	d1 81       	ldd	r29, Z+1	; 0x01
+     932:	22 81       	ldd	r18, Z+2	; 0x02
+     934:	33 81       	ldd	r19, Z+3	; 0x03
+	uint8_t *dend = (buff->pointer - buff->start + buff->datalen) % buff->length + buff->start; /* This points to new byte */
+     936:	04 81       	ldd	r16, Z+4	; 0x04
+     938:	15 81       	ldd	r17, Z+5	; 0x05
+     93a:	86 81       	ldd	r24, Z+6	; 0x06
+     93c:	97 81       	ldd	r25, Z+7	; 0x07
+     93e:	b8 01       	movw	r22, r16
+     940:	6c 1b       	sub	r22, r28
+     942:	7d 0b       	sbc	r23, r29
+     944:	86 0f       	add	r24, r22
+     946:	97 1f       	adc	r25, r23
+     948:	b9 01       	movw	r22, r18
+     94a:	0e 94 5c 08 	call	0x10b8	; 0x10b8 <__divmodhi4>
+     94e:	8c 0f       	add	r24, r28
+     950:	9d 1f       	adc	r25, r29
+	return len; /* Return amount of bytes left */
+}
+
+int circ_push_byte(struct circ_buffer *buff, uint8_t data)
+{
+	uint8_t *bend = buff->start + buff->length - 1;
+     952:	21 50       	subi	r18, 0x01	; 1
+     954:	31 09       	sbc	r19, r1
+     956:	2c 0f       	add	r18, r28
+     958:	3d 1f       	adc	r19, r29
+	uint8_t *dend = (buff->pointer - buff->start + buff->datalen) % buff->length + buff->start; /* This points to new byte */
+
+	if (dend > bend) dend = buff->start;
+     95a:	28 17       	cp	r18, r24
+     95c:	39 07       	cpc	r19, r25
+     95e:	08 f0       	brcs	.+2      	; 0x962 <circ_push_byte+0x40>
+}
+
+int circ_push_byte(struct circ_buffer *buff, uint8_t data)
+{
+	uint8_t *bend = buff->start + buff->length - 1;
+	uint8_t *dend = (buff->pointer - buff->start + buff->datalen) % buff->length + buff->start; /* This points to new byte */
+     960:	ec 01       	movw	r28, r24
+
+	if (dend > bend) dend = buff->start;
+	if (buff->datalen != 0 && dend == buff->pointer) return 1;
+     962:	86 81       	ldd	r24, Z+6	; 0x06
+     964:	97 81       	ldd	r25, Z+7	; 0x07
+     966:	89 2b       	or	r24, r25
+     968:	19 f0       	breq	.+6      	; 0x970 <circ_push_byte+0x4e>
+     96a:	c0 17       	cp	r28, r16
+     96c:	d1 07       	cpc	r29, r17
+     96e:	49 f0       	breq	.+18     	; 0x982 <circ_push_byte+0x60>
+	*dend = data;
+     970:	48 83       	st	Y, r20
+	buff->datalen++;
+     972:	86 81       	ldd	r24, Z+6	; 0x06
+     974:	97 81       	ldd	r25, Z+7	; 0x07
+     976:	01 96       	adiw	r24, 0x01	; 1
+     978:	97 83       	std	Z+7, r25	; 0x07
+     97a:	86 83       	std	Z+6, r24	; 0x06
+
+	return 0; /* Return amount of bytes left */
+     97c:	80 e0       	ldi	r24, 0x00	; 0
+     97e:	90 e0       	ldi	r25, 0x00	; 0
+     980:	02 c0       	rjmp	.+4      	; 0x986 <circ_push_byte+0x64>
+{
+	uint8_t *bend = buff->start + buff->length - 1;
+	uint8_t *dend = (buff->pointer - buff->start + buff->datalen) % buff->length + buff->start; /* This points to new byte */
+
+	if (dend > bend) dend = buff->start;
+	if (buff->datalen != 0 && dend == buff->pointer) return 1;
+     982:	81 e0       	ldi	r24, 0x01	; 1
+     984:	90 e0       	ldi	r25, 0x00	; 0
+	*dend = data;
+	buff->datalen++;
+
+	return 0; /* Return amount of bytes left */
+}
+     986:	df 91       	pop	r29
+     988:	cf 91       	pop	r28
+     98a:	1f 91       	pop	r17
+     98c:	0f 91       	pop	r16
+     98e:	08 95       	ret
+
+00000990 <circ_pop>:
+
+	return i; /* Return the amount of bytes actually peeked */
+}
+
+int circ_pop(struct circ_buffer *buff, uint8_t *data, int len)
+{
+     990:	0f 93       	push	r16
+     992:	1f 93       	push	r17
+     994:	cf 93       	push	r28
+     996:	df 93       	push	r29
+     998:	fc 01       	movw	r30, r24
+	uint8_t *bend = buff->start + buff->length - 1;
+     99a:	02 81       	ldd	r16, Z+2	; 0x02
+     99c:	13 81       	ldd	r17, Z+3	; 0x03
+     99e:	01 50       	subi	r16, 0x01	; 1
+     9a0:	11 09       	sbc	r17, r1
+     9a2:	80 81       	ld	r24, Z
+     9a4:	91 81       	ldd	r25, Z+1	; 0x01
+     9a6:	08 0f       	add	r16, r24
+     9a8:	19 1f       	adc	r17, r25
+	int i;
+
+	for (i = 0; i < len && buff->datalen > 0; i++) {
+     9aa:	14 16       	cp	r1, r20
+     9ac:	15 06       	cpc	r1, r21
+     9ae:	54 f5       	brge	.+84     	; 0xa04 <circ_pop+0x74>
+     9b0:	86 81       	ldd	r24, Z+6	; 0x06
+     9b2:	97 81       	ldd	r25, Z+7	; 0x07
+     9b4:	18 16       	cp	r1, r24
+     9b6:	19 06       	cpc	r1, r25
+     9b8:	44 f5       	brge	.+80     	; 0xa0a <circ_pop+0x7a>
+     9ba:	a6 2f       	mov	r26, r22
+     9bc:	b7 2f       	mov	r27, r23
+     9be:	80 e0       	ldi	r24, 0x00	; 0
+     9c0:	90 e0       	ldi	r25, 0x00	; 0
+		data[i] = *buff->pointer;
+     9c2:	c4 81       	ldd	r28, Z+4	; 0x04
+     9c4:	d5 81       	ldd	r29, Z+5	; 0x05
+     9c6:	28 81       	ld	r18, Y
+     9c8:	2d 93       	st	X+, r18
+		buff->pointer++;
+     9ca:	24 81       	ldd	r18, Z+4	; 0x04
+     9cc:	35 81       	ldd	r19, Z+5	; 0x05
+     9ce:	2f 5f       	subi	r18, 0xFF	; 255
+     9d0:	3f 4f       	sbci	r19, 0xFF	; 255
+     9d2:	35 83       	std	Z+5, r19	; 0x05
+     9d4:	24 83       	std	Z+4, r18	; 0x04
+		buff->datalen--;
+     9d6:	66 81       	ldd	r22, Z+6	; 0x06
+     9d8:	77 81       	ldd	r23, Z+7	; 0x07
+     9da:	61 50       	subi	r22, 0x01	; 1
+     9dc:	71 09       	sbc	r23, r1
+     9de:	77 83       	std	Z+7, r23	; 0x07
+     9e0:	66 83       	std	Z+6, r22	; 0x06
+		if (buff->pointer > bend) buff->pointer = buff->start;
+     9e2:	02 17       	cp	r16, r18
+     9e4:	13 07       	cpc	r17, r19
+     9e6:	20 f4       	brcc	.+8      	; 0x9f0 <circ_pop+0x60>
+     9e8:	20 81       	ld	r18, Z
+     9ea:	31 81       	ldd	r19, Z+1	; 0x01
+     9ec:	35 83       	std	Z+5, r19	; 0x05
+     9ee:	24 83       	std	Z+4, r18	; 0x04
+int circ_pop(struct circ_buffer *buff, uint8_t *data, int len)
+{
+	uint8_t *bend = buff->start + buff->length - 1;
+	int i;
+
+	for (i = 0; i < len && buff->datalen > 0; i++) {
+     9f0:	01 96       	adiw	r24, 0x01	; 1
+     9f2:	84 17       	cp	r24, r20
+     9f4:	95 07       	cpc	r25, r21
+     9f6:	59 f0       	breq	.+22     	; 0xa0e <circ_pop+0x7e>
+     9f8:	26 81       	ldd	r18, Z+6	; 0x06
+     9fa:	37 81       	ldd	r19, Z+7	; 0x07
+     9fc:	12 16       	cp	r1, r18
+     9fe:	13 06       	cpc	r1, r19
+     a00:	04 f3       	brlt	.-64     	; 0x9c2 <circ_pop+0x32>
+     a02:	05 c0       	rjmp	.+10     	; 0xa0e <circ_pop+0x7e>
+     a04:	80 e0       	ldi	r24, 0x00	; 0
+     a06:	90 e0       	ldi	r25, 0x00	; 0
+     a08:	02 c0       	rjmp	.+4      	; 0xa0e <circ_pop+0x7e>
+     a0a:	80 e0       	ldi	r24, 0x00	; 0
+     a0c:	90 e0       	ldi	r25, 0x00	; 0
+		buff->datalen--;
+		if (buff->pointer > bend) buff->pointer = buff->start;
+	}
+
+	return i; /* Return the amount of bytes actually popped */
+}
+     a0e:	df 91       	pop	r29
+     a10:	cf 91       	pop	r28
+     a12:	1f 91       	pop	r17
+     a14:	0f 91       	pop	r16
+     a16:	08 95       	ret
+
+00000a18 <DoNothing>:
+	default:	break;
+	}
+}
+
+void DoNothing(void)																// Функция пустышка, затыкать несуществующие ссылки
+{
+     a18:	08 95       	ret
+
+00000a1a <__vector_24>:
+u08 	WorkLog[100];						// Лог пишем сюда
+u08		WorkIndex=0;						// Индекс лога
+*/
+
+ISR(TWI_vect)								// Прерывание TWI Тут наше все.
+{
+     a1a:	1f 92       	push	r1
+     a1c:	0f 92       	push	r0
+     a1e:	0f b6       	in	r0, 0x3f	; 63
+     a20:	0f 92       	push	r0
+     a22:	11 24       	eor	r1, r1
+     a24:	2f 93       	push	r18
+     a26:	3f 93       	push	r19
+     a28:	4f 93       	push	r20
+     a2a:	5f 93       	push	r21
+     a2c:	6f 93       	push	r22
+     a2e:	7f 93       	push	r23
+     a30:	8f 93       	push	r24
+     a32:	9f 93       	push	r25
+     a34:	af 93       	push	r26
+     a36:	bf 93       	push	r27
+     a38:	ef 93       	push	r30
+     a3a:	ff 93       	push	r31
+	PORTD &= ~(b<<PORTD6);	_delay_ms(0.01);	PORTD |= (1<<PORTD6);	_delay_ms(0.001); PORTD &= ~(1<<PORTD6);_delay_ms(0.001);	PORTD |= (1<<PORTD6);
+}
+
+PORTD |= (1<<PORTD5);
+*/
+switch(TWSR & 0xF8)						// Отсекаем биты прескалера
+     a3c:	80 91 b9 00 	lds	r24, 0x00B9
+     a40:	88 7f       	andi	r24, 0xF8	; 248
+     a42:	90 e0       	ldi	r25, 0x00	; 0
+     a44:	89 3c       	cpi	r24, 0xC9	; 201
+     a46:	91 05       	cpc	r25, r1
+     a48:	08 f0       	brcs	.+2      	; 0xa4c <__vector_24+0x32>
+     a4a:	b3 c1       	rjmp	.+870    	; 0xdb2 <__vector_24+0x398>
+     a4c:	fc 01       	movw	r30, r24
+     a4e:	ec 5c       	subi	r30, 0xCC	; 204
+     a50:	ff 4f       	sbci	r31, 0xFF	; 255
+     a52:	0c 94 70 08 	jmp	0x10e0	; 0x10e0 <__tablejump2__>
+	{
+	case 0x00:	// Bus Fail (автобус сломался)
+			{
+			i2c_Do |= i2c_ERR_BF;
+     a56:	80 91 3c 02 	lds	r24, 0x023C
+     a5a:	81 60       	ori	r24, 0x01	; 1
+     a5c:	80 93 3c 02 	sts	0x023C, r24
+			TWCR = 0<<TWSTA|1<<TWSTO|1<<TWINT|i2c_i_am_slave<<TWEA|1<<TWEN|1<<TWIE;  	// Go!
+     a60:	85 e9       	ldi	r24, 0x95	; 149
+     a62:	80 93 bc 00 	sts	0x00BC, r24
+			MACRO_i2c_WhatDo_ErrorOut
+     a66:	e0 91 10 01 	lds	r30, 0x0110
+     a6a:	f0 91 11 01 	lds	r31, 0x0111
+     a6e:	09 95       	icall
+			break;
+     a70:	a0 c1       	rjmp	.+832    	; 0xdb2 <__vector_24+0x398>
+			}
+
+	case 0x08:	// Старт был, а затем мы:
+		PORTD &= ~(1<<PORTD5);	_delay_ms(0.1);	PORTD |= (1<<PORTD5);
+     a72:	5d 98       	cbi	0x0b, 5	; 11
+     a74:	8f e8       	ldi	r24, 0x8F	; 143
+     a76:	91 e0       	ldi	r25, 0x01	; 1
+     a78:	01 97       	sbiw	r24, 0x01	; 1
+     a7a:	f1 f7       	brne	.-4      	; 0xa78 <__vector_24+0x5e>
+     a7c:	00 c0       	rjmp	.+0      	; 0xa7e <__vector_24+0x64>
+     a7e:	00 00       	nop
+     a80:	5d 9a       	sbi	0x0b, 5	; 11
+			{
+			if( (i2c_Do & i2c_type_msk)== i2c_sarp)							// В зависимости от режима
+     a82:	80 91 3c 02 	lds	r24, 0x023C
+     a86:	8c 70       	andi	r24, 0x0C	; 12
+     a88:	31 f4       	brne	.+12     	; 0xa96 <__vector_24+0x7c>
+				{
+				i2c_SlaveAddress |= 0x01;									// Шлем Addr+R
+     a8a:	80 91 33 02 	lds	r24, 0x0233
+     a8e:	81 60       	ori	r24, 0x01	; 1
+     a90:	80 93 33 02 	sts	0x0233, r24
+     a94:	05 c0       	rjmp	.+10     	; 0xaa0 <__vector_24+0x86>
+				}
+			else															// Или 
+				{
+				i2c_SlaveAddress &= 0xFE;									// Шлем Addr+W
+     a96:	80 91 33 02 	lds	r24, 0x0233
+     a9a:	8e 7f       	andi	r24, 0xFE	; 254
+     a9c:	80 93 33 02 	sts	0x0233, r24
+				}
+			
+			TWDR = i2c_SlaveAddress;													// Адрес слейва
+     aa0:	80 91 33 02 	lds	r24, 0x0233
+     aa4:	80 93 bb 00 	sts	0x00BB, r24
+			TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|i2c_i_am_slave<<TWEA|1<<TWEN|1<<TWIE;  	// Go!
+     aa8:	85 e8       	ldi	r24, 0x85	; 133
+     aaa:	80 93 bc 00 	sts	0x00BC, r24
+			break;
+     aae:	81 c1       	rjmp	.+770    	; 0xdb2 <__vector_24+0x398>
+			}
+				
+	case 0x10:	// Повторный старт был, а затем мы
+			{
+			if( (i2c_Do & i2c_type_msk) == i2c_sawsarp)						// В зависимости от режима
+     ab0:	80 91 3c 02 	lds	r24, 0x023C
+     ab4:	8c 70       	andi	r24, 0x0C	; 12
+     ab6:	88 30       	cpi	r24, 0x08	; 8
+     ab8:	31 f4       	brne	.+12     	; 0xac6 <__vector_24+0xac>
+				{
+				i2c_SlaveAddress |= 0x01;									// Шлем Addr+R
+     aba:	80 91 33 02 	lds	r24, 0x0233
+     abe:	81 60       	ori	r24, 0x01	; 1
+     ac0:	80 93 33 02 	sts	0x0233, r24
+     ac4:	05 c0       	rjmp	.+10     	; 0xad0 <__vector_24+0xb6>
+				}
+			else
+				{
+				i2c_SlaveAddress &= 0xFE;									// Шлем Addr+W
+     ac6:	80 91 33 02 	lds	r24, 0x0233
+     aca:	8e 7f       	andi	r24, 0xFE	; 254
+     acc:	80 93 33 02 	sts	0x0233, r24
+				}
+
+			// To Do: Добавить сюда обработку ошибок 
+
+			TWDR = i2c_SlaveAddress;													// Адрес слейва
+     ad0:	80 91 33 02 	lds	r24, 0x0233
+     ad4:	80 93 bb 00 	sts	0x00BB, r24
+			TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|i2c_i_am_slave<<TWEA|1<<TWEN|1<<TWIE;  	// Go!
+     ad8:	85 e8       	ldi	r24, 0x85	; 133
+     ada:	80 93 bc 00 	sts	0x00BC, r24
+			break;
+     ade:	69 c1       	rjmp	.+722    	; 0xdb2 <__vector_24+0x398>
+			}
+
+	case 0x18:	// Был послан SLA+W получили ACK, а затем:
+			{
+			if( (i2c_Do & i2c_type_msk) == i2c_sawp)						// В зависимости от режима
+     ae0:	80 91 3c 02 	lds	r24, 0x023C
+     ae4:	8c 70       	andi	r24, 0x0C	; 12
+     ae6:	84 30       	cpi	r24, 0x04	; 4
+     ae8:	81 f4       	brne	.+32     	; 0xb0a <__vector_24+0xf0>
+				{
+				TWDR = i2c_Buffer[i2c_index];								// Шлем байт данных
+     aea:	e0 91 2f 02 	lds	r30, 0x022F
+     aee:	f0 e0       	ldi	r31, 0x00	; 0
+     af0:	e0 5d       	subi	r30, 0xD0	; 208
+     af2:	fd 4f       	sbci	r31, 0xFD	; 253
+     af4:	80 81       	ld	r24, Z
+     af6:	80 93 bb 00 	sts	0x00BB, r24
+				i2c_index++;												// Увеличиваем указатель буфера
+     afa:	80 91 2f 02 	lds	r24, 0x022F
+     afe:	8f 5f       	subi	r24, 0xFF	; 255
+     b00:	80 93 2f 02 	sts	0x022F, r24
+				TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|i2c_i_am_slave<<TWEA|1<<TWEN|1<<TWIE;  // Go! 
+     b04:	85 e8       	ldi	r24, 0x85	; 133
+     b06:	80 93 bc 00 	sts	0x00BC, r24
+
+				}
+
+			if( (i2c_Do & i2c_type_msk) == i2c_sawsarp)
+     b0a:	80 91 3c 02 	lds	r24, 0x023C
+     b0e:	8c 70       	andi	r24, 0x0C	; 12
+     b10:	88 30       	cpi	r24, 0x08	; 8
+     b12:	09 f0       	breq	.+2      	; 0xb16 <__vector_24+0xfc>
+     b14:	4e c1       	rjmp	.+668    	; 0xdb2 <__vector_24+0x398>
+				{
+				TWDR = i2c_PageAddress[i2c_PageAddrIndex];					// Или шлем адрес странцы (по сути тоже байт данных)
+     b16:	e0 91 38 02 	lds	r30, 0x0238
+     b1a:	f0 e0       	ldi	r31, 0x00	; 0
+     b1c:	ea 5c       	subi	r30, 0xCA	; 202
+     b1e:	fd 4f       	sbci	r31, 0xFD	; 253
+     b20:	80 81       	ld	r24, Z
+     b22:	80 93 bb 00 	sts	0x00BB, r24
+				i2c_PageAddrIndex++;										// Увеличиваем указатель буфера страницы
+     b26:	80 91 38 02 	lds	r24, 0x0238
+     b2a:	8f 5f       	subi	r24, 0xFF	; 255
+     b2c:	80 93 38 02 	sts	0x0238, r24
+				TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|i2c_i_am_slave<<TWEA|1<<TWEN|1<<TWIE;	// Go!
+     b30:	85 e8       	ldi	r24, 0x85	; 133
+     b32:	80 93 bc 00 	sts	0x00BC, r24
+     b36:	3d c1       	rjmp	.+634    	; 0xdb2 <__vector_24+0x398>
+			}
+			break;
+
+	case 0x20:	// Был послан SLA+W получили NACK - слейв либо занят, либо его нет дома.
+			{
+			i2c_Do |= i2c_ERR_NA;															// Код ошибки
+     b38:	80 91 3c 02 	lds	r24, 0x023C
+     b3c:	80 61       	ori	r24, 0x10	; 16
+     b3e:	80 93 3c 02 	sts	0x023C, r24
+			TWCR = 0<<TWSTA|1<<TWSTO|1<<TWINT|i2c_i_am_slave<<TWEA|1<<TWEN|1<<TWIE;			// Шлем шине Stop
+     b42:	85 e9       	ldi	r24, 0x95	; 149
+     b44:	80 93 bc 00 	sts	0x00BC, r24
+
+			MACRO_i2c_WhatDo_ErrorOut 														// Обрабатываем событие ошибки;
+     b48:	e0 91 10 01 	lds	r30, 0x0110
+     b4c:	f0 91 11 01 	lds	r31, 0x0111
+     b50:	09 95       	icall
+			break;
+     b52:	2f c1       	rjmp	.+606    	; 0xdb2 <__vector_24+0x398>
+			}
+
+	case 0x28: 	// Байт данных послали, получили ACK!  (если sawp - это был байт данных. если sawsarp - байт адреса страницы)
+			{	// А дальше: 
+			if( (i2c_Do & i2c_type_msk) == i2c_sawp)							// В зависимости от режима
+     b54:	80 91 3c 02 	lds	r24, 0x023C
+     b58:	8c 70       	andi	r24, 0x0C	; 12
+     b5a:	84 30       	cpi	r24, 0x04	; 4
+     b5c:	e9 f4       	brne	.+58     	; 0xb98 <__vector_24+0x17e>
+				{
+				if (i2c_index == i2c_ByteCount)												// Если был байт данных последний
+     b5e:	e0 91 2f 02 	lds	r30, 0x022F
+     b62:	80 91 39 02 	lds	r24, 0x0239
+     b66:	e8 13       	cpse	r30, r24
+     b68:	09 c0       	rjmp	.+18     	; 0xb7c <__vector_24+0x162>
+					{																		
+					TWCR = 0<<TWSTA|1<<TWSTO|1<<TWINT|i2c_i_am_slave<<TWEA|1<<TWEN|1<<TWIE;	// Шлем Stop
+     b6a:	85 e9       	ldi	r24, 0x95	; 149
+     b6c:	80 93 bc 00 	sts	0x00BC, r24
+					
+					MACRO_i2c_WhatDo_MasterOut												// И выходим в обработку стопа
+     b70:	e0 91 14 01 	lds	r30, 0x0114
+     b74:	f0 91 15 01 	lds	r31, 0x0115
+     b78:	09 95       	icall
+     b7a:	0e c0       	rjmp	.+28     	; 0xb98 <__vector_24+0x17e>
+
+					}
+				else
+					{
+					TWDR = i2c_Buffer[i2c_index];												// Либо шлем еще один байт
+     b7c:	f0 e0       	ldi	r31, 0x00	; 0
+     b7e:	e0 5d       	subi	r30, 0xD0	; 208
+     b80:	fd 4f       	sbci	r31, 0xFD	; 253
+     b82:	80 81       	ld	r24, Z
+     b84:	80 93 bb 00 	sts	0x00BB, r24
+					i2c_index++;
+     b88:	80 91 2f 02 	lds	r24, 0x022F
+     b8c:	8f 5f       	subi	r24, 0xFF	; 255
+     b8e:	80 93 2f 02 	sts	0x022F, r24
+					TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|i2c_i_am_slave<<TWEA|1<<TWEN|1<<TWIE;  	// Go!
+     b92:	85 e8       	ldi	r24, 0x85	; 133
+     b94:	80 93 bc 00 	sts	0x00BC, r24
+					}
+				}
+
+			if( (i2c_Do & i2c_type_msk) == i2c_sawsarp)						// В другом режиме мы
+     b98:	80 91 3c 02 	lds	r24, 0x023C
+     b9c:	8c 70       	andi	r24, 0x0C	; 12
+     b9e:	88 30       	cpi	r24, 0x08	; 8
+     ba0:	09 f0       	breq	.+2      	; 0xba4 <__vector_24+0x18a>
+     ba2:	07 c1       	rjmp	.+526    	; 0xdb2 <__vector_24+0x398>
+				{
+				if(i2c_PageAddrIndex == i2c_PageAddrCount)					// Если последний байт адреса страницы
+     ba4:	e0 91 38 02 	lds	r30, 0x0238
+     ba8:	80 91 35 02 	lds	r24, 0x0235
+     bac:	e8 13       	cpse	r30, r24
+     bae:	04 c0       	rjmp	.+8      	; 0xbb8 <__vector_24+0x19e>
+					{
+					TWCR = 1<<TWSTA|0<<TWSTO|1<<TWINT|i2c_i_am_slave<<TWEA|1<<TWEN|1<<TWIE;		// Запускаем Повторный старт!
+     bb0:	85 ea       	ldi	r24, 0xA5	; 165
+     bb2:	80 93 bc 00 	sts	0x00BC, r24
+     bb6:	fd c0       	rjmp	.+506    	; 0xdb2 <__vector_24+0x398>
+					}
+				else
+					{														// Иначе 
+					TWDR = i2c_PageAddress[i2c_PageAddrIndex];				// шлем еще один адрес страницы
+     bb8:	f0 e0       	ldi	r31, 0x00	; 0
+     bba:	ea 5c       	subi	r30, 0xCA	; 202
+     bbc:	fd 4f       	sbci	r31, 0xFD	; 253
+     bbe:	80 81       	ld	r24, Z
+     bc0:	80 93 bb 00 	sts	0x00BB, r24
+					i2c_PageAddrIndex++;									// Увеличиваем индекс счетчика адреса страниц
+     bc4:	80 91 38 02 	lds	r24, 0x0238
+     bc8:	8f 5f       	subi	r24, 0xFF	; 255
+     bca:	80 93 38 02 	sts	0x0238, r24
+					TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|i2c_i_am_slave<<TWEA|1<<TWEN|1<<TWIE;		// Go!
+     bce:	85 e8       	ldi	r24, 0x85	; 133
+     bd0:	80 93 bc 00 	sts	0x00BC, r24
+     bd4:	ee c0       	rjmp	.+476    	; 0xdb2 <__vector_24+0x398>
+			}
+			break;
+
+	case 0x30:	//Байт ушел, но получили NACK причин две. 1я передача оборвана слейвом и так надо. 2я слейв сглючил.
+			{
+			i2c_Do |= i2c_ERR_NK;				// Запишем статус ошибки. Хотя это не факт, что ошибка. 
+     bd6:	80 91 3c 02 	lds	r24, 0x023C
+     bda:	82 60       	ori	r24, 0x02	; 2
+     bdc:	80 93 3c 02 	sts	0x023C, r24
+
+			TWCR = 0<<TWSTA|1<<TWSTO|1<<TWINT|i2c_i_am_slave<<TWEA|1<<TWEN|1<<TWIE;		// Шлем Stop
+     be0:	85 e9       	ldi	r24, 0x95	; 149
+     be2:	80 93 bc 00 	sts	0x00BC, r24
+
+			MACRO_i2c_WhatDo_MasterOut													// Отрабатываем событие выхода
+     be6:	e0 91 14 01 	lds	r30, 0x0114
+     bea:	f0 91 15 01 	lds	r31, 0x0115
+     bee:	09 95       	icall
+
+			break;
+     bf0:	e0 c0       	rjmp	.+448    	; 0xdb2 <__vector_24+0x398>
+			}
+
+	case 0x38:	//  Коллизия на шине. Нашелся кто то поглавней
+			{
+			i2c_Do |= i2c_ERR_LP;			// Ставим ошибку потери приоритета
+     bf2:	80 91 3c 02 	lds	r24, 0x023C
+     bf6:	80 62       	ori	r24, 0x20	; 32
+     bf8:	80 93 3c 02 	sts	0x023C, r24
+
+			// Настраиваем индексы заново. 
+			i2c_index = 0;
+     bfc:	10 92 2f 02 	sts	0x022F, r1
+			i2c_PageAddrIndex = 0;
+     c00:	10 92 38 02 	sts	0x0238, r1
+
+			TWCR = 1<<TWSTA|0<<TWSTO|1<<TWINT|i2c_i_am_slave<<TWEA|1<<TWEN|1<<TWIE;		// Как только шина будет свободна 
+     c04:	85 ea       	ldi	r24, 0xA5	; 165
+     c06:	80 93 bc 00 	sts	0x00BC, r24
+			break;																		// попробуем передать снова.
+     c0a:	d3 c0       	rjmp	.+422    	; 0xdb2 <__vector_24+0x398>
+			}
+
+	case 0x40: // Послали SLA+R получили АСК. А теперь будем получать байты
+			{
+			if(i2c_index+1 == i2c_ByteCount)								// Если буфер кончится на этом байте, то 
+     c0c:	20 91 2f 02 	lds	r18, 0x022F
+     c10:	30 e0       	ldi	r19, 0x00	; 0
+     c12:	2f 5f       	subi	r18, 0xFF	; 255
+     c14:	3f 4f       	sbci	r19, 0xFF	; 255
+     c16:	80 91 39 02 	lds	r24, 0x0239
+     c1a:	90 e0       	ldi	r25, 0x00	; 0
+     c1c:	28 17       	cp	r18, r24
+     c1e:	39 07       	cpc	r19, r25
+     c20:	21 f4       	brne	.+8      	; 0xc2a <__vector_24+0x210>
+				{
+				TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|0<<TWEA|1<<TWEN|1<<TWIE;	// Требуем байт, а в ответ потом пошлем NACK(Disconnect)
+     c22:	85 e8       	ldi	r24, 0x85	; 133
+     c24:	80 93 bc 00 	sts	0x00BC, r24
+     c28:	c4 c0       	rjmp	.+392    	; 0xdb2 <__vector_24+0x398>
+				}															// Что даст понять слейву, что мол хватит гнать. И он отпустит шину
+			else
+				{
+				TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|1<<TWEA|1<<TWEN|1<<TWIE;	// Или просто примем байт и скажем потом ACK
+     c2a:	85 ec       	ldi	r24, 0xC5	; 197
+     c2c:	80 93 bc 00 	sts	0x00BC, r24
+     c30:	c0 c0       	rjmp	.+384    	; 0xdb2 <__vector_24+0x398>
+			break;
+			}
+
+	case 0x48: // Послали SLA+R, но получили NACK. Видать slave занят или его нет дома. 
+			{
+			i2c_Do |= i2c_ERR_NA;															// Код ошибки No Answer
+     c32:	80 91 3c 02 	lds	r24, 0x023C
+     c36:	80 61       	ori	r24, 0x10	; 16
+     c38:	80 93 3c 02 	sts	0x023C, r24
+			TWCR = 0<<TWSTA|1<<TWSTO|1<<TWINT|i2c_i_am_slave<<TWEA|1<<TWEN|1<<TWIE;			// Шлем Stop
+     c3c:	85 e9       	ldi	r24, 0x95	; 149
+     c3e:	80 93 bc 00 	sts	0x00BC, r24
+
+			MACRO_i2c_WhatDo_ErrorOut														// Отрабатываем выходную ситуацию ошибки
+     c42:	e0 91 10 01 	lds	r30, 0x0110
+     c46:	f0 91 11 01 	lds	r31, 0x0111
+     c4a:	09 95       	icall
+			break;
+     c4c:	b2 c0       	rjmp	.+356    	; 0xdb2 <__vector_24+0x398>
+			}
+
+	case 0x50: // Приняли байт.
+			{ 
+			i2c_Buffer[i2c_index] = TWDR;			// Забрали его из буфера
+     c4e:	20 91 2f 02 	lds	r18, 0x022F
+     c52:	80 91 bb 00 	lds	r24, 0x00BB
+     c56:	e2 2f       	mov	r30, r18
+     c58:	f0 e0       	ldi	r31, 0x00	; 0
+     c5a:	e0 5d       	subi	r30, 0xD0	; 208
+     c5c:	fd 4f       	sbci	r31, 0xFD	; 253
+     c5e:	80 83       	st	Z, r24
+			i2c_index++;
+     c60:	2f 5f       	subi	r18, 0xFF	; 255
+     c62:	20 93 2f 02 	sts	0x022F, r18
+
+			// To Do: Добавить проверку переполнения буфера. А то мало ли что юзер затребует
+
+			if (i2c_index+1 == i2c_ByteCount)		// Если остался еще один байт из тех, что мы хотели считать
+     c66:	30 e0       	ldi	r19, 0x00	; 0
+     c68:	2f 5f       	subi	r18, 0xFF	; 255
+     c6a:	3f 4f       	sbci	r19, 0xFF	; 255
+     c6c:	80 91 39 02 	lds	r24, 0x0239
+     c70:	90 e0       	ldi	r25, 0x00	; 0
+     c72:	28 17       	cp	r18, r24
+     c74:	39 07       	cpc	r19, r25
+     c76:	21 f4       	brne	.+8      	; 0xc80 <__vector_24+0x266>
+				{
+				TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|0<<TWEA|1<<TWEN|1<<TWIE;		// Затребываем его и потом пошлем NACK (Disconnect)
+     c78:	85 e8       	ldi	r24, 0x85	; 133
+     c7a:	80 93 bc 00 	sts	0x00BC, r24
+     c7e:	99 c0       	rjmp	.+306    	; 0xdb2 <__vector_24+0x398>
+				}
+			else
+				{
+				TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|1<<TWEA|1<<TWEN|1<<TWIE;		// Если нет, то затребываем следующий байт, а в ответ скажем АСК
+     c80:	85 ec       	ldi	r24, 0xC5	; 197
+     c82:	80 93 bc 00 	sts	0x00BC, r24
+     c86:	95 c0       	rjmp	.+298    	; 0xdb2 <__vector_24+0x398>
+			break;
+			}
+
+	case 0x58:	// Вот мы взяли последний байт, сказали NACK слейв обиделся и отпал. 
+			{
+			i2c_Buffer[i2c_index] = TWDR;													// Взяли байт в буфер
+     c88:	80 91 bb 00 	lds	r24, 0x00BB
+     c8c:	e0 91 2f 02 	lds	r30, 0x022F
+     c90:	f0 e0       	ldi	r31, 0x00	; 0
+     c92:	e0 5d       	subi	r30, 0xD0	; 208
+     c94:	fd 4f       	sbci	r31, 0xFD	; 253
+     c96:	80 83       	st	Z, r24
+			TWCR = 0<<TWSTA|1<<TWSTO|1<<TWINT|i2c_i_am_slave<<TWEA|1<<TWEN|1<<TWIE;			// Передали Stop
+     c98:	85 e9       	ldi	r24, 0x95	; 149
+     c9a:	80 93 bc 00 	sts	0x00BC, r24
+			
+			MACRO_i2c_WhatDo_MasterOut														// Отработали точку выхода
+     c9e:	e0 91 14 01 	lds	r30, 0x0114
+     ca2:	f0 91 15 01 	lds	r31, 0x0115
+     ca6:	09 95       	icall
+
+			break;
+     ca8:	84 c0       	rjmp	.+264    	; 0xdb2 <__vector_24+0x398>
+// IIC  Slave ============================================================================
+
+	case 0x68:	// RCV SLA+W Low Priority							// Словили свой адрес во время передачи мастером
+	case 0x78:	// RCV SLA+W Low Priority (Broadcast)				// Или это был широковещательный пакет. Не важно
+			{
+			i2c_Do |= i2c_ERR_LP | i2c_Interrupted;					// Ставим флаг ошибки Low Priority, а также флаг того, что мастера прервали
+     caa:	80 91 3c 02 	lds	r24, 0x023C
+     cae:	80 6a       	ori	r24, 0xA0	; 160
+     cb0:	80 93 3c 02 	sts	0x023C, r24
+			
+			// Restore Trans after.
+			i2c_index = 0;											// Подготовили прерваную передачу заново
+     cb4:	10 92 2f 02 	sts	0x022F, r1
+			i2c_PageAddrIndex = 0;
+     cb8:	10 92 38 02 	sts	0x0238, r1
+
+	case 0x60: // RCV SLA+W  Incoming?								// Или просто получили свой адрес
+	case 0x70: // RCV SLA+W  Incoming? (Broascast)					// Или широковещательный пакет
+			{
+
+			i2c_Do |= i2c_Busy;										// Занимаем шину. Чтобы другие не совались
+     cbc:	80 91 3c 02 	lds	r24, 0x023C
+     cc0:	80 64       	ori	r24, 0x40	; 64
+     cc2:	80 93 3c 02 	sts	0x023C, r24
+			i2c_SlaveIndex = 0;										// Указатель на начало буфера слейва, Неважно какой буфер. Не ошибемся
+     cc6:	10 92 3a 02 	sts	0x023A, r1
+
+			if (i2c_MasterBytesRX == 1)								// Если нам суждено принять всего один байт, то готовимся принять  его
+				{
+				TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|0<<TWEA|1<<TWEN|1<<TWIE;			// Принять и сказать пошли все н... NACK!
+     cca:	85 e8       	ldi	r24, 0x85	; 133
+     ccc:	80 93 bc 00 	sts	0x00BC, r24
+     cd0:	70 c0       	rjmp	.+224    	; 0xdb2 <__vector_24+0x398>
+			}
+
+	case 0x80:	// RCV Data Byte									// И вот мы приняли этот байт. Наш или широковещательный. Не важно
+	case 0x90:	// RCV Data Byte (Broadcast)
+			{
+			i2c_InBuff[i2c_SlaveIndex] = TWDR;						// Сжираем его в буфер.
+     cd2:	80 91 3a 02 	lds	r24, 0x023A
+     cd6:	90 91 bb 00 	lds	r25, 0x00BB
+     cda:	e8 2f       	mov	r30, r24
+     cdc:	f0 e0       	ldi	r31, 0x00	; 0
+     cde:	e5 5c       	subi	r30, 0xC5	; 197
+     ce0:	fd 4f       	sbci	r31, 0xFD	; 253
+     ce2:	90 83       	st	Z, r25
+			
+			i2c_SlaveIndex++;										// Сдвигаем указатель
+     ce4:	8f 5f       	subi	r24, 0xFF	; 255
+     ce6:	80 93 3a 02 	sts	0x023A, r24
+
+			if (i2c_SlaveIndex == i2c_MasterBytesRX-1) 				// Свободно место всего под один байт? 
+     cea:	81 11       	cpse	r24, r1
+     cec:	04 c0       	rjmp	.+8      	; 0xcf6 <__vector_24+0x2dc>
+				{
+				TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|0<<TWEA|1<<TWEN|1<<TWIE;			// Приянть его и сказать NACK!
+     cee:	85 e8       	ldi	r24, 0x85	; 133
+     cf0:	80 93 bc 00 	sts	0x00BC, r24
+     cf4:	5e c0       	rjmp	.+188    	; 0xdb2 <__vector_24+0x398>
+				}
+			else 
+				{
+				TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|1<<TWEA|1<<TWEN|1<<TWIE;			// Места еще дофига? Принять и ACK!
+     cf6:	85 ec       	ldi	r24, 0xC5	; 197
+     cf8:	80 93 bc 00 	sts	0x00BC, r24
+     cfc:	5a c0       	rjmp	.+180    	; 0xdb2 <__vector_24+0x398>
+			} 
+
+	case 0x88: // RCV Last Byte										// Приянли последний байт
+	case 0x98: // RCV Last Byte (Broadcast)
+			{
+			i2c_InBuff[i2c_SlaveIndex] = TWDR;						// Сожрали его в буфер
+     cfe:	80 91 bb 00 	lds	r24, 0x00BB
+     d02:	e0 91 3a 02 	lds	r30, 0x023A
+     d06:	f0 e0       	ldi	r31, 0x00	; 0
+     d08:	e5 5c       	subi	r30, 0xC5	; 197
+     d0a:	fd 4f       	sbci	r31, 0xFD	; 253
+     d0c:	80 83       	st	Z, r24
+			
+			if (i2c_Do & i2c_Interrupted)							// Если у нас был прерываный сеанс от имени мастера
+     d0e:	80 91 3c 02 	lds	r24, 0x023C
+     d12:	88 23       	and	r24, r24
+     d14:	24 f4       	brge	.+8      	; 0xd1e <__vector_24+0x304>
+				{
+				TWCR = 1<<TWSTA|0<<TWSTO|1<<TWINT|1<<TWEA|1<<TWEN|1<<TWIE;			// Влепим в шину свой Start поскорей и сделаем еще одну попытку
+     d16:	85 ee       	ldi	r24, 0xE5	; 229
+     d18:	80 93 bc 00 	sts	0x00BC, r24
+     d1c:	03 c0       	rjmp	.+6      	; 0xd24 <__vector_24+0x30a>
+				}
+			else
+				{
+				TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|1<<TWEA|1<<TWEN|1<<TWIE;			// Если не было такого факта, то просто отвалимся и будем ждать
+     d1e:	85 ec       	ldi	r24, 0xC5	; 197
+     d20:	80 93 bc 00 	sts	0x00BC, r24
+				}
+
+			MACRO_i2c_WhatDo_SlaveOut												// И лениво отработаем наш выходной экшн для слейва
+     d24:	e0 91 12 01 	lds	r30, 0x0112
+     d28:	f0 91 13 01 	lds	r31, 0x0113
+     d2c:	09 95       	icall
+			break;
+     d2e:	41 c0       	rjmp	.+130    	; 0xdb2 <__vector_24+0x398>
+			{
+
+			// Можно, конечно, сделать вспомогательный автомат, чтобы обрабатывать еще и адреса внутренних страниц, подобно еепромке. 
+			// Но я не стал заморачиваться. В этом случае делается это тут.
+
+			TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|1<<TWEA|1<<TWEN|1<<TWIE;			// просто разадресуемся, проигнорировав этот посыл	
+     d30:	85 ec       	ldi	r24, 0xC5	; 197
+     d32:	80 93 bc 00 	sts	0x00BC, r24
+			break;
+     d36:	3d c0       	rjmp	.+122    	; 0xdb2 <__vector_24+0x398>
+
+
+
+	case 0xB0:  // Поймали свой адрес на чтение во время передачи Мастером			
+			{
+			i2c_Do |= i2c_ERR_LP | i2c_Interrupted;			// Ну чо, коды ошибки и флаг прерваной передачи.
+     d38:	80 91 3c 02 	lds	r24, 0x023C
+     d3c:	80 6a       	ori	r24, 0xA0	; 160
+     d3e:	80 93 3c 02 	sts	0x023C, r24
+		
+			
+			// Восстанавливаем индексы
+			i2c_index = 0;
+     d42:	10 92 2f 02 	sts	0x022F, r1
+			i2c_PageAddrIndex = 0;
+     d46:	10 92 38 02 	sts	0x0238, r1
+
+			}												// Break нет! Идем дальше						
+
+	case 0xA8:	// // Либо просто словили свой адрес на чтение
+			{
+			i2c_SlaveIndex = 0;								// Индексы слейвовых массивов на 0
+     d4a:	10 92 3a 02 	sts	0x023A, r1
+
+			TWDR = i2c_OutBuff[i2c_SlaveIndex];				// Чтож, отдадим байт из тех что есть.
+     d4e:	80 91 34 02 	lds	r24, 0x0234
+     d52:	80 93 bb 00 	sts	0x00BB, r24
+			
+			if(i2c_MasterBytesTX == 1)
+				{
+				TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|0<<TWEA|1<<TWEN|1<<TWIE;	// Если он последний, мы еще на NACK в ответ надеемся 
+     d56:	85 e8       	ldi	r24, 0x85	; 133
+     d58:	80 93 bc 00 	sts	0x00BC, r24
+     d5c:	2a c0       	rjmp	.+84     	; 0xdb2 <__vector_24+0x398>
+			
+
+	case 0xB8: // Послали байт, получили ACK
+			{
+
+			i2c_SlaveIndex++;								// Значит продолжаем дискотеку. Берем следующий байт
+     d5e:	e0 91 3a 02 	lds	r30, 0x023A
+     d62:	ef 5f       	subi	r30, 0xFF	; 255
+     d64:	e0 93 3a 02 	sts	0x023A, r30
+			TWDR = i2c_OutBuff[i2c_SlaveIndex];				// Даем его мастеру
+     d68:	f0 e0       	ldi	r31, 0x00	; 0
+     d6a:	ec 5c       	subi	r30, 0xCC	; 204
+     d6c:	fd 4f       	sbci	r31, 0xFD	; 253
+     d6e:	80 81       	ld	r24, Z
+     d70:	80 93 bb 00 	sts	0x00BB, r24
+
+			if (i2c_SlaveIndex == i2c_MasterBytesTX-1)		// Если он последний был, то
+     d74:	80 91 3a 02 	lds	r24, 0x023A
+     d78:	81 11       	cpse	r24, r1
+     d7a:	04 c0       	rjmp	.+8      	; 0xd84 <__vector_24+0x36a>
+				{
+				TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|0<<TWEA|1<<TWEN|1<<TWIE;	// Шлем его и ждем NACK
+     d7c:	85 e8       	ldi	r24, 0x85	; 133
+     d7e:	80 93 bc 00 	sts	0x00BC, r24
+     d82:	17 c0       	rjmp	.+46     	; 0xdb2 <__vector_24+0x398>
+				}
+			else
+				{
+				TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|1<<TWEA|0<<TWEN|1<<TWIE;	// Если нет, то шлем и ждем ACK
+     d84:	81 ec       	ldi	r24, 0xC1	; 193
+     d86:	80 93 bc 00 	sts	0x00BC, r24
+     d8a:	13 c0       	rjmp	.+38     	; 0xdb2 <__vector_24+0x398>
+			}
+
+	case 0xC0: // Мы выслали последний байт, больше у нас нет, получили NACK
+	case 0xC8: // или ACK. В данном случае нам пох. Т.к. больше байтов у нас нет.
+			{
+			if (i2c_Do & i2c_Interrupted)											// Если там была прерваная передача мастера
+     d8c:	80 91 3c 02 	lds	r24, 0x023C
+     d90:	88 23       	and	r24, r24
+     d92:	3c f4       	brge	.+14     	; 0xda2 <__vector_24+0x388>
+				{																	// То мы ему ее вернем
+				i2c_Do &= i2c_NoInterrupted;										// Снимем флаг прерваности
+     d94:	8f 77       	andi	r24, 0x7F	; 127
+     d96:	80 93 3c 02 	sts	0x023C, r24
+				TWCR = 1<<TWSTA|0<<TWSTO|1<<TWINT|1<<TWEA|1<<TWEN|1<<TWIE;			// Сгенерим старт сразу же как получим шину.
+     d9a:	85 ee       	ldi	r24, 0xE5	; 229
+     d9c:	80 93 bc 00 	sts	0x00BC, r24
+     da0:	03 c0       	rjmp	.+6      	; 0xda8 <__vector_24+0x38e>
+				}
+			else
+				{
+				TWCR = 0<<TWSTA|0<<TWSTO|1<<TWINT|1<<TWEA|1<<TWEN|1<<TWIE;			// Если мы там одни, то просто отдадим шину
+     da2:	85 ec       	ldi	r24, 0xC5	; 197
+     da4:	80 93 bc 00 	sts	0x00BC, r24
+				}
+
+			MACRO_i2c_WhatDo_SlaveOut												// И отработаем выход слейва. Впрочем, он тут
+     da8:	e0 91 12 01 	lds	r30, 0x0112
+     dac:	f0 91 13 01 	lds	r31, 0x0113
+     db0:	09 95       	icall
+			break;																	// Нас почтил своим визитом.
+			}
+
+	default:	break;
+	}
+}
+     db2:	ff 91       	pop	r31
+     db4:	ef 91       	pop	r30
+     db6:	bf 91       	pop	r27
+     db8:	af 91       	pop	r26
+     dba:	9f 91       	pop	r25
+     dbc:	8f 91       	pop	r24
+     dbe:	7f 91       	pop	r23
+     dc0:	6f 91       	pop	r22
+     dc2:	5f 91       	pop	r21
+     dc4:	4f 91       	pop	r20
+     dc6:	3f 91       	pop	r19
+     dc8:	2f 91       	pop	r18
+     dca:	0f 90       	pop	r0
+     dcc:	0f be       	out	0x3f, r0	; 63
+     dce:	0f 90       	pop	r0
+     dd0:	1f 90       	pop	r1
+     dd2:	18 95       	reti
+
+00000dd4 <Init_i2c>:
+{
+}
+
+void Init_i2c(void)							// Настройка режима мастера
+{
+i2c_PORT |= 1<<i2c_SCL|1<<i2c_SDA;			// Включим подтяжку на ноги, вдруг юзер на резисторы пожмотился
+     dd4:	88 b1       	in	r24, 0x08	; 8
+     dd6:	80 63       	ori	r24, 0x30	; 48
+     dd8:	88 b9       	out	0x08, r24	; 8
+i2c_DDR &=~(1<<i2c_SCL|1<<i2c_SDA);
+     dda:	87 b1       	in	r24, 0x07	; 7
+     ddc:	8f 7c       	andi	r24, 0xCF	; 207
+     dde:	87 b9       	out	0x07, r24	; 7
+
+//TWBR = 0xFF;         						// Настроим битрейт
+//TWSR = 0x03;
+
+TWBR = 0x48;         						// Настроим битрейт
+     de0:	88 e4       	ldi	r24, 0x48	; 72
+     de2:	80 93 b8 00 	sts	0x00B8, r24
+TWSR = 0x0;
+     de6:	10 92 b9 00 	sts	0x00B9, r1
+     dea:	08 95       	ret
+
+00000dec <Idle>:
 }
 
 
 //Пустая процедура - простой ядра. 
 inline void  Idle(void)
 {
- 8cc:	08 95       	ret
+     dec:	08 95       	ret
 
-000008ce <InitRTOS>:
+00000dee <InitRTOS>:
 	u16 Time;							// Выдержка в мс
 } MainTimer[MainTimerQueueSize+1];	// Очередь таймеров
 
 
 // RTOS Подготовка. Очистка очередей
 inline void InitRTOS(void) {
- 8ce:	80 e0       	ldi	r24, 0x00	; 0
- 8d0:	90 e0       	ldi	r25, 0x00	; 0
+     dee:	80 e0       	ldi	r24, 0x00	; 0
+     df0:	90 e0       	ldi	r25, 0x00	; 0
 u08	index;
 
 	for(index=0;index!=TaskQueueSize+1;index++)	// Во все позиции записываем Idle
 	{
 		TaskQueue[index] = Idle;
- 8d2:	26 e6       	ldi	r18, 0x66	; 102
- 8d4:	34 e0       	ldi	r19, 0x04	; 4
- 8d6:	fc 01       	movw	r30, r24
- 8d8:	ee 0f       	add	r30, r30
- 8da:	ff 1f       	adc	r31, r31
- 8dc:	ea 5b       	subi	r30, 0xBA	; 186
- 8de:	fe 4f       	sbci	r31, 0xFE	; 254
- 8e0:	31 83       	std	Z+1, r19	; 0x01
- 8e2:	20 83       	st	Z, r18
- 8e4:	01 96       	adiw	r24, 0x01	; 1
+     df2:	26 ef       	ldi	r18, 0xF6	; 246
+     df4:	36 e0       	ldi	r19, 0x06	; 6
+     df6:	fc 01       	movw	r30, r24
+     df8:	ee 0f       	add	r30, r30
+     dfa:	ff 1f       	adc	r31, r31
+     dfc:	ea 59       	subi	r30, 0x9A	; 154
+     dfe:	fe 4f       	sbci	r31, 0xFE	; 254
+     e00:	31 83       	std	Z+1, r19	; 0x01
+     e02:	20 83       	st	Z, r18
+     e04:	01 96       	adiw	r24, 0x01	; 1
 
 // RTOS Подготовка. Очистка очередей
 inline void InitRTOS(void) {
 u08	index;
 
 	for(index=0;index!=TaskQueueSize+1;index++)	// Во все позиции записываем Idle
- 8e6:	85 31       	cpi	r24, 0x15	; 21
- 8e8:	91 05       	cpc	r25, r1
- 8ea:	a9 f7       	brne	.-22     	; 0x8d6 <InitRTOS+0x8>
- 8ec:	80 e0       	ldi	r24, 0x00	; 0
- 8ee:	90 e0       	ldi	r25, 0x00	; 0
+     e06:	85 31       	cpi	r24, 0x15	; 21
+     e08:	91 05       	cpc	r25, r1
+     e0a:	a9 f7       	brne	.-22     	; 0xdf6 <InitRTOS+0x8>
+     e0c:	80 e0       	ldi	r24, 0x00	; 0
+     e0e:	90 e0       	ldi	r25, 0x00	; 0
 	}
 
 
 	for(index=0;index!=MainTimerQueueSize+1;index++) // Обнуляем все таймеры.
 	{
 		MainTimer[index].GoToTask = Idle;
- 8f0:	26 e6       	ldi	r18, 0x66	; 102
- 8f2:	34 e0       	ldi	r19, 0x04	; 4
- 8f4:	fc 01       	movw	r30, r24
- 8f6:	ee 0f       	add	r30, r30
- 8f8:	ff 1f       	adc	r31, r31
- 8fa:	ee 0f       	add	r30, r30
- 8fc:	ff 1f       	adc	r31, r31
- 8fe:	ea 5f       	subi	r30, 0xFA	; 250
- 900:	fe 4f       	sbci	r31, 0xFE	; 254
- 902:	31 83       	std	Z+1, r19	; 0x01
- 904:	20 83       	st	Z, r18
+     e10:	26 ef       	ldi	r18, 0xF6	; 246
+     e12:	36 e0       	ldi	r19, 0x06	; 6
+     e14:	fc 01       	movw	r30, r24
+     e16:	ee 0f       	add	r30, r30
+     e18:	ff 1f       	adc	r31, r31
+     e1a:	ee 0f       	add	r30, r30
+     e1c:	ff 1f       	adc	r31, r31
+     e1e:	ea 5d       	subi	r30, 0xDA	; 218
+     e20:	fe 4f       	sbci	r31, 0xFE	; 254
+     e22:	31 83       	std	Z+1, r19	; 0x01
+     e24:	20 83       	st	Z, r18
 		MainTimer[index].Time = 0;
- 906:	13 82       	std	Z+3, r1	; 0x03
- 908:	12 82       	std	Z+2, r1	; 0x02
- 90a:	01 96       	adiw	r24, 0x01	; 1
+     e26:	13 82       	std	Z+3, r1	; 0x03
+     e28:	12 82       	std	Z+2, r1	; 0x02
+     e2a:	01 96       	adiw	r24, 0x01	; 1
 	{
 		TaskQueue[index] = Idle;
 	}
 
 
 	for(index=0;index!=MainTimerQueueSize+1;index++) // Обнуляем все таймеры.
- 90c:	80 31       	cpi	r24, 0x10	; 16
- 90e:	91 05       	cpc	r25, r1
- 910:	89 f7       	brne	.-30     	; 0x8f4 <InitRTOS+0x26>
+     e2c:	80 31       	cpi	r24, 0x10	; 16
+     e2e:	91 05       	cpc	r25, r1
+     e30:	89 f7       	brne	.-30     	; 0xe14 <InitRTOS+0x26>
 	{
 		MainTimer[index].GoToTask = Idle;
 		MainTimer[index].Time = 0;
 	}
 }
- 912:	08 95       	ret
+     e32:	08 95       	ret
 
-00000914 <SetTask>:
+00000e34 <SetTask>:
 // Отдаваемое значение - код ошибки.
 void SetTask(TPTR TS) {
 u08		index = 0;
 u08		nointerrupted = 0;
 
 	if (STATUS_REG & (1<<Interrupt_Flag))  // Если прерывания разрешены, то запрещаем их.
- 914:	0f b6       	in	r0, 0x3f	; 63
- 916:	07 fe       	sbrs	r0, 7
- 918:	0c c0       	rjmp	.+24     	; 0x932 <SetTask+0x1e>
+     e34:	0f b6       	in	r0, 0x3f	; 63
+     e36:	07 fe       	sbrs	r0, 7
+     e38:	0c c0       	rjmp	.+24     	; 0xe52 <SetTask+0x1e>
 	{
 		Disable_Interrupt
- 91a:	f8 94       	cli
+     e3a:	f8 94       	cli
 		nointerrupted = 1;					// И ставим флаг, что мы не в прерывании. 
- 91c:	a1 e0       	ldi	r26, 0x01	; 1
- 91e:	0a c0       	rjmp	.+20     	; 0x934 <SetTask+0x20>
- 920:	2f 5f       	subi	r18, 0xFF	; 255
- 922:	3f 4f       	sbci	r19, 0xFF	; 255
+     e3c:	a1 e0       	ldi	r26, 0x01	; 1
+     e3e:	0a c0       	rjmp	.+20     	; 0xe54 <SetTask+0x20>
+     e40:	2f 5f       	subi	r18, 0xFF	; 255
+     e42:	3f 4f       	sbci	r19, 0xFF	; 255
 	}
 
 	while(TaskQueue[index]!=Idle) 			// Прочесываем очередь задач на предмет свободной ячейки
 	{									// с значением Idle - конец очереди.
 		index++;
 		if (index==TaskQueueSize+1) 		// Если очередь переполнена то выходим не солоно хлебавши
- 924:	25 31       	cpi	r18, 0x15	; 21
- 926:	31 05       	cpc	r19, r1
- 928:	39 f4       	brne	.+14     	; 0x938 <SetTask+0x24>
+     e44:	25 31       	cpi	r18, 0x15	; 21
+     e46:	31 05       	cpc	r19, r1
+     e48:	39 f4       	brne	.+14     	; 0xe58 <SetTask+0x24>
 		{
 			if (nointerrupted)	Enable_Interrupt 	// Если мы не в прерывании, то разрешаем прерывания
- 92a:	aa 23       	and	r26, r26
- 92c:	c9 f0       	breq	.+50     	; 0x960 <SetTask+0x4c>
- 92e:	78 94       	sei
- 930:	08 95       	ret
+     e4a:	aa 23       	and	r26, r26
+     e4c:	c9 f0       	breq	.+50     	; 0xe80 <SetTask+0x4c>
+     e4e:	78 94       	sei
+     e50:	08 95       	ret
 
 // Функция установки задачи в очередь. Передаваемый параметр - указатель на функцию
 // Отдаваемое значение - код ошибки.
 void SetTask(TPTR TS) {
 u08		index = 0;
 u08		nointerrupted = 0;
- 932:	a0 e0       	ldi	r26, 0x00	; 0
- 934:	20 e0       	ldi	r18, 0x00	; 0
- 936:	30 e0       	ldi	r19, 0x00	; 0
+     e52:	a0 e0       	ldi	r26, 0x00	; 0
+     e54:	20 e0       	ldi	r18, 0x00	; 0
+     e56:	30 e0       	ldi	r19, 0x00	; 0
 	{
 		Disable_Interrupt
 		nointerrupted = 1;					// И ставим флаг, что мы не в прерывании. 
 	}
 
 	while(TaskQueue[index]!=Idle) 			// Прочесываем очередь задач на предмет свободной ячейки
- 938:	f9 01       	movw	r30, r18
- 93a:	ee 0f       	add	r30, r30
- 93c:	ff 1f       	adc	r31, r31
- 93e:	ea 5b       	subi	r30, 0xBA	; 186
- 940:	fe 4f       	sbci	r31, 0xFE	; 254
- 942:	40 81       	ld	r20, Z
- 944:	51 81       	ldd	r21, Z+1	; 0x01
- 946:	46 56       	subi	r20, 0x66	; 102
- 948:	54 40       	sbci	r21, 0x04	; 4
- 94a:	51 f7       	brne	.-44     	; 0x920 <SetTask+0xc>
+     e58:	f9 01       	movw	r30, r18
+     e5a:	ee 0f       	add	r30, r30
+     e5c:	ff 1f       	adc	r31, r31
+     e5e:	ea 59       	subi	r30, 0x9A	; 154
+     e60:	fe 4f       	sbci	r31, 0xFE	; 254
+     e62:	40 81       	ld	r20, Z
+     e64:	51 81       	ldd	r21, Z+1	; 0x01
+     e66:	46 5f       	subi	r20, 0xF6	; 246
+     e68:	56 40       	sbci	r21, 0x06	; 6
+     e6a:	51 f7       	brne	.-44     	; 0xe40 <SetTask+0xc>
 			if (nointerrupted)	Enable_Interrupt 	// Если мы не в прерывании, то разрешаем прерывания
 			return;									// Раньше функция возвращала код ошибки - очередь переполнена. Пока убрал.
 		}
 	}
 												// Если нашли свободное место, то
 	TaskQueue[index] = TS;							// Записываем в очередь задачу
- 94c:	f9 01       	movw	r30, r18
- 94e:	ee 0f       	add	r30, r30
- 950:	ff 1f       	adc	r31, r31
- 952:	ea 5b       	subi	r30, 0xBA	; 186
- 954:	fe 4f       	sbci	r31, 0xFE	; 254
- 956:	91 83       	std	Z+1, r25	; 0x01
- 958:	80 83       	st	Z, r24
+     e6c:	f9 01       	movw	r30, r18
+     e6e:	ee 0f       	add	r30, r30
+     e70:	ff 1f       	adc	r31, r31
+     e72:	ea 59       	subi	r30, 0x9A	; 154
+     e74:	fe 4f       	sbci	r31, 0xFE	; 254
+     e76:	91 83       	std	Z+1, r25	; 0x01
+     e78:	80 83       	st	Z, r24
 	if (nointerrupted) Enable_Interrupt				// И включаем прерывания если не в обработчике прерывания.
- 95a:	aa 23       	and	r26, r26
- 95c:	09 f0       	breq	.+2      	; 0x960 <SetTask+0x4c>
- 95e:	78 94       	sei
- 960:	08 95       	ret
+     e7a:	aa 23       	and	r26, r26
+     e7c:	09 f0       	breq	.+2      	; 0xe80 <SetTask+0x4c>
+     e7e:	78 94       	sei
+     e80:	08 95       	ret
 
-00000962 <TaskManager>:
+00000e82 <SetTimerTask>:
+}
+
+
+//Функция установки задачи по таймеру. Передаваемые параметры - указатель на функцию, 
+// Время выдержки в тиках системного таймера. Возвращет код ошибки.
+void SetTimerTask(TPTR TS, u16 NewTime) {
+     e82:	cf 93       	push	r28
+u08		index=0;
+u08		nointerrupted = 0;
+
+	if (STATUS_REG & (1<<Interrupt_Flag)) 			// Проверка запрета прерывания, аналогично функции выше
+     e84:	0f b6       	in	r0, 0x3f	; 63
+     e86:	07 fe       	sbrs	r0, 7
+     e88:	03 c0       	rjmp	.+6      	; 0xe90 <SetTimerTask+0xe>
+	{
+		Disable_Interrupt
+     e8a:	f8 94       	cli
+		nointerrupted = 1;
+     e8c:	c1 e0       	ldi	r28, 0x01	; 1
+     e8e:	01 c0       	rjmp	.+2      	; 0xe92 <SetTimerTask+0x10>
+
+//Функция установки задачи по таймеру. Передаваемые параметры - указатель на функцию, 
+// Время выдержки в тиках системного таймера. Возвращет код ошибки.
+void SetTimerTask(TPTR TS, u16 NewTime) {
+u08		index=0;
+u08		nointerrupted = 0;
+     e90:	c0 e0       	ldi	r28, 0x00	; 0
+	}
+
+
+	for(index=0;index!=MainTimerQueueSize+1;++index)	//Прочесываем очередь таймеров
+	{
+		if(MainTimer[index].GoToTask == TS)				// Если уже есть запись с таким адресом
+     e92:	20 91 26 01 	lds	r18, 0x0126
+     e96:	30 91 27 01 	lds	r19, 0x0127
+     e9a:	28 17       	cp	r18, r24
+     e9c:	39 07       	cpc	r19, r25
+     e9e:	81 f0       	breq	.+32     	; 0xec0 <SetTimerTask+0x3e>
+     ea0:	21 e0       	ldi	r18, 0x01	; 1
+     ea2:	30 e0       	ldi	r19, 0x00	; 0
+     ea4:	d9 01       	movw	r26, r18
+     ea6:	f9 01       	movw	r30, r18
+     ea8:	ee 0f       	add	r30, r30
+     eaa:	ff 1f       	adc	r31, r31
+     eac:	ee 0f       	add	r30, r30
+     eae:	ff 1f       	adc	r31, r31
+     eb0:	ea 5d       	subi	r30, 0xDA	; 218
+     eb2:	fe 4f       	sbci	r31, 0xFE	; 254
+     eb4:	40 81       	ld	r20, Z
+     eb6:	51 81       	ldd	r21, Z+1	; 0x01
+     eb8:	48 17       	cp	r20, r24
+     eba:	59 07       	cpc	r21, r25
+     ebc:	89 f4       	brne	.+34     	; 0xee0 <SetTimerTask+0x5e>
+     ebe:	02 c0       	rjmp	.+4      	; 0xec4 <SetTimerTask+0x42>
+     ec0:	a0 e0       	ldi	r26, 0x00	; 0
+     ec2:	b0 e0       	ldi	r27, 0x00	; 0
+		{
+			MainTimer[index].Time = NewTime;			// Перезаписываем ей выдержку
+     ec4:	aa 0f       	add	r26, r26
+     ec6:	bb 1f       	adc	r27, r27
+     ec8:	aa 0f       	add	r26, r26
+     eca:	bb 1f       	adc	r27, r27
+     ecc:	aa 5d       	subi	r26, 0xDA	; 218
+     ece:	be 4f       	sbci	r27, 0xFE	; 254
+     ed0:	13 96       	adiw	r26, 0x03	; 3
+     ed2:	7c 93       	st	X, r23
+     ed4:	6e 93       	st	-X, r22
+     ed6:	12 97       	sbiw	r26, 0x02	; 2
+			if (nointerrupted) 	Enable_Interrupt		// Разрешаем прерывания если не были запрещены.
+     ed8:	cc 23       	and	r28, r28
+     eda:	b1 f1       	breq	.+108    	; 0xf48 <SetTimerTask+0xc6>
+     edc:	78 94       	sei
+     ede:	34 c0       	rjmp	.+104    	; 0xf48 <SetTimerTask+0xc6>
+     ee0:	2f 5f       	subi	r18, 0xFF	; 255
+     ee2:	3f 4f       	sbci	r19, 0xFF	; 255
+		Disable_Interrupt
+		nointerrupted = 1;
+	}
+
+
+	for(index=0;index!=MainTimerQueueSize+1;++index)	//Прочесываем очередь таймеров
+     ee4:	20 31       	cpi	r18, 0x10	; 16
+     ee6:	31 05       	cpc	r19, r1
+     ee8:	e9 f6       	brne	.-70     	; 0xea4 <SetTimerTask+0x22>
+	}
+	
+
+	for(index=0;index!=MainTimerQueueSize+1;++index)	// Если не находим похожий таймер, то ищем любой пустой	
+	{
+		if (MainTimer[index].GoToTask == Idle)		
+     eea:	20 91 26 01 	lds	r18, 0x0126
+     eee:	30 91 27 01 	lds	r19, 0x0127
+     ef2:	26 5f       	subi	r18, 0xF6	; 246
+     ef4:	36 40       	sbci	r19, 0x06	; 6
+     ef6:	81 f0       	breq	.+32     	; 0xf18 <SetTimerTask+0x96>
+     ef8:	21 e0       	ldi	r18, 0x01	; 1
+     efa:	30 e0       	ldi	r19, 0x00	; 0
+     efc:	d9 01       	movw	r26, r18
+     efe:	f9 01       	movw	r30, r18
+     f00:	ee 0f       	add	r30, r30
+     f02:	ff 1f       	adc	r31, r31
+     f04:	ee 0f       	add	r30, r30
+     f06:	ff 1f       	adc	r31, r31
+     f08:	ea 5d       	subi	r30, 0xDA	; 218
+     f0a:	fe 4f       	sbci	r31, 0xFE	; 254
+     f0c:	40 81       	ld	r20, Z
+     f0e:	51 81       	ldd	r21, Z+1	; 0x01
+     f10:	46 5f       	subi	r20, 0xF6	; 246
+     f12:	56 40       	sbci	r21, 0x06	; 6
+     f14:	a1 f4       	brne	.+40     	; 0xf3e <SetTimerTask+0xbc>
+     f16:	02 c0       	rjmp	.+4      	; 0xf1c <SetTimerTask+0x9a>
+     f18:	a0 e0       	ldi	r26, 0x00	; 0
+     f1a:	b0 e0       	ldi	r27, 0x00	; 0
+		{
+			MainTimer[index].GoToTask = TS;			// Заполняем поле перехода задачи
+     f1c:	aa 0f       	add	r26, r26
+     f1e:	bb 1f       	adc	r27, r27
+     f20:	aa 0f       	add	r26, r26
+     f22:	bb 1f       	adc	r27, r27
+     f24:	aa 5d       	subi	r26, 0xDA	; 218
+     f26:	be 4f       	sbci	r27, 0xFE	; 254
+     f28:	11 96       	adiw	r26, 0x01	; 1
+     f2a:	9c 93       	st	X, r25
+     f2c:	8e 93       	st	-X, r24
+			MainTimer[index].Time = NewTime;		// И поле выдержки времени
+     f2e:	13 96       	adiw	r26, 0x03	; 3
+     f30:	7c 93       	st	X, r23
+     f32:	6e 93       	st	-X, r22
+     f34:	12 97       	sbiw	r26, 0x02	; 2
+			if (nointerrupted) 	Enable_Interrupt	// Разрешаем прерывания
+     f36:	cc 23       	and	r28, r28
+     f38:	39 f0       	breq	.+14     	; 0xf48 <SetTimerTask+0xc6>
+     f3a:	78 94       	sei
+     f3c:	05 c0       	rjmp	.+10     	; 0xf48 <SetTimerTask+0xc6>
+     f3e:	2f 5f       	subi	r18, 0xFF	; 255
+     f40:	3f 4f       	sbci	r19, 0xFF	; 255
+			return;										// Выходим. Раньше был код успешной операции. Пока убрал
+		}
+	}
+	
+
+	for(index=0;index!=MainTimerQueueSize+1;++index)	// Если не находим похожий таймер, то ищем любой пустой	
+     f42:	20 31       	cpi	r18, 0x10	; 16
+     f44:	31 05       	cpc	r19, r1
+     f46:	d1 f6       	brne	.-76     	; 0xefc <SetTimerTask+0x7a>
+			if (nointerrupted) 	Enable_Interrupt	// Разрешаем прерывания
+			return;									// Выход. 
+		}
+		
+	}												// тут можно сделать return c кодом ошибки - нет свободных таймеров
+}
+     f48:	cf 91       	pop	r28
+     f4a:	08 95       	ret
+
+00000f4c <TaskManager>:
 
 inline void TaskManager(void) {
 u08		index=0;
 TPTR	GoToTask = Idle;		// Инициализируем переменные
 
 	Disable_Interrupt				// Запрещаем прерывания!!!
- 962:	f8 94       	cli
+     f4c:	f8 94       	cli
 	GoToTask = TaskQueue[0];		// Хватаем первое значение из очереди
- 964:	e0 91 46 01 	lds	r30, 0x0146
- 968:	f0 91 47 01 	lds	r31, 0x0147
+     f4e:	e0 91 66 01 	lds	r30, 0x0166
+     f52:	f0 91 67 01 	lds	r31, 0x0167
 
 	if (GoToTask==Idle) 			// Если там пусто
- 96c:	84 e0       	ldi	r24, 0x04	; 4
- 96e:	e6 36       	cpi	r30, 0x66	; 102
- 970:	f8 07       	cpc	r31, r24
- 972:	11 f4       	brne	.+4      	; 0x978 <TaskManager+0x16>
+     f56:	86 e0       	ldi	r24, 0x06	; 6
+     f58:	e6 3f       	cpi	r30, 0xF6	; 246
+     f5a:	f8 07       	cpc	r31, r24
+     f5c:	11 f4       	brne	.+4      	; 0xf62 <TaskManager+0x16>
 	{
 		Enable_Interrupt			// Разрешаем прерывания
- 974:	78 94       	sei
- 976:	08 95       	ret
+     f5e:	78 94       	sei
+     f60:	08 95       	ret
 TPTR	GoToTask = Idle;		// Инициализируем переменные
 
 	Disable_Interrupt				// Запрещаем прерывания!!!
 	GoToTask = TaskQueue[0];		// Хватаем первое значение из очереди
 
 	if (GoToTask==Idle) 			// Если там пусто
- 978:	20 e0       	ldi	r18, 0x00	; 0
- 97a:	30 e0       	ldi	r19, 0x00	; 0
- 97c:	c9 01       	movw	r24, r18
- 97e:	01 96       	adiw	r24, 0x01	; 1
+     f62:	20 e0       	ldi	r18, 0x00	; 0
+     f64:	30 e0       	ldi	r19, 0x00	; 0
+     f66:	c9 01       	movw	r24, r18
+     f68:	01 96       	adiw	r24, 0x01	; 1
 	}
 	else
 	{
 		for(index=0;index!=TaskQueueSize;index++)	// В противном случае сдвигаем всю очередь
 		{
 			TaskQueue[index]=TaskQueue[index+1];
- 980:	dc 01       	movw	r26, r24
- 982:	aa 0f       	add	r26, r26
- 984:	bb 1f       	adc	r27, r27
- 986:	aa 5b       	subi	r26, 0xBA	; 186
- 988:	be 4f       	sbci	r27, 0xFE	; 254
- 98a:	4d 91       	ld	r20, X+
- 98c:	5c 91       	ld	r21, X
- 98e:	d9 01       	movw	r26, r18
- 990:	aa 0f       	add	r26, r26
- 992:	bb 1f       	adc	r27, r27
- 994:	aa 5b       	subi	r26, 0xBA	; 186
- 996:	be 4f       	sbci	r27, 0xFE	; 254
- 998:	11 96       	adiw	r26, 0x01	; 1
- 99a:	5c 93       	st	X, r21
- 99c:	4e 93       	st	-X, r20
+     f6a:	dc 01       	movw	r26, r24
+     f6c:	aa 0f       	add	r26, r26
+     f6e:	bb 1f       	adc	r27, r27
+     f70:	aa 59       	subi	r26, 0x9A	; 154
+     f72:	be 4f       	sbci	r27, 0xFE	; 254
+     f74:	4d 91       	ld	r20, X+
+     f76:	5c 91       	ld	r21, X
+     f78:	d9 01       	movw	r26, r18
+     f7a:	aa 0f       	add	r26, r26
+     f7c:	bb 1f       	adc	r27, r27
+     f7e:	aa 59       	subi	r26, 0x9A	; 154
+     f80:	be 4f       	sbci	r27, 0xFE	; 254
+     f82:	11 96       	adiw	r26, 0x01	; 1
+     f84:	5c 93       	st	X, r21
+     f86:	4e 93       	st	-X, r20
 		Enable_Interrupt			// Разрешаем прерывания
 		(Idle)(); 					// Переходим на обработку пустого цикла
 	}
 	else
 	{
 		for(index=0;index!=TaskQueueSize;index++)	// В противном случае сдвигаем всю очередь
- 99e:	84 31       	cpi	r24, 0x14	; 20
- 9a0:	91 05       	cpc	r25, r1
- 9a2:	11 f0       	breq	.+4      	; 0x9a8 <TaskManager+0x46>
- 9a4:	9c 01       	movw	r18, r24
- 9a6:	ea cf       	rjmp	.-44     	; 0x97c <TaskManager+0x1a>
+     f88:	84 31       	cpi	r24, 0x14	; 20
+     f8a:	91 05       	cpc	r25, r1
+     f8c:	11 f0       	breq	.+4      	; 0xf92 <TaskManager+0x46>
+     f8e:	9c 01       	movw	r18, r24
+     f90:	ea cf       	rjmp	.-44     	; 0xf66 <TaskManager+0x1a>
 		{
 			TaskQueue[index]=TaskQueue[index+1];
 		}
 
 		TaskQueue[TaskQueueSize]= Idle;				// В последнюю запись пихаем затычку
- 9a8:	86 e6       	ldi	r24, 0x66	; 102
- 9aa:	94 e0       	ldi	r25, 0x04	; 4
- 9ac:	90 93 6f 01 	sts	0x016F, r25
- 9b0:	80 93 6e 01 	sts	0x016E, r24
+     f92:	86 ef       	ldi	r24, 0xF6	; 246
+     f94:	96 e0       	ldi	r25, 0x06	; 6
+     f96:	90 93 8f 01 	sts	0x018F, r25
+     f9a:	80 93 8e 01 	sts	0x018E, r24
 
 		Enable_Interrupt							// Разрешаем прерывания
- 9b4:	78 94       	sei
+     f9e:	78 94       	sei
 		(GoToTask)();								// Переходим к задаче
- 9b6:	09 95       	icall
- 9b8:	08 95       	ret
+     fa0:	09 95       	icall
+     fa2:	08 95       	ret
 
-000009ba <__vector_11>:
+00000fa4 <__vector_11>:
 	}
 }
 
 //RTOS Interrupt
 ISR(RTOS_ISR)
 {
- 9ba:	1f 92       	push	r1
- 9bc:	0f 92       	push	r0
- 9be:	0f b6       	in	r0, 0x3f	; 63
- 9c0:	0f 92       	push	r0
- 9c2:	11 24       	eor	r1, r1
- 9c4:	ef 92       	push	r14
- 9c6:	ff 92       	push	r15
- 9c8:	0f 93       	push	r16
- 9ca:	1f 93       	push	r17
- 9cc:	2f 93       	push	r18
- 9ce:	3f 93       	push	r19
- 9d0:	4f 93       	push	r20
- 9d2:	5f 93       	push	r21
- 9d4:	6f 93       	push	r22
- 9d6:	7f 93       	push	r23
- 9d8:	8f 93       	push	r24
- 9da:	9f 93       	push	r25
- 9dc:	af 93       	push	r26
- 9de:	bf 93       	push	r27
- 9e0:	cf 93       	push	r28
- 9e2:	df 93       	push	r29
- 9e4:	ef 93       	push	r30
- 9e6:	ff 93       	push	r31
- 9e8:	c0 e0       	ldi	r28, 0x00	; 0
- 9ea:	d0 e0       	ldi	r29, 0x00	; 0
+     fa4:	1f 92       	push	r1
+     fa6:	0f 92       	push	r0
+     fa8:	0f b6       	in	r0, 0x3f	; 63
+     faa:	0f 92       	push	r0
+     fac:	11 24       	eor	r1, r1
+     fae:	ef 92       	push	r14
+     fb0:	ff 92       	push	r15
+     fb2:	0f 93       	push	r16
+     fb4:	1f 93       	push	r17
+     fb6:	2f 93       	push	r18
+     fb8:	3f 93       	push	r19
+     fba:	4f 93       	push	r20
+     fbc:	5f 93       	push	r21
+     fbe:	6f 93       	push	r22
+     fc0:	7f 93       	push	r23
+     fc2:	8f 93       	push	r24
+     fc4:	9f 93       	push	r25
+     fc6:	af 93       	push	r26
+     fc8:	bf 93       	push	r27
+     fca:	cf 93       	push	r28
+     fcc:	df 93       	push	r29
+     fce:	ef 93       	push	r30
+     fd0:	ff 93       	push	r31
+     fd2:	c0 e0       	ldi	r28, 0x00	; 0
+     fd4:	d0 e0       	ldi	r29, 0x00	; 0
 			MainTimer[index].Time --;						// Уменьшаем число в ячейке если не конец.
 		}
 		else
 		{
 			SetTask(MainTimer[index].GoToTask);				// Дощелкали до нуля? Пихаем в очередь задачу
 			MainTimer[index].GoToTask = Idle;				// А в ячейку пишем затычку
- 9ec:	06 e6       	ldi	r16, 0x66	; 102
- 9ee:	14 e0       	ldi	r17, 0x04	; 4
+     fd6:	06 ef       	ldi	r16, 0xF6	; 246
+     fd8:	16 e0       	ldi	r17, 0x06	; 6
 inline void TimerService(void){
 u08 index;
 
 	for(index=0;index!=MainTimerQueueSize+1;index++)		// Прочесываем очередь таймеров
 	{
 		if(MainTimer[index].GoToTask == Idle) continue;		// Если нашли пустышку - щелкаем следующую итерацию
- 9f0:	fe 01       	movw	r30, r28
- 9f2:	de 01       	movw	r26, r28
- 9f4:	aa 0f       	add	r26, r26
- 9f6:	bb 1f       	adc	r27, r27
- 9f8:	aa 0f       	add	r26, r26
- 9fa:	bb 1f       	adc	r27, r27
- 9fc:	aa 5f       	subi	r26, 0xFA	; 250
- 9fe:	be 4f       	sbci	r27, 0xFE	; 254
- a00:	8d 91       	ld	r24, X+
- a02:	9c 91       	ld	r25, X
- a04:	86 56       	subi	r24, 0x66	; 102
- a06:	94 40       	sbci	r25, 0x04	; 4
- a08:	21 f1       	breq	.+72     	; 0xa52 <__vector_11+0x98>
+     fda:	fe 01       	movw	r30, r28
+     fdc:	de 01       	movw	r26, r28
+     fde:	aa 0f       	add	r26, r26
+     fe0:	bb 1f       	adc	r27, r27
+     fe2:	aa 0f       	add	r26, r26
+     fe4:	bb 1f       	adc	r27, r27
+     fe6:	aa 5d       	subi	r26, 0xDA	; 218
+     fe8:	be 4f       	sbci	r27, 0xFE	; 254
+     fea:	8d 91       	ld	r24, X+
+     fec:	9c 91       	ld	r25, X
+     fee:	86 5f       	subi	r24, 0xF6	; 246
+     ff0:	96 40       	sbci	r25, 0x06	; 6
+     ff2:	21 f1       	breq	.+72     	; 0x103c <__vector_11+0x98>
 
 		if(MainTimer[index].Time !=1)						// Если таймер не выщелкал, то щелкаем еще раз. 
- a0a:	de 01       	movw	r26, r28
- a0c:	aa 0f       	add	r26, r26
- a0e:	bb 1f       	adc	r27, r27
- a10:	aa 0f       	add	r26, r26
- a12:	bb 1f       	adc	r27, r27
- a14:	aa 5f       	subi	r26, 0xFA	; 250
- a16:	be 4f       	sbci	r27, 0xFE	; 254
- a18:	12 96       	adiw	r26, 0x02	; 2
- a1a:	8d 91       	ld	r24, X+
- a1c:	9c 91       	ld	r25, X
- a1e:	13 97       	sbiw	r26, 0x03	; 3
- a20:	01 97       	sbiw	r24, 0x01	; 1
- a22:	39 f0       	breq	.+14     	; 0xa32 <__vector_11+0x78>
-		{												// To Do: Вычислить по тактам, что лучше !=1 или !=0. 
+     ff4:	de 01       	movw	r26, r28
+     ff6:	aa 0f       	add	r26, r26
+     ff8:	bb 1f       	adc	r27, r27
+     ffa:	aa 0f       	add	r26, r26
+     ffc:	bb 1f       	adc	r27, r27
+     ffe:	aa 5d       	subi	r26, 0xDA	; 218
+    1000:	be 4f       	sbci	r27, 0xFE	; 254
+    1002:	12 96       	adiw	r26, 0x02	; 2
+    1004:	8d 91       	ld	r24, X+
+    1006:	9c 91       	ld	r25, X
+    1008:	13 97       	sbiw	r26, 0x03	; 3
+    100a:	01 97       	sbiw	r24, 0x01	; 1
+    100c:	39 f0       	breq	.+14     	; 0x101c <__vector_11+0x78>
+		{													// To Do: Вычислить по тактам, что лучше !=1 или !=0. 
 			MainTimer[index].Time --;						// Уменьшаем число в ячейке если не конец.
- a24:	fd 01       	movw	r30, r26
- a26:	82 81       	ldd	r24, Z+2	; 0x02
- a28:	93 81       	ldd	r25, Z+3	; 0x03
- a2a:	01 97       	sbiw	r24, 0x01	; 1
- a2c:	93 83       	std	Z+3, r25	; 0x03
- a2e:	82 83       	std	Z+2, r24	; 0x02
- a30:	10 c0       	rjmp	.+32     	; 0xa52 <__vector_11+0x98>
+    100e:	fd 01       	movw	r30, r26
+    1010:	82 81       	ldd	r24, Z+2	; 0x02
+    1012:	93 81       	ldd	r25, Z+3	; 0x03
+    1014:	01 97       	sbiw	r24, 0x01	; 1
+    1016:	93 83       	std	Z+3, r25	; 0x03
+    1018:	82 83       	std	Z+2, r24	; 0x02
+    101a:	10 c0       	rjmp	.+32     	; 0x103c <__vector_11+0x98>
 		}
 		else
 		{
 			SetTask(MainTimer[index].GoToTask);				// Дощелкали до нуля? Пихаем в очередь задачу
- a32:	ee 0f       	add	r30, r30
- a34:	ff 1f       	adc	r31, r31
- a36:	ee 0f       	add	r30, r30
- a38:	ff 1f       	adc	r31, r31
- a3a:	cf 01       	movw	r24, r30
- a3c:	8a 5f       	subi	r24, 0xFA	; 250
- a3e:	9e 4f       	sbci	r25, 0xFE	; 254
- a40:	7c 01       	movw	r14, r24
- a42:	fc 01       	movw	r30, r24
- a44:	80 81       	ld	r24, Z
- a46:	91 81       	ldd	r25, Z+1	; 0x01
- a48:	0e 94 8a 04 	call	0x914	; 0x914 <SetTask>
+    101c:	ee 0f       	add	r30, r30
+    101e:	ff 1f       	adc	r31, r31
+    1020:	ee 0f       	add	r30, r30
+    1022:	ff 1f       	adc	r31, r31
+    1024:	cf 01       	movw	r24, r30
+    1026:	8a 5d       	subi	r24, 0xDA	; 218
+    1028:	9e 4f       	sbci	r25, 0xFE	; 254
+    102a:	7c 01       	movw	r14, r24
+    102c:	fc 01       	movw	r30, r24
+    102e:	80 81       	ld	r24, Z
+    1030:	91 81       	ldd	r25, Z+1	; 0x01
+    1032:	0e 94 1a 07 	call	0xe34	; 0xe34 <SetTask>
 			MainTimer[index].GoToTask = Idle;				// А в ячейку пишем затычку
- a4c:	f7 01       	movw	r30, r14
- a4e:	11 83       	std	Z+1, r17	; 0x01
- a50:	00 83       	st	Z, r16
- a52:	21 96       	adiw	r28, 0x01	; 1
+    1036:	f7 01       	movw	r30, r14
+    1038:	11 83       	std	Z+1, r17	; 0x01
+    103a:	00 83       	st	Z, r16
+    103c:	21 96       	adiw	r28, 0x01	; 1
 В этом случае не забыть добавить проверку прерывания. 
 */
 inline void TimerService(void){
 u08 index;
 
 	for(index=0;index!=MainTimerQueueSize+1;index++)		// Прочесываем очередь таймеров
- a54:	c0 31       	cpi	r28, 0x10	; 16
- a56:	d1 05       	cpc	r29, r1
- a58:	59 f6       	brne	.-106    	; 0x9f0 <__vector_11+0x36>
+    103e:	c0 31       	cpi	r28, 0x10	; 16
+    1040:	d1 05       	cpc	r29, r1
+    1042:	59 f6       	brne	.-106    	; 0xfda <__vector_11+0x36>
 
 //RTOS Interrupt
 ISR(RTOS_ISR)
 {
 	TimerService();						// Прерывание ядра диспетчера
 }
- a5a:	ff 91       	pop	r31
- a5c:	ef 91       	pop	r30
- a5e:	df 91       	pop	r29
- a60:	cf 91       	pop	r28
- a62:	bf 91       	pop	r27
- a64:	af 91       	pop	r26
- a66:	9f 91       	pop	r25
- a68:	8f 91       	pop	r24
- a6a:	7f 91       	pop	r23
- a6c:	6f 91       	pop	r22
- a6e:	5f 91       	pop	r21
- a70:	4f 91       	pop	r20
- a72:	3f 91       	pop	r19
- a74:	2f 91       	pop	r18
- a76:	1f 91       	pop	r17
- a78:	0f 91       	pop	r16
- a7a:	ff 90       	pop	r15
- a7c:	ef 90       	pop	r14
- a7e:	0f 90       	pop	r0
- a80:	0f be       	out	0x3f, r0	; 63
- a82:	0f 90       	pop	r0
- a84:	1f 90       	pop	r1
- a86:	18 95       	reti
+    1044:	ff 91       	pop	r31
+    1046:	ef 91       	pop	r30
+    1048:	df 91       	pop	r29
+    104a:	cf 91       	pop	r28
+    104c:	bf 91       	pop	r27
+    104e:	af 91       	pop	r26
+    1050:	9f 91       	pop	r25
+    1052:	8f 91       	pop	r24
+    1054:	7f 91       	pop	r23
+    1056:	6f 91       	pop	r22
+    1058:	5f 91       	pop	r21
+    105a:	4f 91       	pop	r20
+    105c:	3f 91       	pop	r19
+    105e:	2f 91       	pop	r18
+    1060:	1f 91       	pop	r17
+    1062:	0f 91       	pop	r16
+    1064:	ff 90       	pop	r15
+    1066:	ef 90       	pop	r14
+    1068:	0f 90       	pop	r0
+    106a:	0f be       	out	0x3f, r0	; 63
+    106c:	0f 90       	pop	r0
+    106e:	1f 90       	pop	r1
+    1070:	18 95       	reti
 
-00000a88 <RunRTOS>:
+00001072 <RunRTOS>:
 	OCR2A  = LO(TimerDivider); 			// Установить значение в регистр сравнения
 
 	TIMSK2 = _BV(OCIE2A);				// Разрешаем прерывание RTOS - запуск ОС
 */
 
 	TCCR1B |=  _BV(WGM12) | (0<<CS12) | (1<<CS11) | (1<<CS10);		// PRESCAler 64
- a88:	e1 e8       	ldi	r30, 0x81	; 129
- a8a:	f0 e0       	ldi	r31, 0x00	; 0
- a8c:	80 81       	ld	r24, Z
- a8e:	8b 60       	ori	r24, 0x0B	; 11
- a90:	80 83       	st	Z, r24
+    1072:	e1 e8       	ldi	r30, 0x81	; 129
+    1074:	f0 e0       	ldi	r31, 0x00	; 0
+    1076:	80 81       	ld	r24, Z
+    1078:	8b 60       	ori	r24, 0x0B	; 11
+    107a:	80 83       	st	Z, r24
 	OCR1A = 250; /* Magical constant - 1 ms */
- a92:	8a ef       	ldi	r24, 0xFA	; 250
- a94:	90 e0       	ldi	r25, 0x00	; 0
- a96:	90 93 89 00 	sts	0x0089, r25
- a9a:	80 93 88 00 	sts	0x0088, r24
+    107c:	8a ef       	ldi	r24, 0xFA	; 250
+    107e:	90 e0       	ldi	r25, 0x00	; 0
+    1080:	90 93 89 00 	sts	0x0089, r25
+    1084:	80 93 88 00 	sts	0x0088, r24
 	TIMSK1 |= _BV(OCIE1A);
- a9e:	ef e6       	ldi	r30, 0x6F	; 111
- aa0:	f0 e0       	ldi	r31, 0x00	; 0
- aa2:	80 81       	ld	r24, Z
- aa4:	82 60       	ori	r24, 0x02	; 2
- aa6:	80 83       	st	Z, r24
+    1088:	ef e6       	ldi	r30, 0x6F	; 111
+    108a:	f0 e0       	ldi	r31, 0x00	; 0
+    108c:	80 81       	ld	r24, Z
+    108e:	82 60       	ori	r24, 0x02	; 2
+    1090:	80 83       	st	Z, r24
 	
 	Enable_Interrupt;
- aa8:	78 94       	sei
- aaa:	08 95       	ret
+    1092:	78 94       	sei
+    1094:	08 95       	ret
 
-00000aac <InitAll>:
+00001096 <InitAll>:
 {
 
 	// 1- output, 0-input
 	// Port B
 	// 0 - ~SD_Select, 1 - E_Reset, 2 - E_Select, 3 - MOSI, 4 - MISO, 5 - SCK
 	PORTB = _BV(PORTB0) | _BV(PORTB1) | _BV(PORTB2) | _BV(PORTB3) | _BV(PORTB5);
- aac:	8f e2       	ldi	r24, 0x2F	; 47
- aae:	85 b9       	out	0x05, r24	; 5
+    1096:	8f e2       	ldi	r24, 0x2F	; 47
+    1098:	85 b9       	out	0x05, r24	; 5
 	DDRB = _BV(PORTB0) | _BV(PORTB1) | _BV(PORTB2) | _BV(PORTB3) | _BV(PORTB5);
- ab0:	84 b9       	out	0x04, r24	; 4
+    109a:	84 b9       	out	0x04, r24	; 4
 
 	SPCR = (1<<SPE)|(1<<MSTR);								// enable SPI, master mode 0
- ab2:	80 e5       	ldi	r24, 0x50	; 80
- ab4:	8c bd       	out	0x2c, r24	; 44
+    109c:	80 e5       	ldi	r24, 0x50	; 80
+    109e:	8c bd       	out	0x2c, r24	; 44
 	SPSR |= (1<<SPI2X);										// set the clock rate fck/2
- ab6:	8d b5       	in	r24, 0x2d	; 45
- ab8:	81 60       	ori	r24, 0x01	; 1
- aba:	8d bd       	out	0x2d, r24	; 45
+    10a0:	8d b5       	in	r24, 0x2d	; 45
+    10a2:	81 60       	ori	r24, 0x01	; 1
+    10a4:	8d bd       	out	0x2d, r24	; 45
 
 	//
 	// PORT C
 	// 0-3 - выходные оптроны, 4 - SDA, 5 - SCL, 6 -SPI0 (~CS для spi на разъеме) , 7 - NC
 	//
 	PORTC = _BV(PORTC4) | _BV(PORTC5) | _BV(PORTC6);
- abc:	80 e7       	ldi	r24, 0x70	; 112
- abe:	88 b9       	out	0x08, r24	; 8
-	DDRC = _BV(PORTC0) |_BV(PORTC1) |_BV(PORTC2) |_BV(PORTC3) |_BV(PORTC4) | _BV(PORTC5) | _BV(PORTC6);
- ac0:	8f e7       	ldi	r24, 0x7F	; 127
- ac2:	87 b9       	out	0x07, r24	; 7
+    10a6:	80 e7       	ldi	r24, 0x70	; 112
+    10a8:	88 b9       	out	0x08, r24	; 8
+	DDRC = _BV(PORTC0) |_BV(PORTC1) |_BV(PORTC2) |_BV(PORTC3) | _BV(PORTC6);	// |_BV(PORTC4) | _BV(PORTC5)
+    10aa:	8f e4       	ldi	r24, 0x4F	; 79
+    10ac:	87 b9       	out	0x07, r24	; 7
 
 	// Port D
 	// 0 -RxD, 1 - TxD, 2 - INT0 (клавиатура), 3 - INT1 (входные датчики), 4 - 485_RW (~RE/DE), 5,6 -reserve, 7 - SD_DETECT
 	//
 	PORTD = _BV(PORTD1) | _BV(PORTD4);
- ac4:	82 e1       	ldi	r24, 0x12	; 18
- ac6:	8b b9       	out	0x0b, r24	; 11
+    10ae:	82 e1       	ldi	r24, 0x12	; 18
+    10b0:	8b b9       	out	0x0b, r24	; 11
 	DDRD = _BV(PORTD0) | _BV(PORTD4) | _BV(PORTD5) | _BV(PORTD6);
- ac8:	81 e7       	ldi	r24, 0x71	; 113
- aca:	8a b9       	out	0x0a, r24	; 10
-	
-	// Настройка режима мастера
-	i2c_PORT |= 1<<i2c_SCL|1<<i2c_SDA;			// Включим подтяжку на ноги, вдруг юзер на резисторы пожмотился
- acc:	88 b1       	in	r24, 0x08	; 8
- ace:	80 63       	ori	r24, 0x30	; 48
- ad0:	88 b9       	out	0x08, r24	; 8
-	i2c_DDR &=~(1<<i2c_SCL|1<<i2c_SDA);
- ad2:	87 b1       	in	r24, 0x07	; 7
- ad4:	8f 7c       	andi	r24, 0xCF	; 207
- ad6:	87 b9       	out	0x07, r24	; 7
+    10b2:	81 e7       	ldi	r24, 0x71	; 113
+    10b4:	8a b9       	out	0x0a, r24	; 10
+    10b6:	08 95       	ret
 
-	TWBR = 0xFF;         						// Настроим битрейт
- ad8:	8f ef       	ldi	r24, 0xFF	; 255
- ada:	80 93 b8 00 	sts	0x00B8, r24
-	TWSR = 0x03;
- ade:	83 e0       	ldi	r24, 0x03	; 3
- ae0:	80 93 b9 00 	sts	0x00B9, r24
- ae4:	08 95       	ret
+000010b8 <__divmodhi4>:
+    10b8:	97 fb       	bst	r25, 7
+    10ba:	07 2e       	mov	r0, r23
+    10bc:	16 f4       	brtc	.+4      	; 0x10c2 <__divmodhi4+0xa>
+    10be:	00 94       	com	r0
+    10c0:	07 d0       	rcall	.+14     	; 0x10d0 <__divmodhi4_neg1>
+    10c2:	77 fd       	sbrc	r23, 7
+    10c4:	09 d0       	rcall	.+18     	; 0x10d8 <__divmodhi4_neg2>
+    10c6:	0e 94 76 08 	call	0x10ec	; 0x10ec <__udivmodhi4>
+    10ca:	07 fc       	sbrc	r0, 7
+    10cc:	05 d0       	rcall	.+10     	; 0x10d8 <__divmodhi4_neg2>
+    10ce:	3e f4       	brtc	.+14     	; 0x10de <__divmodhi4_exit>
 
-00000ae6 <__tablejump2__>:
- ae6:	ee 0f       	add	r30, r30
- ae8:	ff 1f       	adc	r31, r31
+000010d0 <__divmodhi4_neg1>:
+    10d0:	90 95       	com	r25
+    10d2:	81 95       	neg	r24
+    10d4:	9f 4f       	sbci	r25, 0xFF	; 255
+    10d6:	08 95       	ret
 
-00000aea <__tablejump__>:
- aea:	05 90       	lpm	r0, Z+
- aec:	f4 91       	lpm	r31, Z
- aee:	e0 2d       	mov	r30, r0
- af0:	09 94       	ijmp
+000010d8 <__divmodhi4_neg2>:
+    10d8:	70 95       	com	r23
+    10da:	61 95       	neg	r22
+    10dc:	7f 4f       	sbci	r23, 0xFF	; 255
 
-00000af2 <_exit>:
- af2:	f8 94       	cli
+000010de <__divmodhi4_exit>:
+    10de:	08 95       	ret
 
-00000af4 <__stop_program>:
- af4:	ff cf       	rjmp	.-2      	; 0xaf4 <__stop_program>
+000010e0 <__tablejump2__>:
+    10e0:	ee 0f       	add	r30, r30
+    10e2:	ff 1f       	adc	r31, r31
+
+000010e4 <__tablejump__>:
+    10e4:	05 90       	lpm	r0, Z+
+    10e6:	f4 91       	lpm	r31, Z
+    10e8:	e0 2d       	mov	r30, r0
+    10ea:	09 94       	ijmp
+
+000010ec <__udivmodhi4>:
+    10ec:	aa 1b       	sub	r26, r26
+    10ee:	bb 1b       	sub	r27, r27
+    10f0:	51 e1       	ldi	r21, 0x11	; 17
+    10f2:	07 c0       	rjmp	.+14     	; 0x1102 <__udivmodhi4_ep>
+
+000010f4 <__udivmodhi4_loop>:
+    10f4:	aa 1f       	adc	r26, r26
+    10f6:	bb 1f       	adc	r27, r27
+    10f8:	a6 17       	cp	r26, r22
+    10fa:	b7 07       	cpc	r27, r23
+    10fc:	10 f0       	brcs	.+4      	; 0x1102 <__udivmodhi4_ep>
+    10fe:	a6 1b       	sub	r26, r22
+    1100:	b7 0b       	sbc	r27, r23
+
+00001102 <__udivmodhi4_ep>:
+    1102:	88 1f       	adc	r24, r24
+    1104:	99 1f       	adc	r25, r25
+    1106:	5a 95       	dec	r21
+    1108:	a9 f7       	brne	.-22     	; 0x10f4 <__udivmodhi4_loop>
+    110a:	80 95       	com	r24
+    110c:	90 95       	com	r25
+    110e:	bc 01       	movw	r22, r24
+    1110:	cd 01       	movw	r24, r26
+    1112:	08 95       	ret
+
+00001114 <_exit>:
+    1114:	f8 94       	cli
+
+00001116 <__stop_program>:
+    1116:	ff cf       	rjmp	.-2      	; 0x1116 <__stop_program>

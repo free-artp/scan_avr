@@ -1,5 +1,6 @@
-#include "IIC_ultimate.h"
 
+#include "IIC_ultimate.h"
+#include <util/delay.h>
 
 void DoNothing(void);
 
@@ -50,6 +51,20 @@ if (WorkIndex <99)							// Если лог не переполнен
 		}
 }
 */
+
+/*
+u08 t = TWSR, i, b;
+
+PORTD &= ~(1<<PORTD5);
+
+
+for ( i=0; i<8; i++ ) {
+	b = (t & _BV(i))? 1 :0;
+	PORTD &= ~(b<<PORTD6);	_delay_ms(0.01);	PORTD |= (1<<PORTD6);	_delay_ms(0.001); PORTD &= ~(1<<PORTD6);_delay_ms(0.001);	PORTD |= (1<<PORTD6);
+}
+
+PORTD |= (1<<PORTD5);
+*/
 switch(TWSR & 0xF8)						// Отсекаем биты прескалера
 	{
 	case 0x00:	// Bus Fail (автобус сломался)
@@ -61,6 +76,7 @@ switch(TWSR & 0xF8)						// Отсекаем биты прескалера
 			}
 
 	case 0x08:	// Старт был, а затем мы:
+		PORTD &= ~(1<<PORTD5);	_delay_ms(0.1);	PORTD |= (1<<PORTD5);
 			{
 			if( (i2c_Do & i2c_type_msk)== i2c_sarp)							// В зависимости от режима
 				{
@@ -389,8 +405,12 @@ void Init_i2c(void)							// Настройка режима мастера
 i2c_PORT |= 1<<i2c_SCL|1<<i2c_SDA;			// Включим подтяжку на ноги, вдруг юзер на резисторы пожмотился
 i2c_DDR &=~(1<<i2c_SCL|1<<i2c_SDA);
 
-TWBR = 0xFF;         						// Настроим битрейт
-TWSR = 0x03;
+//TWBR = 0xFF;         						// Настроим битрейт
+//TWSR = 0x03;
+
+TWBR = 0x48;         						// Настроим битрейт
+TWSR = 0x0;
+
 }
 
 void Init_Slave_i2c(IIC_F Addr)				// Настройка режима слейва (если нужно)

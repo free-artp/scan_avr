@@ -46,6 +46,7 @@ void circ_init(struct circ_buffer *buff);
 
 /* Return the amount of bytes left */
 int circ_push(struct circ_buffer *buff, uint8_t *data, int len);
+int circ_push_byte(struct circ_buffer *buff, uint8_t data);
 
 /* Returns amount of bytes popped/peeked */
 int circ_pop(struct circ_buffer *buff, uint8_t *data, int len);

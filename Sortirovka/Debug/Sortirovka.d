@@ -20,7 +20,10 @@ Sortirovka.d Sortirovka.o: .././Sortirovka.c \
  .././../RTOS/avrlibtypes.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
  .././../RTOS/EERTOS.h .././../RTOS/HAL.h .././../RTOS/EERTOSHAL.h \
- .././opto22.h .././comm2.h .././display.h
+ .././../IIC_ultimate/IIC_ultimate.h \
+ .././../IIC_ultimate/../include/avrlibtypes.h \
+ .././../IIC_ultimate/../include/avrlibdefs.h .././console_drv.h \
+ .././opto22.h .././comm2.h
 
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -68,8 +71,14 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-g
 
 .././../RTOS/EERTOSHAL.h:
 
+.././../IIC_ultimate/IIC_ultimate.h:
+
+.././../IIC_ultimate/../include/avrlibtypes.h:
+
+.././../IIC_ultimate/../include/avrlibdefs.h:
+
+.././console_drv.h:
+
 .././opto22.h:
 
 .././comm2.h:
-
-.././display.h:
