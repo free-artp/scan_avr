@@ -18,50 +18,51 @@ SCANER_REQS = {
 
 */
 
-#pragma pack(push,1)
+//#pragma pack(push,1)
 
 typedef struct o22_header {
-	unsigned char address;		// адрес прибора
-	unsigned char packet_size;	// размер пакета в байтах, не включая контрольную сумму
-	unsigned char cmd;			// номер запроса
-	unsigned char dop_byte_num;	// номер байта, с которго начинается доп.информация (всегда 4)
+	u08 address;		// адрес прибора
+	u08 packet_size;	// размер пакета в байтах, не включая контрольную сумму
+	u08 cmd;			// номер запроса
+	u08 dop_byte_num;	// номер байта, с которго начинается доп.информация (всегда 4)
 } o22_header_t;			// sizeof = 4 + 2(crc)
 
 typedef struct o22_wood {
-	unsigned short index;	// last wood
-	unsigned long  time;
-	unsigned short d1;
-	unsigned short d2;
-	unsigned short d3;
-	unsigned short length;
-	unsigned short sbeg;
-	unsigned short sbegk;
-	unsigned short volume;
-	unsigned short nums;
-	unsigned short flags;
-	unsigned char  kr;
-	unsigned char  ov;
+	u16 index;	// last wood
+//	u08  time[4];
+	uint32_t time;
+	u16 d1;
+	u16 d2;
+	u16 d3;
+	u16 length;
+	u16 sbeg;
+	u16 sbegk;
+	u16 volume;
+	u16 nums;
+	u16 flags;
+	u08  kr;
+	u08  ov;
 } o22_wood_t;				// sizeof = 26
 
 typedef struct o22_common {
-	unsigned short state;
+	u16 state;
 	
 	o22_wood_t		last;
 	
-	unsigned char  reserve1;
-	unsigned char  reserve2;
-	unsigned char  reserve3;
-	unsigned char  reserve4;
-	unsigned short cur_low_beamA;
-	unsigned short cur_upp_beamA;
-	unsigned short cur_low_beamB;
-	unsigned short cur_upp_beamB;
-	unsigned short cur_length;
-	unsigned short cur_dmts;
-	unsigned short cur_speed;
+	u08  reserve1;
+	u08  reserve2;
+	u08  reserve3;
+	u08  reserve4;
+	u16 cur_low_beamA;
+	u16 cur_upp_beamA;
+	u16 cur_low_beamB;
+	u16 cur_upp_beamB;
+	u16 cur_length;
+	u16 cur_dmts;
+	u16 cur_speed;
 	
 } o22_common_t;			// sizeof 18
 
-#pragma pack(pop)
+//#pragma pack(pop)
 
 #endif

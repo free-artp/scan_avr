@@ -6,5 +6,7 @@ comm2.c
 
 console_drv.c
 
+scaner.c
+
 Sortirovka.c
 

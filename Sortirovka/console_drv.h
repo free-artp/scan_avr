@@ -39,7 +39,7 @@
 #define DS_RS	6
 #define DS_RW	5
 #define DS_E	4
-#define DS_CMD_DELAY_DEFAULT	6
+#define DS_CMD_DELAY_DEFAULT	10
 
 // upper level buffer
 
@@ -51,13 +51,19 @@
 #define DISP_STRP		0b00010000			// <DISP_STRP> <HI(*char PROGMEM)> <LO(*char PROGMEM)>
 #define DISP_STRP_N		0b00010001			// работаем по строке
 
+char str0[17];
+char str1[17];
+
+
 void d_init();
+void d_start();
 void d_clear();
 void d_setcursor (u08 column, u08 row);
 void d_command(u08 cmd);
 void d_putchar(char chr);
 void d_putstring(char *str);
-void d_putstringP(char *str);
+//void d_putstringP( const PROGMEM char *str);
+void d_putstringP( const char *str);
 
 
 #endif /* CONSOLE_DRV_H_ */

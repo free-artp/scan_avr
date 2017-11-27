@@ -130,6 +130,12 @@
     <Compile Include="pins.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="scaner.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="scaner.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Sortirovka.c">
       <SubType>compile</SubType>
     </Compile>

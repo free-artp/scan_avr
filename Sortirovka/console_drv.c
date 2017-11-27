@@ -28,6 +28,10 @@
 u08 buff_inp[DRV_BUFF];
 u08 buff_out[DRV_BUFF];
 
+char str0[17]="0123456789ABCDEF\0";
+char str1[17]="0123456789ABCDEF\0";
+
+
 struct circ_buffer drv_queue_inp = {
 	.start = buff_inp,
 	.length = sizeof(buff_inp),
@@ -241,9 +245,17 @@ void d_putstring(char *str){
 	SetTask(parser_d);
 }
 
-void d_putstringP(char *str){
+void d_putstringP(const char *str){
 	circ_push_byte( &drv_queue_inp, DISP_STRP);
 	circ_push( &drv_queue_inp, (u08*)&str, 2);
+	SetTask(parser_d);
+}
+
+void d_start() {
+	circ_push_byte( &drv_queue_inp, DISP_CMD);
+	circ_push_byte( &drv_queue_inp, 0x01);		// clear, cursor = 0, shift=0, i/d=1
+	circ_push_byte( &drv_queue_inp, DISP_CMD);
+	circ_push_byte( &drv_queue_inp, 0x0E);		// display On, cursor On, blink Off
 	SetTask(parser_d);
 }
 

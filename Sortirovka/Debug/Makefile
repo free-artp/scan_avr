@@ -39,6 +39,7 @@ SUBDIRS :=
 C_SRCS +=  \
 ../comm2.c \
 ../console_drv.c \
+../scaner.c \
 ../Sortirovka.c
 
 
@@ -51,21 +52,25 @@ ASM_SRCS +=
 OBJS +=  \
 comm2.o \
 console_drv.o \
+scaner.o \
 Sortirovka.o
 
 OBJS_AS_ARGS +=  \
 comm2.o \
 console_drv.o \
+scaner.o \
 Sortirovka.o
 
 C_DEPS +=  \
 comm2.d \
 console_drv.d \
+scaner.d \
 Sortirovka.d
 
 C_DEPS_AS_ARGS +=  \
 comm2.d \
 console_drv.d \
+scaner.d \
 Sortirovka.d
 
 OUTPUT_FILE_PATH +=Sortirovka.elf
@@ -85,6 +90,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
