@@ -20,7 +20,7 @@
 #define i2c_MasterBytesRX	1			// Величина принимающего буфера режима Slave, т.е. сколько байт жрем.
 #define i2c_MasterBytesTX	1			// Величина Передающего буфера режима Slave , т.е. сколько байт отдаем за сессию.
 
-#define i2c_MaxBuffer		3			// Величина буфера Master режима RX-TX. Зависит от того какой длины строки мы будем гонять
+#define i2c_MaxBuffer		8			// Величина буфера Master режима RX-TX. Зависит от того какой длины строки мы будем гонять. 7 байт нужно для даты в ds1307
 #define i2c_MaxPageAddrLgth	2			// Максимальная величина адреса страницы. Обычно адрес страницы это один или два байта. 
 										// Зависит от типа ЕЕПРОМ или другой микросхемы. 
 
@@ -49,7 +49,7 @@
 #define MACRO_i2c_WhatDo_SlaveOut   (SlaveOutFunc)();
 #define MACRO_i2c_WhatDo_ErrorOut   (ErrorOutFunc)();
 
-
+#define i2c_Retrain	50					// ms . Через сколько повторить попытку захвата шины.
 
 typedef void (*IIC_F)(void);								// Тип указателя на функцию
 

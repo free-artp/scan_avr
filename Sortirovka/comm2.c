@@ -116,7 +116,7 @@ ISR( USART_UDRE_vect )
 
 // разрешает прерывания по пустому буферу передатчика (начинает отсылку)
 void uart_send_kick(){
-	PORTD &= ~(1<<PORTD5);	_delay_ms(0.2);	PORTD |= (1<<PORTD5);
+//	PORTD &= ~(1<<PORTD5);	_delay_ms(0.2);	PORTD |= (1<<PORTD5);
 //	if ( (PIND & _BV(pin_RS485_RW)) == 0)							// можно и проверять
 	PORTD |= _BV(pin_RS485_RW);										// переключаем драйвер RS485 на передачу
 		

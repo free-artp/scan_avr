@@ -12,8 +12,8 @@
 void new_req();
 void new_packet();
 
-volatile unsigned short current_dmts;
-volatile unsigned short last_wood_index;
+volatile uint16_t current_dmts;
+volatile uint16_t last_wood_index;
 
 
 

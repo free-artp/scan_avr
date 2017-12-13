@@ -12,25 +12,28 @@
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
 #include <util/atomic.h>
-
+#include <stdio.h>
 #include <stddef.h>
 
 #include "../RTOS/EERTOS.h"
+#include "../RTOS/messages.h"
 
 #include "../include/avrlibtypes.h"
 #include "../circ/circ.h"
 #include "../IIC_ultimate/IIC_ultimate.h"
 
+#include "menu.h"
 #include "console_drv.h"
 
-#include<util/delay.h>
+//#include<util/delay.h>
 
 u08 buff_inp[DRV_BUFF];
 u08 buff_out[DRV_BUFF];
 
-char str0[17]="0123456789ABCDEF\0";
-char str1[17]="0123456789ABCDEF\0";
+char str0[]="0123456789ABCDEF\0";
+char str1[]="0123456789ABCDEF\0";
 
+const char strz[] PROGMEM = "                \0";
 
 struct circ_buffer drv_queue_inp = {
 	.start = buff_inp,
@@ -49,6 +52,9 @@ u08 m_cmd = DISP_NONE;
 u08 *m_ptr = NULL;
 u16 m_delay = 0;	// пауза, которую надо выждать после посылки всего пакета (несколько записей в разные слейвы)
 u08 m_delay_fl = 0;
+
+
+uint8_t lastKey = 0, prevKey = 0;
 
 void parser_m();
 
@@ -245,6 +251,15 @@ void d_putstring(char *str){
 	SetTask(parser_d);
 }
 
+void d_putrow(u08 r, char *str){
+	r %= 2;
+	circ_push_byte( &drv_queue_inp, DISP_CMD);
+	circ_push_byte( &drv_queue_inp, 0x80 | 0x40*r);
+	circ_push_byte( &drv_queue_inp, DISP_STR);
+	circ_push( &drv_queue_inp, (u08*)(r?&str1:&str0), 2);
+	SetTask(parser_d);
+}
+
 void d_putstringP(const char *str){
 	circ_push_byte( &drv_queue_inp, DISP_STRP);
 	circ_push( &drv_queue_inp, (u08*)&str, 2);
@@ -262,32 +277,70 @@ void d_start() {
 
 //============================
 
-uint8_t lastKey,prevKey;
-uint8_t kf1,kf2,kf3;
 
-void kbd_read();
+void kbd_init2(){
+	i2c_Do &= i2c_Free;											// Освобождаем шину
+	if(i2c_Do & (i2c_ERR_NA|i2c_ERR_BF))						// Если запись не удалась
+	{
+		SetTimerTask(kbd_init, 50);								// повторяем попытку
+	}
+	else														// Если все ок, то ...
+	{
+		EICRA |= (1 <<ISC01 ) | (0<<ISC00);						// по падающему фронту
+		EIMSK |= _BV(PCINT0);									// разрешаем INT0
+		
+	}
+}
 
-void kbd_readed(){
-	u08 kf;
-	kf = i2c_Buffer[0];
+void kbd_init(){
+	if ( (i2c_Do & i2c_Busy) ) {
+		SetTimerTask(kbd_init, i2c_Retrain);
+	} else {
+		i2c_Do = i2c_sawp | i2c_Busy;
+		i2c_SlaveAddress = KBD_REG;
+		i2c_index = 0;
+		i2c_ByteCount = 1;
+		i2c_Buffer[0] = 0xFF;
+
+		MasterOutFunc = kbd_init2;
+		ErrorOutFunc =  kbd_init2;
+			
+		TWCR = 1<<TWSTA|0<<TWSTO|1<<TWINT|0<<TWEA|1<<TWEN|1<<TWIE;
+	}
+}
+
+//
+// AUTO		- 7f - 01111111
+// MENU		- bf - 10111111
+// LEFT		- df - 11011111
+// RIGHT	- ef - 11101111
+// SELECT	- fd - 11111101
+// ON/OFF	- fb - 11111011
+//
+// LED		- f7 - 11110111
+//
+
+void kbd_read2(){
+	u08 nbit, kf = ~(i2c_Buffer[0]);
 	
 	i2c_Do &= i2c_Free;											// Освобождаем шину
 	if(i2c_Do & (i2c_ERR_NA|i2c_ERR_BF))						// Если запись не удалась
 	{
-		SetTimerTask(kbd_read,20);								// повторяем попытку
-	}
-	else														// Если все ок, то ...
-	{
-		kf3=kf2;
-		kf2=kf1;
-		kf1 = kf;
+		SetTimerTask(kbd_read, i2c_Retrain);					// повторяем попытку
+	} else {													// Если все ок, то ...
+		for(nbit=0; nbit<8; nbit++) {
+			if (kf & (1<<nbit) ) {
+				lastKey = kf & (1<<nbit);
+				sendMessage(MSG_KEY_PRESS, lastKey);
+			}
+		}
 	}
 }
 
 void kbd_read(){
 	if ( (i2c_Do & i2c_Busy) ) {
 		SetTimerTask(kbd_read, 5);
-		} else {
+	} else {
 		ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
 		{
 			i2c_Do = i2c_sarp | i2c_Busy;
@@ -295,17 +348,21 @@ void kbd_read(){
 			i2c_index = 0;
 			i2c_ByteCount = 1;
 			
-			MasterOutFunc = kbd_readed;
-			ErrorOutFunc =  kbd_readed;
+			MasterOutFunc = kbd_read2;
+			ErrorOutFunc =  kbd_read2;
 			
 			TWCR = 1<<TWSTA|0<<TWSTO|1<<TWINT|0<<TWEA|1<<TWEN|1<<TWIE;
 		}
 	}
 }
 
+
+void kbd_int_en(){
+	EIMSK |= _BV(PCINT0);								// разрешаем INT0 (подавление дребезга)
+}
+
 // прерывание по изменению состояния входных пинов PCF8574
-
-
+//
 // включить подтяжку
 // настроить на HI-to-LOW
 
@@ -326,6 +383,8 @@ void kbd_read(){
 // прочитали - прерывание снялось
 //
 ISR(INT0_vect) {
+	EIMSK &= ~_BV(PCINT0);								// запрещаем INT0
 	SetTask(kbd_read);
+	SetTimerTask(kbd_int_en, KBD_DEATHTIME);
 }
 

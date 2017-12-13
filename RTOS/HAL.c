@@ -22,8 +22,9 @@ inline void InitAll(void)
 	// Port D
 	// 0 -RxD, 1 - TxD, 2 - INT0 (клавиатура), 3 - INT1 (входные датчики), 4 - 485_RW (~RE/DE), 5,6 -reserve, 7 - SD_DETECT
 	//
-	PORTD = _BV(PORTD1) | _BV(PORTD4);
+	PORTD = _BV(PORTD1) | _BV(PORTD4) | _BV(PORTD2);
 	DDRD = _BV(PORTD0) | _BV(PORTD4) | _BV(PORTD5) | _BV(PORTD6);
+	//
 	
 }
 

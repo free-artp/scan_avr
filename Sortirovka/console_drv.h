@@ -31,7 +31,7 @@
 #define DISPLAY_DATA_REG		( BASE_PCF8574 | PCF8574_A2(0) | PCF8574_A1(1) | PCF8574_A0(1) )
 */
 
-#define KBD_REG				0x40
+
 #define SENSOR_REG			0x42
 #define DISPLAY_CTRL_REG	0x44
 #define DISPLAY_DATA_REG	0x46
@@ -58,12 +58,28 @@ char str1[17];
 void d_init();
 void d_start();
 void d_clear();
-void d_setcursor (u08 column, u08 row);
-void d_command(u08 cmd);
+void d_setcursor (uint8_t column, uint8_t row);
+void d_command(uint8_t cmd);
 void d_putchar(char chr);
 void d_putstring(char *str);
-//void d_putstringP( const PROGMEM char *str);
 void d_putstringP( const char *str);
+
+//=================================================== keyboard ====================================
+#define KBD_REG				0x40		// адрес регистра на i2c
+
+#define KBD_DEATHTIME		200			// время подавления дребезга в ms
+
+void kbd_init();
+void kbd_read();
+
+#define KEY_AUTO		0b10000000
+#define KEY_MENU		0b01000000
+#define KEY_LEFT		0b00100000
+#define KEY_RIGHT		0b00010000
+#define KEY_ONOFF		0b00000100
+#define KEY_SELECT		0b00000010
+
+#define KBD_LED			0b00001000
 
 
 #endif /* CONSOLE_DRV_H_ */

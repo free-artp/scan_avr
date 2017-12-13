@@ -76,7 +76,6 @@ switch(TWSR & 0xF8)						// Отсекаем биты прескалера
 			}
 
 	case 0x08:	// Старт был, а затем мы:
-		PORTD &= ~(1<<PORTD5);	_delay_ms(0.1);	PORTD |= (1<<PORTD5);
 			{
 			if( (i2c_Do & i2c_type_msk)== i2c_sarp)							// В зависимости от режима
 				{

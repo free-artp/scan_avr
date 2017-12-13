@@ -39,7 +39,8 @@ SUBDIRS :=
 C_SRCS +=  \
 ../EERTOS.c \
 ../EERTOSHAL.c \
-../HAL.c
+../HAL.c \
+../messages.c
 
 
 PREPROCESSING_SRCS += 
@@ -51,22 +52,26 @@ ASM_SRCS +=
 OBJS +=  \
 EERTOS.o \
 EERTOSHAL.o \
-HAL.o
+HAL.o \
+messages.o
 
 OBJS_AS_ARGS +=  \
 EERTOS.o \
 EERTOSHAL.o \
-HAL.o
+HAL.o \
+messages.o
 
 C_DEPS +=  \
 EERTOS.d \
 EERTOSHAL.d \
-HAL.d
+HAL.d \
+messages.d
 
 C_DEPS_AS_ARGS +=  \
 EERTOS.d \
 EERTOSHAL.d \
-HAL.d
+HAL.d \
+messages.d
 
 OUTPUT_FILE_PATH +=libRTOS.a
 
@@ -82,6 +87,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

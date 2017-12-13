@@ -39,6 +39,8 @@ SUBDIRS :=
 C_SRCS +=  \
 ../comm2.c \
 ../console_drv.c \
+../menu.c \
+../rtc.c \
 ../scaner.c \
 ../Sortirovka.c
 
@@ -52,24 +54,32 @@ ASM_SRCS +=
 OBJS +=  \
 comm2.o \
 console_drv.o \
+menu.o \
+rtc.o \
 scaner.o \
 Sortirovka.o
 
 OBJS_AS_ARGS +=  \
 comm2.o \
 console_drv.o \
+menu.o \
+rtc.o \
 scaner.o \
 Sortirovka.o
 
 C_DEPS +=  \
 comm2.d \
 console_drv.d \
+menu.d \
+rtc.d \
 scaner.d \
 Sortirovka.d
 
 C_DEPS_AS_ARGS +=  \
 comm2.d \
 console_drv.d \
+menu.d \
+rtc.d \
 scaner.d \
 Sortirovka.d
 
@@ -90,6 +100,10 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
+
+
 
 
 

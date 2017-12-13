@@ -1,8 +1,10 @@
 #include "EERTOS.h"
+#include "messages.h"
 
 // Очереди задач, таймеров.
 // Тип данных - указатель на функцию
-volatile static TPTR	TaskQueue[TaskQueueSize+1];			// очередь указателей
+volatile static TPTR		TaskQueue[TaskQueueSize+1];			// очередь указателей
+
 volatile static struct {									
 	TPTR GoToTask; 						// Указатель перехода
 	u16 Time;							// Выдержка в мс
@@ -61,6 +63,7 @@ u08		nointerrupted = 0;
 }
 
 
+
 //Функция установки задачи по таймеру. Передаваемые параметры - указатель на функцию, 
 // Время выдержки в тиках системного таймера. Возвращет код ошибки.
 void SetTimerTask(TPTR TS, u16 NewTime) {
@@ -114,19 +117,16 @@ TPTR	GoToTask = Idle;		// Инициализируем переменные
 	{
 		Enable_Interrupt			// Разрешаем прерывания
 		(Idle)(); 					// Переходим на обработку пустого цикла
-	}
-	else
-	{
-		for(index=0;index!=TaskQueueSize;index++)	// В противном случае сдвигаем всю очередь
-		{
+	} else {
+		for(index=0;index!=TaskQueueSize;index++) {	// В противном случае сдвигаем всю очередь
 			TaskQueue[index]=TaskQueue[index+1];
 		}
-
-		TaskQueue[TaskQueueSize]= Idle;				// В последнюю запись пихаем затычку
+		TaskQueue[TaskQueueSize]= Idle;					// В последнюю запись пихаем затычку
 
 		Enable_Interrupt							// Разрешаем прерывания
 		(GoToTask)();								// Переходим к задаче
 	}
+	dispatchMessage();
 }
 
 
